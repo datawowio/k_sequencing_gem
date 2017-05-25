@@ -4,23 +4,24 @@ Image and content moderation services.
 
 ## Getting Started
 
-KSequencing 0.0.2 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.0.1 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
 gem 'k_sequencing'
 ```
 Then run bundle install
 
-## Usage
+You have to contact us [Kiyo](http://kiyo.tech/pages/contact) to get your token. With this token you'll be able to use our gem properly.
 
+## Usage
 ### Operations about Images
 Getting all images
 ```ruby
-KSequencing.client.get_images()
+KSequencing.client.image_closed_questions()
 ```
 
 Create images
 ```ruby
-KSequencing.client.create_images()
+KSequencing.client.image_closed_questions()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -59,7 +60,7 @@ Sample results
 ```
 Show image
 ```ruby
-KSequencing.client.get_image(id)
+KSequencing.client.image_closed_question(id)
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -68,8 +69,8 @@ KSequencing.client.get_image(id)
 
 ---
 #### Image moderation can set 4 kinds of answer
+* Closed question - Answer can be only approved, declined or ban.
 * Choices - User can set multiple choices for select. It can be radio or checkbox.
-* Tag
 * Photo tag - User can create box-like overlays on top of your image and assign messages to each box.
 * Message - User can set messages for answer.
 
