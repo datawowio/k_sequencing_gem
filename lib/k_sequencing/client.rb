@@ -54,6 +54,22 @@ module KSequencing
       connection.get("/api/reports/images/photo_tag", options)
     end
 
+    def get_projects(options = {})
+      connection.get("/api/projects", options)
+    end
+
+    def get_project(id, options = {})
+      connection.get("/api/projects/#{id}", options)
+    end
+
+    def destroy_sessions(options = {})
+      connection.delete("/api/sessions", options)
+    end
+
+    def authenticate_sessions(options = {})
+      connection.post("/api/sessions", options)
+    end
+
     private
 
     def connection

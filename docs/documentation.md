@@ -389,3 +389,71 @@ Sample results
 }
 ```
 ---
+### Projects
+Getting all projects
+```ruby
+KSequencing.client.get_projects()
+```
+
+Show project
+```ruby
+KSequencing.client.get_project(id)
+```
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| id     | 	integer | Yes |Id of image|
+| token     | 	string | Yes |User Authorization Token|
+
+Sample result
+```json
+{
+  "data": {
+    "id": 1,
+    "project_id": 1,
+    "project_name": "test",
+    "site_name": "site_name",
+    "priority_timer": 0,
+    "created_at": "2017-05-25T05:03:12.589Z",
+    "updated_at": "2017-05-25T05:03:12.589Z"
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
+
+---
+#### Sessions
+Authenticate user and return user object / access token
+```ruby
+KSequencing.client.authenticate_sessions()
+```
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| email     | 	string | Yes |User email|
+| password	     | string      |   Yes | User password|
+
+Sample result
+```json
+{
+  "data": {
+    "uid": 1,
+    "email": "example@datawow.io",
+    "token": "e5eCgB8mGDYf6Dqa12YyNzNC"
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
+
+Delete session
+
+```ruby
+KSequencing.client.destroy_sessions()
+```
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| token     | 	string | Yes |User Authorization Token|
