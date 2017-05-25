@@ -1,6 +1,6 @@
 ## Usage
 ### Operations about Images
-#### Image moderation can set 3 kinds of answer
+#### Image moderation can set 4 kinds of answer
 * Closed question - Answer can be only approved, declined or ban.
 * Choices - User can set multiple choices for select. It can be radio or checkbox.
 * Photo tag - User can create box-like overlays on top of your image and assign messages to each box.
