@@ -424,7 +424,10 @@ Sample result
 ```
 
 ---
-#### Sessions
+### Sessions
+Create or regenerate user/project token.
+
+#### User
 Authenticate user and return user object / access token
 ```ruby
 KSequencing.client.authenticate_user_sessions()
@@ -458,6 +461,7 @@ KSequencing.client.destroy_user_sessions()
 | ------------- |:-------------:| :-----:| :-----|
 | token     | 	string | Yes |User Authorization Token|
 
+#### Project
 Authenticate project and return project object / access token
 ```ruby
 KSequencing.client.authenticate_project_sessions()
