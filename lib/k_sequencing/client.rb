@@ -62,12 +62,20 @@ module KSequencing
       connection.get("/api/projects/#{id}", options)
     end
 
-    def destroy_sessions(options = {})
-      connection.delete("/api/sessions", options)
+    def destroy_user_sessions(options = {})
+      connection.delete("/api/sessions/users", options)
     end
 
-    def authenticate_sessions(options = {})
-      connection.post("/api/sessions", options)
+    def authenticate_user_sessions(options = {})
+      connection.post("/api/sessions/users", options)
+    end
+
+    def destroy_project_sessions(options = {})
+      connection.delete("/api/sessions/projects", options)
+    end
+
+    def authenticate_project_sessions(options = {})
+      connection.post("/api/sessions/projects", options)
     end
 
     private

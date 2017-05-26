@@ -427,7 +427,7 @@ Sample result
 #### Sessions
 Authenticate user and return user object / access token
 ```ruby
-KSequencing.client.authenticate_sessions()
+KSequencing.client.authenticate_user_sessions()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -449,11 +449,49 @@ Sample result
 }
 ```
 
-Delete session
+Delete user session
 
 ```ruby
-KSequencing.client.destroy_sessions()
+KSequencing.client.destroy_user_sessions()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
 | token     | 	string | Yes |User Authorization Token|
+
+Authenticate project and return project object / access token
+```ruby
+KSequencing.client.authenticate_project_sessions()
+```
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| Authorization     | 	string | Yes |User Authorization Token|
+| id	     | integer      |   Yes | id of project|
+
+Sample result
+```json
+{
+  "data": {
+    "id": 3,
+    "project_id": 1,
+    "project_name": "test",
+    "site_name": "test",
+    "priority_timer": 0,
+    "created_at": "2017-05-26T02:33:16.048Z",
+    "updated_at": "2017-05-26T02:33:16.048Z",
+    "token": "VeZrkTnaYo64aP7eeUNG2HHs"
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
+
+Delete project session
+
+```ruby
+KSequencing.client.destroy_project_sessions()
+```
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| token     | 	string | Yes |Project Authorization Token|
