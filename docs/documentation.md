@@ -256,8 +256,10 @@ Sample results
 ```json
 {
   "data": {
-    "total": 5,
+    "total": 14,
     "processed": 5,
+    "unprocess": 9,
+    "image_unprocess_count": 9,
     "report_details": [
       {
         "_id": 20,
@@ -298,6 +300,7 @@ Sample results
     "total": 12,
     "processing": 3,
     "unprocess": 9,
+    "image_unprocess_count": 9,
     "report_details": [
       {
         "_id": 20,
@@ -335,6 +338,7 @@ Sample results
     "total": 12,
     "processing": 3,
     "unprocess": 9,
+    "image_unprocess_count": 9,
     "report_details": [
       {
         "_id": 20,
@@ -372,6 +376,7 @@ Sample results
     "total": 12,
     "processing": 3,
     "unprocess": 9,
+    "image_unprocess_count": 9,
     "report_details": [
       {
         "_id": 20,
