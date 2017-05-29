@@ -57,7 +57,7 @@ module KSequencing
       handle_error(e)
     end
 
-    def delete(path)
+    def delete(path, options = {})
       connection.delete do |request|
         request.path = path
         request.headers["Authorization"] = options[:token] unless options[:token].nil?
