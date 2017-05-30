@@ -58,8 +58,8 @@ module KSequencing
       connection.get("/api/projects", options)
     end
 
-    def get_project(id, options = {})
-      connection.get("/api/projects/#{id}", options)
+    def get_project(options = {})
+      connection.get("/api/project", options)
     end
 
     def destroy_user_sessions(options = {})

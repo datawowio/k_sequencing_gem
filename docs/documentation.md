@@ -1,12 +1,12 @@
 ## Usage
 ### Operations about Images
 #### Image moderation can set 4 kinds of answer
-* Closed question - Answer can be only approved, declined or ban.
-* Choices - User can set multiple choices for select. It can be radio or checkbox.
-* Photo tag - User can create box-like overlays on top of your image and assign messages to each box.
-* Message - User can set messages for answer.
+* [Closed questions](#closed-questions)- Answer can be only approved, declined or ban.
+* [Choices](#choices) - User can set multiple choices for select. It can be radio or checkbox.
+* [Photo tags](#photo-tags) - User can create box-like overlays on top of your image and assign messages to each box.
+* [Messages](#messages) - User can set messages for answer.
 ---
-#### Closed question
+#### Closed questions
 Getting all image closed question
 ```ruby
 KSequencing.client.image_closed_questions()
@@ -18,7 +18,7 @@ KSequencing.client.image_closed_questions()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| token     | 	string | Yes |User Authorization Token|
+| token     | 	string | Yes |Project Authorization Token|
 | data     | 	string | Yes |Data for moderate|
 | postback_url	     | string      |   Yes | Image postback url|
 | project_id     | 	string | No |	Project id|
@@ -58,7 +58,7 @@ KSequencing.client.image_closed_question(id)
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
 | id     | 	integer | Yes |Id of image|
-| token     | 	string | Yes |User Authorization Token|
+| token     | 	string | Yes |Project Authorization Token|
 
 ---
 #### Choices
@@ -68,7 +68,7 @@ KSequencing.client.get_choices()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| token     | 	string | Yes |User Authorization Token|
+| token     | 	string | Yes |Project Authorization Token|
 | page	     | integer      |   No | page|
 |per_page | integer     |    No | per_page |
 
@@ -78,7 +78,7 @@ KSequencing.client.create_choices()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| token     | 	string | Yes |User Authorization Token|
+| token     | 	string | Yes |Project Authorization Token|
 | instruction	     | string      |   Yes | Image instruction|
 |categories | Array[string]     |    Yes | Categories of answers |
 | data     | 	string | Yes |Data for attachment|
@@ -130,7 +130,7 @@ KSequencing.client.get_messages()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| token     | 	string | Yes |User Authorization Token|
+| token     | 	string | Yes |Project Authorization Token|
 | page	     | integer      |   No | page|
 |per_page | integer     |    No | per_page |
 
@@ -140,7 +140,7 @@ KSequencing.client.create_messages()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| token     | 	string | Yes |User Authorization Token|
+| token     | 	string | Yes |Project Authorization Token|
 | instruction	     | string      |   Yes | Image instruction|
 | data     | 	string | Yes |Data for attachment|
 | postback_url	     | string      |   Yes | Image postback url|
@@ -183,7 +183,7 @@ KSequencing.client.get_photo_tags()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| token     | 	string | Yes |User Authorization Token|
+| token     | 	string | Yes |Project Authorization Token|
 | page	     | integer      |   No | page|
 |per_page | integer     |    No | per_page |
 
@@ -193,7 +193,7 @@ KSequencing.client.create_photo_tags()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| token     | 	string | Yes |User Authorization Token|
+| token     | 	string | Yes |Project Authorization Token|
 | instruction	     | string      |   Yes | Image instruction|
 | tags	     | Array[string]      |   Yes | Tags of answers|
 | data     | 	string | Yes |Data for attachment|
@@ -402,12 +402,15 @@ KSequencing.client.get_projects()
 
 Show project
 ```ruby
-KSequencing.client.get_project(id)
+KSequencing.client.get_project()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| id     | 	integer | Yes |Id of image|
 | token     | 	string | Yes |User Authorization Token|
+| id     | 	integer | No |Id of project|
+| project_id     | 	integer | No |Client's project id|
+
+Note: You can choose to search by id or project_id. Not both.
 
 Sample result
 ```json
