@@ -6,7 +6,7 @@
 * [Photo tags](#photo-tags) - User can create box-like overlays on top of your image and assign messages to each box.
 * [Messages](#messages) - User can set messages for answer.
 ### Operations about Projects
-* [Projects](*projects) - User can show all projects and get project by id or project id.
+* [Projects](#projects) - User can show all projects and get project by id or project id.
 ### Operations about Sessions
 * [Sessions](#sessions) - User can regenerate user and project authorization token. Also can destroy user and project session too.
 ---
