@@ -413,7 +413,7 @@ KSequencing.client.get_project()
 | id     | 	integer | No |Id of project|
 | project_id     | 	integer | No |Client's project id|
 
-Note: You can choose to search by id or project_id. Not both.
+Note: You must choose id or project id for search. Not both.
 
 Sample result
 ```json
