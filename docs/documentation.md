@@ -1,13 +1,14 @@
 ## Usage
-### [Operations about Reports](#operations-about-reports)
-### [Operations about Projects](#operations-about-projects)
-### [Operations about Sessions](#operations-about-sessions)
 ### Operations about Images
 #### Image moderation can set 4 kinds of answer
 * [Closed questions](#closed-questions)- Answer can be only approved, declined or ban.
 * [Choices](#choices) - User can set multiple choices for select. It can be radio or checkbox.
 * [Photo tags](#photo-tags) - User can create box-like overlays on top of your image and assign messages to each box.
 * [Messages](#messages) - User can set messages for answer.
+### Operations about Projects
+* [Projects](*projects) - User can show all projects and get project by id or project id.
+### Operations about Sessions
+* [Sessions](#sessions) - User can regenerate user and project authorization token. Also can destroy user and project session too.
 ---
 #### Closed questions
 Getting all image closed question
@@ -238,7 +239,7 @@ Sample results
 }
 ```
 ---
-### Operation about reports
+### Operation about Reports
 * Can filter date range
 * Can filter only moderator that you focus
 #### Closed questions
@@ -396,7 +397,7 @@ Sample results
 }
 ```
 ---
-### Operations about Projects
+### Projects
 Getting all projects
 ```ruby
 KSequencing.client.get_projects()
@@ -434,7 +435,7 @@ Sample result
 ```
 
 ---
-### Operations about Sessions
+### Sessions
 Create or regenerate user/project token.
 
 #### User
