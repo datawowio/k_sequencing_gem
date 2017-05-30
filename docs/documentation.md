@@ -1,19 +1,13 @@
 ## Usage
+### [Operations about Reports](#operations-about-reports)
+### [Operations about Projects](#operations-about-projects)
+### [Operations about Sessions](#operations-about-sessions)
 ### Operations about Images
 #### Image moderation can set 4 kinds of answer
 * [Closed questions](#closed-questions)- Answer can be only approved, declined or ban.
 * [Choices](#choices) - User can set multiple choices for select. It can be radio or checkbox.
 * [Photo tags](#photo-tags) - User can create box-like overlays on top of your image and assign messages to each box.
 * [Messages](#messages) - User can set messages for answer.
-### Operation about reports
-* Can filter date range
-* Can filter only moderator that you focus
-### Operations about Projects
-* Show all projects
-* Get project by id or project id
-### Operations about Sessions
-* Regenerate user/project token
-* Destroy user/project token
 ---
 #### Closed questions
 Getting all image closed question
@@ -245,6 +239,8 @@ Sample results
 ```
 ---
 ### Operation about reports
+* Can filter date range
+* Can filter only moderator that you focus
 #### Closed questions
 Getting all closed question reports
 ```ruby
