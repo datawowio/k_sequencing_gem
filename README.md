@@ -14,23 +14,21 @@ You have to contact us [Kiyo](http://kiyo.tech/pages/contact) to get your token.
 
 ## Usage
 ### Operations about Images
-Getting all images
-```ruby
-KSequencing.client.image_closed_questions()
-```
-
 Create images
 ```ruby
-KSequencing.client.image_closed_questions()
+KSequencing.client.create_image_closed_questions()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
 | token     | 	string | Yes |User Authorization Token|
 | data     | 	string | Yes |Data for moderate|
 | postback_url	     | string      |   Yes | Image postback url|
-| project_id     | 	string | No |	Project id|
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
+
+Sample request
+
+curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: 9UPmGGWEwBsJrVnw6844tfpd' -d 'data=test&postback_url=test' 'http://k-sequencing.datawow.io/api/images/closed_questions'
 
 Sample results
 ```json
@@ -58,15 +56,6 @@ Sample results
   }
 }
 ```
-Show image
-```ruby
-KSequencing.client.image_closed_question(id)
-```
-| Field        | Type           | Required  | Description |
-| ------------- |:-------------:| :-----:| :-----|
-| id     | 	integer | Yes |Id of image|
-| token     | 	string | Yes |User Authorization Token|
-
 ---
 #### Image moderation can set 4 kinds of answer
 * Closed question - Answer can be only approved, declined or ban.
