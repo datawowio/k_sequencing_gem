@@ -22,7 +22,7 @@ KSequencing.client.create_image_closed_questions()
 Sample request
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/closed_questions"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/closed_questions"
 ```
 
 Sample results
@@ -35,7 +35,7 @@ Sample results
     "answer": null,
     "credit_charged": 0,
     "custom_id": null,
-    "data": "image",
+    "data": "image_url",
     "deadline_at": "2017-03-14T08:29:40.697+00:00",
     "postback_url": "www.example.com",
     "process": false,
@@ -71,7 +71,7 @@ KSequencing.client.create_choices()
 Sample request
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=test&categories=test&data=test&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/choices"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&categories=option1%20options2%20options3&data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/choices"
 ```
 
 Sample results
@@ -84,11 +84,11 @@ Sample results
     "answer": null,
     "credit_charged": 0,
     "custom_id": null,
-    "data": "Test data",
+    "data": "image_url",
     "deadline_at": "2017-03-15T04:31:12.601+00:00",
     "postback_url": "www.example.com",
     "process": false,
-    "instruction": "Testing",
+    "instruction": "question",
     "categories": [
       "option1",
       "option2",
@@ -126,7 +126,7 @@ KSequencing.client.create_messages()
 Sample request
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=test&data=test&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/messages"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/messages"
 ```
 
 Sample results
@@ -139,11 +139,11 @@ Sample results
     "answer": null,
     "credit_charged": 0,
     "custom_id": null,
-    "data": "test data",
+    "data": "image_url",
     "deadline_at": "2017-03-15T04:32:47.763+00:00",
     "postback_url": "www.example.com",
     "process": false,
-    "instruction": "Testing",
+    "instruction": "question",
     "project_id": null,
     "processed_at": null,
     "staff_id": null,
@@ -175,7 +175,7 @@ KSequencing.client.create_photo_tags()
 Sample request
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" --H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=test&data=test&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/photo_tags"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" --H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/photo_tags"
 ```
 
 Sample results
@@ -188,16 +188,11 @@ Sample results
     "answer": null,
     "credit_charged": 0,
     "custom_id": null,
-    "data": "test-data",
+    "data": "image_url",
     "deadline_at": "2017-03-15T04:34:36.231+00:00",
     "postback_url": "www.example.com",
     "process": false,
-    "instruction": "Testing data",
-    "tags": [
-      "tag1",
-      "tag2",
-      "tag3"
-    ],
+    "instruction": "question",
     "project_id": null,
     "processed_at": null,
     "staff_id": null,

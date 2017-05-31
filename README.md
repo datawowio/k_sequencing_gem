@@ -29,7 +29,7 @@ KSequencing.client.create_image_closed_questions()
 Sample request
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/closed_questions"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/closed_questions"
 ```
 
 Sample results
@@ -42,7 +42,7 @@ Sample results
     "answer": null,
     "credit_charged": 0,
     "custom_id": null,
-    "data": "image.jpg",
+    "data": "image_url",
     "deadline_at": "2017-03-14T08:29:40.697+00:00",
     "postback_url": "www.example.com",
     "process": false,
