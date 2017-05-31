@@ -21,7 +21,11 @@ KSequencing.client.create_image_closed_questions()
 
 Sample request
 ```ruby
-KSequencing.client.create_image_closed_questions(token: "9UPmGGWEwBsJrVnw6844tfpd", data: "image_url", postback_url: "www.example.com" )
+KSequencing.client.create_image_closed_questions(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  data: "image_url",
+  postback_url: "www.example.com"
+)
 ```
 
 ```
@@ -74,7 +78,13 @@ KSequencing.client.create_choices()
 Sample request
 
 ```ruby
-KSequencing.client.create_choices(token: "9UPmGGWEwBsJrVnw6844tfpd", instruction: "question", categories: ["options1", "options2", "options3"], data: "question", postback_url: "www.example.com")
+KSequencing.client.create_choices(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  instruction: "question",
+  categories: ["options1", "options2", "options3"],
+  data: "image_url",
+  postback_url: "www.example.com"
+)
 ```
 
 ```
@@ -132,7 +142,12 @@ KSequencing.client.create_messages()
 
 Sample request
 ```ruby
-KSequencing.client.create_messages(token: "9UPmGGWEwBsJrVnw6844tfpd", instruction: "question", data: "image_url", postback_url: "www.example.com")
+KSequencing.client.create_messages(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  instruction: "question",
+  data: "image_url",
+  postback_url: "www.example.com"
+)
 ```
 
 ```
@@ -183,7 +198,12 @@ KSequencing.client.create_photo_tags()
 
 Sample request
 ```ruby
-KSequencing.client.create_photo_tags(token: "9UPmGGWEwBsJrVnw6844tfpd", instruction: "question", data: "image_url", postback_url: "www.example.com")
+KSequencing.client.create_photo_tags(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  instruction: "question",
+  data: "image_url",
+  postback_url: "www.example.com"
+)
 ```
 
 ```

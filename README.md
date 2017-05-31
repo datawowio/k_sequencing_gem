@@ -29,7 +29,11 @@ KSequencing.client.create_image_closed_questions()
 Sample request
 
 ```ruby
-KSequencing.client.create_image_closed_questions(token: "9UPmGGWEwBsJrVnw6844tfpd", data: "image_url", postback_url: "www.example.com" )
+KSequencing.client.create_image_closed_questions(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  data: "image_url",
+  postback_url: "www.example.com"
+)
 ```
 
 ```
