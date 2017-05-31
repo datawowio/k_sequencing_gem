@@ -75,8 +75,10 @@ KSequencing.client.create_choices()
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
-Sample request
+Note: Default for answer is radio. If you want answer in checkboxes, you need to select multiple to true.
 
+Sample request
+For radio
 ```ruby
 KSequencing.client.create_choices(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
@@ -84,6 +86,17 @@ KSequencing.client.create_choices(
   categories: ["options1", "options2", "options3"],
   data: "image_url",
   postback_url: "www.example.com"
+)
+```
+For checkboxes
+```ruby
+KSequencing.client.create_choices(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  instruction: "question",
+  categories: ["options1", "options2", "options3"],
+  data: "image_url",
+  postback_url: "www.example.com",
+  multiple: true
 )
 ```
 
