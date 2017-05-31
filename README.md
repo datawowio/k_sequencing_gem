@@ -28,6 +28,10 @@ KSequencing.client.create_image_closed_questions()
 
 Sample request
 
+```ruby
+KSequencing.client.create_image_closed_questions(token: "9UPmGGWEwBsJrVnw6844tfpd", data: "image_url", postback_url: "www.example.com" )
+```
+
 ```
 curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/closed_questions"
 ```

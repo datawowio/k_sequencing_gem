@@ -20,6 +20,9 @@ KSequencing.client.create_image_closed_questions()
 | custom_id	     | string      |   No |Custom's id|
 
 Sample request
+```ruby
+KSequencing.client.create_image_closed_questions(token: "9UPmGGWEwBsJrVnw6844tfpd", data: "image_url", postback_url: "www.example.com" )
+```
 
 ```
 curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/closed_questions"
@@ -69,6 +72,10 @@ KSequencing.client.create_choices()
 | custom_id	     | string      |   No |Custom's id|
 
 Sample request
+
+```ruby
+KSequencing.client.create_choices(token: "9UPmGGWEwBsJrVnw6844tfpd", instruction: "question", categories: ["options1", "options2", "options3"], data: "question", postback_url: "www.example.com")
+```
 
 ```
 curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&categories=option1%20options2%20options3&data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/choices"
@@ -124,6 +131,9 @@ KSequencing.client.create_messages()
 | custom_id	     | string      |   No |Custom's id|
 
 Sample request
+```ruby
+KSequencing.client.create_messages(token: "9UPmGGWEwBsJrVnw6844tfpd", instruction: "question", data: "image_url", postback_url: "www.example.com")
+```
 
 ```
 curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/messages"
@@ -166,13 +176,15 @@ KSequencing.client.create_photo_tags()
 | ------------- |:-------------:| :-----:| :-----|
 | token     | 	string | Yes |Project Authorization Token|
 | instruction	     | string      |   Yes | Image instruction|
-| tags	     | Array[string]      |   Yes | Tags of answers|
 | data     | 	string | Yes |Data for attachment|
 | postback_url	     | string      |   Yes | Image postback url|
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
 Sample request
+```ruby
+KSequencing.client.create_photo_tags(token: "9UPmGGWEwBsJrVnw6844tfpd", instruction: "question", data: "image_url", postback_url: "www.example.com")
+```
 
 ```
 curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" --H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/photo_tags"
