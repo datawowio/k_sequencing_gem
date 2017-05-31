@@ -6,18 +6,6 @@ module KSequencing
 
   class Connection
 
-    def get(path, options = {})
-      response = connection.get do |request|
-        request.url(path)
-        request.headers["Content-Type"] = "application/json"
-        request.headers["Authorization"] = options[:token] unless options[:token].nil?
-        request.params = options
-      end
-      Response.new(data(response), true, response.status, "success", meta(response), total(response))
-    rescue Error, Faraday::Error => e
-      handle_error(e)
-    end
-
     def post(path, options = {}, query_params = {})
       response = connection.post do |request|
         request.path = path
@@ -27,41 +15,6 @@ module KSequencing
         request.body = options unless options.empty?
       end
       Response.new(data(response), true, response.status)
-    rescue Error, Faraday::Error => e
-      handle_error(e)
-    end
-
-    def put(path, options = {}, query_params = {})
-      response = connection.put do |request|
-        request.path = path
-        request.headers["Content-Type"] = "application/x-www-form-urlencoded"
-        request.headers["Authorization"] = options[:token] unless options[:token].nil?
-        request.params = query_params
-        request.body = options unless options.empty?
-      end
-      Response.new(data(response), true, response.status)
-    rescue Error, Faraday::Error => e
-      handle_error(e)
-    end
-
-    def patch(path, options = {}, query_params = {})
-      response = connection.patch do |request|
-        request.path = path
-        request.headers["Content-Type"] = "application/x-www-form-urlencoded"
-        request.headers["Authorization"] = options[:token] unless options[:token].nil?
-        request.params = query_params
-        request.body = options unless options.empty?
-      end
-      Response.new(data(response), true, response.status)
-    rescue Error, Faraday::Error => e
-      handle_error(e)
-    end
-
-    def delete(path, options = {})
-      connection.delete do |request|
-        request.path = path
-        request.headers["Authorization"] = options[:token] unless options[:token].nil?
-      end
     rescue Error, Faraday::Error => e
       handle_error(e)
     end
