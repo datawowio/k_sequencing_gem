@@ -21,7 +21,7 @@ KSequencing.client.create_image_closed_questions()
 
 Sample request
 
-curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: 9UPmGGWEwBsJrVnw6844tfpd' -d 'data=test&postback_url=test' 'http://k-sequencing.datawow.io/api/images/closed_questions'
+curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: 9UPmGGWEwBsJrVnw6844tfpd' -d 'data=image&postback_url=www.example.com' 'http://k-sequencing.datawow.io/api/images/closed_questions'
 
 Sample results
 ```json
@@ -68,7 +68,7 @@ KSequencing.client.create_choices()
 
 Sample request
 
-curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: 9UPmGGWEwBsJrVnw6844tfpd' -d 'instruction=test&categories=test&data=test&postback_url=test' 'http://k-sequencing.datawow.io/api/images/choices'
+curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: 9UPmGGWEwBsJrVnw6844tfpd' -d 'instruction=test&categories=test&data=test&postback_url=www.example.com' 'http://k-sequencing.datawow.io/api/images/choices'
 
 Sample results
 ```json
@@ -121,7 +121,7 @@ KSequencing.client.create_messages()
 
 Sample request
 
-curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: 9UPmGGWEwBsJrVnw6844tfpd' -d 'instruction=test&data=test&postback_url=test' 'http://k-sequencing.datawow.io/api/images/messages'
+curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: 9UPmGGWEwBsJrVnw6844tfpd' -d 'instruction=test&data=test&postback_url=www.example.com' 'http://k-sequencing.datawow.io/api/images/messages'
 
 Sample results
 ```json
@@ -168,7 +168,7 @@ KSequencing.client.create_photo_tags()
 
 Sample request
 
-curl -X POST --header 'Content-Type: application/x-www-form-urlencoded' --header 'Accept: application/json' --header 'Authorization: 9UPmGGWEwBsJrVnw6844tfpd' -d 'instruction=test&data=test&postback_url=test' 'http://k-sequencing.datawow.io/api/images/photo_tags'
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" --H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=test&data=test&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/photo_tags"
 
 Sample results
 ```json
