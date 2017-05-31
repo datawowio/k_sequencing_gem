@@ -71,7 +71,7 @@ KSequencing.client.create_choices()
 |categories | Array[string]     |    Yes | Categories of answers |
 | data     | 	string | Yes |Data for attachment|
 | postback_url	     | string      |   Yes | Image instruction|
-|multiple | boolean   |    No | true for checkboxes and false for radio |
+|multiple | boolean   |    No | true for multiple answer and false for one answer |
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
