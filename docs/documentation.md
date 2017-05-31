@@ -168,7 +168,9 @@ KSequencing.client.create_photo_tags()
 
 Sample request
 
+```
 curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" --H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=test&data=test&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/photo_tags"
+```
 
 Sample results
 ```json
