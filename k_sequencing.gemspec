@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors       = ['Jesdakorn Samittiauttakorn']
   s.email         = 'ton@nanameue.jp'
   s.files         = `git ls-files`.split("\n")
-  s.homepage      = 'https://kiyo.tech'
+  s.homepage      = 'https://datawow.io'
   s.license       = 'Commercial'
   s.require_paths = ['lib']
 
