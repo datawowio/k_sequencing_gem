@@ -10,7 +10,7 @@ gem 'k_sequencing'
 ```
 Then run bundle install
 
-You have to contact us [Kiyo](http://kiyo.tech/pages/contact) to get your token. With this token you'll be able to use our gem properly.
+You have to contact us [Datawow](https://datawow.io/pages/contact) to get your token. With this token you'll be able to use our gem properly.
 
 ## Usage
 ### Operations about Images
