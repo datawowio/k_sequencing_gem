@@ -18,19 +18,19 @@ module KSequencing
       connection.post("/api/images/photo_tags", options)
     end
 
-    def get_image_choices(options = {})
+    def get_image_choice(options = {})
       connection.get("/api/images/choice", options)
     end
 
-    def get_image_closed_questions(options = {})
+    def get_image_closed_question(options = {})
       connection.get("/api/images/closed_question", options)
     end
 
-    def get_image_messages(options = {})
+    def get_image_message(options = {})
       connection.get("/api/images/message", options)
     end
 
-    def get_image_photo_tags(options = {})
+    def get_image_photo_tag(options = {})
       connection.get("/api/images/photo_tag", options)
     end
 
