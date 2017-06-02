@@ -42,14 +42,11 @@ Sample results
       "credit_charged": 0,
       "custom_id": null,
       "data": "image_url",
-      "deadline_at": "2017-06-02T07:19:48.574+00:00",
       "postback_url": "www.example.com",
       "processed_at": null,
       "project_id": 3,
-      "staff_id": null,
       "status": "unprocess",
-      "created_at": "2017-06-02T07:19:48.574Z",
-      "updated_at": "2017-06-02T07:19:48.574Z"
+      "created_at": "2017-06-02T07:19:48.574Z"
     }
   },
   "meta": {
@@ -92,14 +89,11 @@ Sample results
     "credit_charged": 0,
     "custom_id": null,
     "data": "image_url",
-    "deadline_at": "2017-03-14T08:29:40.697+00:00",
     "postback_url": "www.example.com",
     "process": false,
     "processed_at": null,
     "project_id": 1,
-    "staff_id": null,
-    "created_at": "2017-03-14T08:29:40.696Z",
-    "updated_at": "2017-03-14T08:29:40.696Z"
+    "created_at": "2017-03-14T08:29:40.696Z"
   },
   "meta": {
     "code": 200,
@@ -146,7 +140,6 @@ Sample results
       "credit_charged": 0,
       "custom_id": null,
       "data": "image_url",
-      "deadline_at": "2017-06-01T07:18:02.350+00:00",
       "postback_url": "www.example.com",
       "instruction": "TEST instruction",
       "categories": [
@@ -156,10 +149,8 @@ Sample results
       "project_id": 190,
       "multiple": false,
       "processed_at": "2017-06-01T07:23:17.494+00:00",
-      "staff_id": 26,
       "status": "unprocess",
-      "created_at": "2017-06-01T07:18:02.350Z",
-      "updated_at": "2017-06-02T03:07:06.455Z"
+      "created_at": "2017-06-01T07:18:02.350Z"
     }
   },
   "meta": {
@@ -221,7 +212,6 @@ Sample results
     "credit_charged": 0,
     "custom_id": null,
     "data": "image_url",
-    "deadline_at": "2017-03-15T04:31:12.601+00:00",
     "postback_url": "www.example.com",
     "process": false,
     "instruction": "question",
@@ -233,9 +223,7 @@ Sample results
     "project_id": 1,
     "multiple": false,
     "processed_at": null,
-    "staff_id": null,
-    "created_at": "2017-03-15T04:31:12.600Z",
-    "updated_at": "2017-03-15T04:31:12.600Z"
+    "created_at": "2017-03-15T04:31:12.600Z"
   },
   "meta": {
     "code": 200,
@@ -281,15 +269,12 @@ Sample results
       "credit_charged": 0,
       "custom_id": null,
       "data": "image_url",
-      "deadline_at": "2017-06-01T07:18:38.786+00:00",
       "postback_url": "www.example.com",
       "instruction": "Test",
       "project_id": 190,
       "processed_at": null,
-      "staff_id": null,
       "status": "unprocess",
-      "created_at": "2017-06-01T07:18:38.786Z",
-      "updated_at": "2017-06-01T07:23:44.593Z"
+      "created_at": "2017-06-01T07:18:38.786Z"
     }
   },
   "meta": {
@@ -334,15 +319,12 @@ Sample results
     "credit_charged": 0,
     "custom_id": null,
     "data": "image_url",
-    "deadline_at": "2017-03-15T04:32:47.763+00:00",
     "postback_url": "www.example.com",
     "process": false,
     "instruction": "question",
     "project_id": 1,
     "processed_at": null,
-    "staff_id": null,
-    "created_at": "2017-03-15T04:32:47.762Z",
-    "updated_at": "2017-03-15T04:32:47.762Z"
+    "created_at": "2017-03-15T04:32:47.762Z"
   },
   "meta": {
     "code": 200,
@@ -387,15 +369,12 @@ Sample results
       "credit_charged": 0,
       "custom_id": null,
       "data": "image_url",
-      "deadline_at": "2017-06-01T07:19:08.587+00:00",
       "postback_url": "www.example.com",
       "instruction": "TEST",
       "project_id": 190,
       "processed_at": null,
-      "staff_id": null,
       "status": "unprocess",
-      "created_at": "2017-06-01T07:19:08.587Z",
-      "updated_at": "2017-06-01T07:23:34.035Z"
+      "created_at": "2017-06-01T07:19:08.587Z"
     }
   },
   "meta": {
@@ -440,15 +419,12 @@ Sample results
     "credit_charged": 0,
     "custom_id": null,
     "data": "image_url",
-    "deadline_at": "2017-03-15T04:34:36.231+00:00",
     "postback_url": "www.example.com",
     "process": false,
     "instruction": "question",
     "project_id": 1,
     "processed_at": null,
-    "staff_id": null,
-    "created_at": "2017-03-15T04:34:36.230Z",
-    "updated_at": "2017-03-15T04:34:36.230Z"
+    "created_at": "2017-03-15T04:34:36.230Z"
   },
   "meta": {
     "code": 200,

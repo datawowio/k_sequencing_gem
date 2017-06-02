@@ -4,7 +4,7 @@ Image and content moderation services.
 
 ## Getting Started
 
-KSequencing 0.1.2 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.1.3 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
 gem 'k_sequencing'
 ```
@@ -49,14 +49,11 @@ Sample results
       "credit_charged": 0,
       "custom_id": null,
       "data": "image_url",
-      "deadline_at": "2017-06-02T07:19:48.574+00:00",
       "postback_url": "www.example.com",
       "processed_at": null,
       "project_id": 3,
-      "staff_id": null,
       "status": "unprocess",
       "created_at": "2017-06-02T07:19:48.574Z",
-      "updated_at": "2017-06-02T07:19:48.574Z"
     }
   },
   "meta": {
@@ -100,14 +97,11 @@ Sample results
     "credit_charged": 0,
     "custom_id": null,
     "data": "image_url",
-    "deadline_at": "2017-03-14T08:29:40.697+00:00",
     "postback_url": "www.example.com",
     "process": false,
     "processed_at": null,
     "project_id": null,
-    "staff_id": null,
-    "created_at": "2017-03-14T08:29:40.696Z",
-    "updated_at": "2017-03-14T08:29:40.696Z"
+    "created_at": "2017-03-14T08:29:40.696Z"
   },
   "meta": {
     "code": 200,
