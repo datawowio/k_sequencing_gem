@@ -15,7 +15,7 @@ KSequencing.client.create_image_closed_questions()
 | ------------- |:-------------:| :-----:| :-----|
 | token     | 	string | Yes |Project Authorization Token|
 | data     | 	string | Yes |Data for moderate|
-| postback_url	     | string      |   Yes | Image postback url|
+| postback_url	     | string      | No | Image postback url|
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
@@ -23,13 +23,12 @@ Sample request
 ```ruby
 KSequencing.client.create_image_closed_questions(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
-  data: "image_url",
-  postback_url: "www.example.com"
+  data: "image_url"
 )
 ```
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/closed_questions"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image_url" "http://k-sequencing.datawow.io/api/images/closed_questions"
 ```
 
 Sample results
@@ -68,7 +67,7 @@ KSequencing.client.create_choices()
 | instruction	     | string      |   Yes | Image instruction|
 |categories | Array[string]     |    Yes | Categories of answers |
 | data     | 	string | Yes |Data for attachment|
-| postback_url	     | string      |   Yes | Image instruction|
+| postback_url	     | string      |  No | Image instruction|
 |multiple | boolean   |    No | true for multiple answer and false for one answer |
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
@@ -83,8 +82,7 @@ KSequencing.client.create_choices(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   categories: ["options1", "options2", "options3"],
-  data: "image_url",
-  postback_url: "www.example.com"
+  data: "image_url"
 )
 ```
 For multiple answer
@@ -93,14 +91,13 @@ KSequencing.client.create_choices(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   categories: ["options1", "options2", "options3"],
-  data: "image_url",
-  postback_url: "www.example.com",
+  data: "image_url"
   multiple: true
 )
 ```
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&categories=option1%20options2%20options3&data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/choices"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&categories=option1%20options2%20options3&data=image_url" "http://k-sequencing.datawow.io/api/images/choices"
 ```
 
 Sample results
@@ -146,7 +143,7 @@ KSequencing.client.create_messages()
 | token     | 	string | Yes |Project Authorization Token|
 | instruction	     | string      |   Yes | Image instruction|
 | data     | 	string | Yes |Data for attachment|
-| postback_url	     | string      |   Yes | Image postback url|
+| postback_url	     | string      | No | Image postback url|
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
@@ -155,13 +152,12 @@ Sample request
 KSequencing.client.create_messages(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
-  data: "image_url",
-  postback_url: "www.example.com"
+  data: "image_url"
 )
 ```
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/messages"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url" "http://k-sequencing.datawow.io/api/images/messages"
 ```
 
 Sample results
@@ -200,7 +196,7 @@ KSequencing.client.create_photo_tags()
 | token     | 	string | Yes |Project Authorization Token|
 | instruction	     | string      |   Yes | Image instruction|
 | data     | 	string | Yes |Data for attachment|
-| postback_url	     | string      |   Yes | Image postback url|
+| postback_url	     | string      | No | Image postback url|
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
@@ -209,13 +205,12 @@ Sample request
 KSequencing.client.create_photo_tags(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
-  data: "image_url",
-  postback_url: "www.example.com"
+  data: "image_url"
 )
 ```
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" --H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/photo_tags"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" --H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url" "http://k-sequencing.datawow.io/api/images/photo_tags"
 ```
 
 Sample results
