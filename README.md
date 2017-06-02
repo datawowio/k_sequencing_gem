@@ -4,7 +4,7 @@ Image and content moderation services.
 
 ## Getting Started
 
-KSequencing 0.0.4 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.0.5 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
 gem 'k_sequencing'
 ```
@@ -22,7 +22,7 @@ KSequencing.client.create_image_closed_questions()
 | ------------- |:-------------:| :-----:| :-----|
 | token     | 	string | Yes |User Authorization Token|
 | data     | 	string | Yes |Data for moderate|
-| postback_url	     | string      |   Yes | Image postback url|
+| postback_url	     | string      | No | Image postback url|
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
 
@@ -31,13 +31,12 @@ Sample request
 ```ruby
 KSequencing.client.create_image_closed_questions(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
-  data: "image_url",
-  postback_url: "www.example.com"
+  data: "image_url"
 )
 ```
 
 ```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image_url&postback_url=www.example.com" "http://k-sequencing.datawow.io/api/images/closed_questions"
+curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image_url" "http://k-sequencing.datawow.io/api/images/closed_questions"
 ```
 
 Sample results
