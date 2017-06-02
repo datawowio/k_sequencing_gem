@@ -6,6 +6,18 @@ module KSequencing
 
   class Connection
 
+    def get(path, options = {})
+      response = connection.get do |request|
+        request.url(path)
+        request.headers["Content-Type"] = "application/json"
+        request.headers["Authorization"] = options[:token] unless options[:token].nil?
+        request.params = options
+      end
+      Response.new(data(response), true, response.status, "success", meta(response), total(response))
+    rescue Error, Faraday::Error => e
+      handle_error(e)
+    end
+
     def post(path, options = {}, query_params = {})
       response = connection.post do |request|
         request.path = path
