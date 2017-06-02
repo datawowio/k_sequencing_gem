@@ -7,6 +7,19 @@
 * [Messages](#messages) - User can set messages for answer.
 ---
 #### Closed questions
+Get image
+```ruby
+KSequencing.client.get_image_closed_questions()
+```
+
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| token     | 	string | Yes |Project Authorization Token|
+| id	     | integer      |   No | Image id|
+|custom_id | integer     |    No | Client's image id |
+
+Note: You must choose id or custom_id for search. Not both.
+
 Create images
 ```ruby
 KSequencing.client.create_image_closed_questions()
@@ -57,9 +70,22 @@ Sample results
 ```
 ---
 #### Choices
+Get image
+```ruby
+KSequencing.client.get_image_choices()
+```
+
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| token     | 	string | Yes |Project Authorization Token|
+| id	     | integer      |   No | Image id|
+|custom_id | integer     |    No | Client's image id |
+
+Note: You must choose id or custom_id for search. Not both.
+
 Create new choices
 ```ruby
-KSequencing.client.create_choices()
+KSequencing.client.create_image_choices()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -78,7 +104,7 @@ Sample request
 
 For one answer
 ```ruby
-KSequencing.client.create_choices(
+KSequencing.client.create_image_choices(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   categories: ["options1", "options2", "options3"],
@@ -87,7 +113,7 @@ KSequencing.client.create_choices(
 ```
 For multiple answer
 ```ruby
-KSequencing.client.create_choices(
+KSequencing.client.create_image_choices(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   categories: ["options1", "options2", "options3"],
@@ -134,9 +160,22 @@ Sample results
 ```
 ---
 #### Messages
+Get image
+```ruby
+KSequencing.client.get_image_messages()
+```
+
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| token     | 	string | Yes |Project Authorization Token|
+| id	     | integer      |   No | Image id|
+|custom_id | integer     |    No | Client's image id |
+
+Note: You must choose id or custom_id for search. Not both.
+
 Create new message
 ```ruby
-KSequencing.client.create_messages()
+KSequencing.client.create_image_messages()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -149,7 +188,7 @@ KSequencing.client.create_messages()
 
 Sample request
 ```ruby
-KSequencing.client.create_messages(
+KSequencing.client.create_image_messages(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   data: "image_url"
@@ -187,9 +226,22 @@ Sample results
 ```
 ---
 #### Photo tags
+Get image
+```ruby
+KSequencing.client.get_image_photo_tags()
+```
+
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| token     | 	string | Yes |Project Authorization Token|
+| id	     | integer      |   No | Image id|
+|custom_id | integer     |    No | Client's image id |
+
+Note: You must choose id or custom_id for search. Not both.
+
 Create new photo tag
 ```ruby
-KSequencing.client.create_photo_tags()
+KSequencing.client.create_image_photo_tags()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -202,7 +254,7 @@ KSequencing.client.create_photo_tags()
 
 Sample request
 ```ruby
-KSequencing.client.create_photo_tags(
+KSequencing.client.create_image_photo_tags(
   token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   data: "image_url"

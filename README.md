@@ -4,7 +4,7 @@ Image and content moderation services.
 
 ## Getting Started
 
-KSequencing 0.0.5 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.1 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
 gem 'k_sequencing'
 ```
@@ -14,6 +14,19 @@ You have to contact us [Datawow](https://datawow.io/pages/contact) to get your t
 
 ## Usage
 ### Operations about Images
+Get image
+```ruby
+KSequencing.client.get_image_closed_questions()
+```
+
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| token     | 	string | Yes |Project Authorization Token|
+| id	     | integer      |   No | Image id|
+|custom_id | integer     |    No | Client's image id |
+
+Note: You must choose id or custom_id for search. Not both.
+
 Create images
 ```ruby
 KSequencing.client.create_image_closed_questions()
