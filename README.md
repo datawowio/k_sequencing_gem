@@ -53,7 +53,7 @@ Sample results
       "processed_at": null,
       "project_id": 3,
       "status": "unprocess",
-      "created_at": "2017-06-02T07:19:48.574Z",
+      "created_at": "2017-06-02T07:19:48.574Z"
     }
   },
   "meta": {
