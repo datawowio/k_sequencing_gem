@@ -36,9 +36,7 @@ Sample results
 ```json
 {
   "data": {
-    "id": {
-      "$oid": "58c7a9f412c09f1c0fa78390"
-    },
+    "id": "58c8c3ef12c09f1c0fa78392",
     "answer": null,
     "credit_charged": 0,
     "custom_id": null,
@@ -109,9 +107,7 @@ Sample results
 ```json
 {
   "data": {
-    "id": {
-      "$oid": "58c8c39012c09f1c0fa78391"
-    },
+    "id": "58c8c3ef12c09f1c0fa78392",
     "answer": null,
     "credit_charged": 0,
     "custom_id": null,
@@ -172,9 +168,7 @@ Sample results
 ```json
 {
   "data": {
-    "id": {
-      "$oid": "58c8c3ef12c09f1c0fa78392"
-    },
+    "id": "58c8c3ef12c09f1c0fa78392",
     "answer": null,
     "credit_charged": 0,
     "custom_id": null,
@@ -228,9 +222,7 @@ Sample results
 ```json
 {
   "data": {
-    "id": {
-      "$oid": "58c8c45c12c09f1c0fa78394"
-    },
+    "id": "58c8c3ef12c09f1c0fa78392",
     "answer": null,
     "credit_charged": 0,
     "custom_id": null,
