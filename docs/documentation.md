@@ -9,16 +9,55 @@
 #### Closed questions
 Get image
 ```ruby
-KSequencing.client.get_image_closed_questions()
+KSequencing.client.get_image_closed_question()
 ```
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
 | token     | 	string | Yes |Project Authorization Token|
-| id	     | integer      |   No | Image id|
-|custom_id | integer     |    No | Client's image id |
+| id	     | string      |   No | Image id|
+| custom_id | string     |    No | Client's image id |
 
 Note: You must choose id or custom_id for search. Not both.
+
+Sample request
+```ruby
+KSequencing.client.get_image_closed_question(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  id: "59311194e99991b2ca8979f1"
+)
+```
+
+```
+curl --request GET -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" "https://k-sequencing.datawow.io/api/images/closed_question?id=59311194e99991b2ca8979f1"
+```
+
+Sample results
+```json
+{
+  "data": {
+    "image": {
+      "id": "59311194e99991b2ca8979f1",
+      "answer": null,
+      "credit_charged": 0,
+      "custom_id": null,
+      "data": "image_url",
+      "deadline_at": "2017-06-02T07:19:48.574+00:00",
+      "postback_url": "www.example.com",
+      "processed_at": null,
+      "project_id": 3,
+      "staff_id": null,
+      "status": "unprocess",
+      "created_at": "2017-06-02T07:19:48.574Z",
+      "updated_at": "2017-06-02T07:19:48.574Z"
+    }
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
 
 Create images
 ```ruby
@@ -72,16 +111,63 @@ Sample results
 #### Choices
 Get image
 ```ruby
-KSequencing.client.get_image_choices()
+KSequencing.client.get_image_choice()
 ```
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
 | token     | 	string | Yes |Project Authorization Token|
-| id	     | integer      |   No | Image id|
-|custom_id | integer     |    No | Client's image id |
+| id	     | string  |   No | Image id|
+|custom_id | string |    No | Client's image id |
 
 Note: You must choose id or custom_id for search. Not both.
+
+Sample request
+```ruby
+KSequencing.client.get_image_choice(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  id: "59311194e99991b2ca8979f1"
+)
+```
+
+```
+curl --request GET -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" "https://k-sequencing.datawow.io/api/images/choice?id=59311194e99991b2ca8979f1"
+```
+
+Sample results
+```json
+{
+  "data": {
+    "image": {
+      "id": "59311194e99991b2ca8979f1",
+      "answer": [
+        "approved"
+      ],
+      "credit_charged": 0,
+      "custom_id": null,
+      "data": "image_url",
+      "deadline_at": "2017-06-01T07:18:02.350+00:00",
+      "postback_url": "www.example.com",
+      "instruction": "TEST instruction",
+      "categories": [
+        "approved",
+        "reject"
+      ],
+      "project_id": 190,
+      "multiple": false,
+      "processed_at": "2017-06-01T07:23:17.494+00:00",
+      "staff_id": 26,
+      "status": "unprocess",
+      "created_at": "2017-06-01T07:18:02.350Z",
+      "updated_at": "2017-06-02T03:07:06.455Z"
+    }
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
 
 Create new choices
 ```ruby
@@ -162,16 +248,56 @@ Sample results
 #### Messages
 Get image
 ```ruby
-KSequencing.client.get_image_messages()
+KSequencing.client.get_image_message()
 ```
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
 | token     | 	string | Yes |Project Authorization Token|
-| id	     | integer      |   No | Image id|
-|custom_id | integer     |    No | Client's image id |
+| id	     | string      |   No | Image id|
+|custom_id | string     |    No | Client's image id |
 
 Note: You must choose id or custom_id for search. Not both.
+
+Sample request
+```ruby
+KSequencing.client.get_image_message(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  id: "592fbfce1b9d8f69e4178688"
+)
+```
+
+```
+curl --request GET -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" "https://k-sequencing.datawow.io/api/images/message?id=592fbfce1b9d8f69e4178688"
+```
+
+Sample results
+```json
+{
+  "data": {
+    "image": {
+      "id": "592fbfce1b9d8f69e4178688",
+      "answer": null,
+      "credit_charged": 0,
+      "custom_id": null,
+      "data": "image_url",
+      "deadline_at": "2017-06-01T07:18:38.786+00:00",
+      "postback_url": "www.example.com",
+      "instruction": "Test",
+      "project_id": 190,
+      "processed_at": null,
+      "staff_id": null,
+      "status": "unprocess",
+      "created_at": "2017-06-01T07:18:38.786Z",
+      "updated_at": "2017-06-01T07:23:44.593Z"
+    }
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
 
 Create new message
 ```ruby
@@ -228,16 +354,56 @@ Sample results
 #### Photo tags
 Get image
 ```ruby
-KSequencing.client.get_image_photo_tags()
+KSequencing.client.get_image_photo_tag()
 ```
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
 | token     | 	string | Yes |Project Authorization Token|
-| id	     | integer      |   No | Image id|
-|custom_id | integer     |    No | Client's image id |
+| id	     | string      |   No | Image id|
+|custom_id | string     |    No | Client's image id |
 
 Note: You must choose id or custom_id for search. Not both.
+
+Sample request
+```ruby
+KSequencing.client.get_image_photo_tag(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  id: "592fbfec1b9d8f69e4178689"
+)
+```
+
+```
+curl --request GET -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" "https://k-sequencing.datawow.io/api/images/photo_tag?id=592fbfec1b9d8f69e4178689"
+```
+
+Sample results
+```json
+{
+  "data": {
+    "image": {
+      "id": "592fbfec1b9d8f69e4178689",
+      "answer": [],
+      "credit_charged": 0,
+      "custom_id": null,
+      "data": "image_url",
+      "deadline_at": "2017-06-01T07:19:08.587+00:00",
+      "postback_url": "www.example.com",
+      "instruction": "TEST",
+      "project_id": 190,
+      "processed_at": null,
+      "staff_id": null,
+      "status": "unprocess",
+      "created_at": "2017-06-01T07:19:08.587Z",
+      "updated_at": "2017-06-01T07:23:34.035Z"
+    }
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
 
 Create new photo tag
 ```ruby

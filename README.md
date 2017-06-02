@@ -4,7 +4,7 @@ Image and content moderation services.
 
 ## Getting Started
 
-KSequencing 0.1 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.1.1 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
 gem 'k_sequencing'
 ```
@@ -22,10 +22,49 @@ KSequencing.client.get_image_closed_questions()
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
 | token     | 	string | Yes |Project Authorization Token|
-| id	     | integer      |   No | Image id|
-|custom_id | integer     |    No | Client's image id |
+| id	     | string      |   No | Image id|
+|custom_id | string     |    No | Client's image id |
 
 Note: You must choose id or custom_id for search. Not both.
+
+Sample request
+```ruby
+KSequencing.client.get_image_closed_question(
+  token: "9UPmGGWEwBsJrVnw6844tfpd",
+  id: "59311194e99991b2ca8979f1"
+)
+```
+
+```
+curl --request GET -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" "https://k-sequencing.datawow.io/api/images/closed_question?id=59311194e99991b2ca8979f1"
+```
+
+Sample results
+```json
+{
+  "data": {
+    "image": {
+      "id": "59311194e99991b2ca8979f1",
+      "answer": null,
+      "credit_charged": 0,
+      "custom_id": null,
+      "data": "image_url",
+      "deadline_at": "2017-06-02T07:19:48.574+00:00",
+      "postback_url": "www.example.com",
+      "processed_at": null,
+      "project_id": 3,
+      "staff_id": null,
+      "status": "unprocess",
+      "created_at": "2017-06-02T07:19:48.574Z",
+      "updated_at": "2017-06-02T07:19:48.574Z"
+    }
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
 
 Create images
 ```ruby
