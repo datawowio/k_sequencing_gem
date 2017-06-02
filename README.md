@@ -16,7 +16,7 @@ You have to contact us [Datawow](https://datawow.io/pages/contact) to get your t
 ### Operations about Images
 Get image
 ```ruby
-KSequencing.client.get_image_closed_questions()
+KSequencing.client.get_image_closed_question()
 ```
 
 | Field        | Type           | Required  | Description |
