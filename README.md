@@ -22,8 +22,8 @@ KSequencing.client.get_image_closed_questions()
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
 | token     | 	string | Yes |Project Authorization Token|
-| id	     | integer      |   No | Image id|
-|custom_id | integer     |    No | Client's image id |
+| id	     | string      |   No | Image id|
+|custom_id | string     |    No | Client's image id |
 
 Note: You must choose id or custom_id for search. Not both.
 
