@@ -1,10 +1,11 @@
 # coding: utf-8
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name          = 'k_sequencing'
-  s.version       = '0.1.3'
+  s.version       = '0.1.4'
   s.date          = '2017-05-24'
   s.summary       = 'KSequencing is a moderator service for your online content'
   s.description   = 'Moderation suite'
