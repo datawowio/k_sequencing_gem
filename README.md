@@ -4,11 +4,19 @@ Image and content moderation services.
 
 ## Getting Started
 
-KSequencing 0.1.3 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.1.4 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
 gem 'k_sequencing'
 ```
 Then run bundle install
+
+Next, you need to run the generator:
+
+```console
+$ rails generate k_sequencing:install
+```
+
+The generator will install an initializer which describes ALL of KSequencing's configuration options. It is *imperative* that you take a look at it. When you are done, you are ready to add KSqeuencing to any of your codes.
 
 You have to contact us [Datawow](https://datawow.io/pages/contact) to get your token. With this token you'll be able to use our gem properly.
 
@@ -21,7 +29,6 @@ KSequencing.client.get_image_closed_question()
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| token     | 	string | Yes |Project Authorization Token|
 | id	     | string      |   No | Image id|
 |custom_id | string     |    No | Client's image id |
 
@@ -30,7 +37,6 @@ Note: You must choose id or custom_id for search. Not both.
 Sample request
 ```ruby
 KSequencing.client.get_image_closed_question(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   id: "59311194e99991b2ca8979f1"
 )
 ```
@@ -69,7 +75,6 @@ KSequencing.client.create_image_closed_questions()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| token     | 	string | Yes |User Authorization Token|
 | data     | 	string | Yes |Data for moderate|
 | postback_url	     | string      | No | Image postback url|
 | postback_method     | 	string | No |Postback method|
@@ -79,7 +84,6 @@ Sample request
 
 ```ruby
 KSequencing.client.create_image_closed_questions(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   data: "image_url"
 )
 ```

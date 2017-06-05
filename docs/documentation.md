@@ -14,7 +14,6 @@ KSequencing.client.get_image_closed_question()
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| token     | 	string | Yes |Project Authorization Token|
 | id	     | string      |   No | Image id|
 | custom_id | string     |    No | Client's image id |
 
@@ -23,7 +22,6 @@ Note: You must choose id or custom_id for search. Not both.
 Sample request
 ```ruby
 KSequencing.client.get_image_closed_question(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   id: "59311194e99991b2ca8979f1"
 )
 ```
@@ -62,7 +60,6 @@ KSequencing.client.create_image_closed_questions()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| token     | 	string | Yes |Project Authorization Token|
 | data     | 	string | Yes |Data for moderate|
 | postback_url	     | string      | No | Image postback url|
 | postback_method     | 	string | No |Postback method|
@@ -71,7 +68,6 @@ KSequencing.client.create_image_closed_questions()
 Sample request
 ```ruby
 KSequencing.client.create_image_closed_questions(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   data: "image_url"
 )
 ```
@@ -110,7 +106,6 @@ KSequencing.client.get_image_choice()
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| token     | 	string | Yes |Project Authorization Token|
 | id	     | string  |   No | Image id|
 |custom_id | string |    No | Client's image id |
 
@@ -119,7 +114,6 @@ Note: You must choose id or custom_id for search. Not both.
 Sample request
 ```ruby
 KSequencing.client.get_image_choice(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   id: "59311194e99991b2ca8979f1"
 )
 ```
@@ -166,7 +160,6 @@ KSequencing.client.create_image_choices()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| token     | 	string | Yes |Project Authorization Token|
 | instruction	     | string      |   Yes | Image instruction|
 |categories | Array[string]     |    Yes | Categories of answers |
 | data     | 	string | Yes |Data for attachment|
@@ -182,7 +175,6 @@ Sample request
 For one answer
 ```ruby
 KSequencing.client.create_image_choices(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   categories: ["options1", "options2", "options3"],
   data: "image_url"
@@ -191,7 +183,6 @@ KSequencing.client.create_image_choices(
 For multiple answer
 ```ruby
 KSequencing.client.create_image_choices(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   categories: ["options1", "options2", "options3"],
   data: "image_url"
@@ -241,7 +232,6 @@ KSequencing.client.get_image_message()
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| token     | 	string | Yes |Project Authorization Token|
 | id	     | string      |   No | Image id|
 |custom_id | string     |    No | Client's image id |
 
@@ -250,7 +240,6 @@ Note: You must choose id or custom_id for search. Not both.
 Sample request
 ```ruby
 KSequencing.client.get_image_message(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   id: "592fbfce1b9d8f69e4178688"
 )
 ```
@@ -290,7 +279,6 @@ KSequencing.client.create_image_messages()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| token     | 	string | Yes |Project Authorization Token|
 | instruction	     | string      |   Yes | Image instruction|
 | data     | 	string | Yes |Data for attachment|
 | postback_url	     | string      | No | Image postback url|
@@ -300,7 +288,6 @@ KSequencing.client.create_image_messages()
 Sample request
 ```ruby
 KSequencing.client.create_image_messages(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   data: "image_url"
 )
@@ -341,7 +328,6 @@ KSequencing.client.get_image_photo_tag()
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| token     | 	string | Yes |Project Authorization Token|
 | id	     | string      |   No | Image id|
 |custom_id | string     |    No | Client's image id |
 
@@ -350,7 +336,6 @@ Note: You must choose id or custom_id for search. Not both.
 Sample request
 ```ruby
 KSequencing.client.get_image_photo_tag(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   id: "592fbfec1b9d8f69e4178689"
 )
 ```
@@ -390,7 +375,6 @@ KSequencing.client.create_image_photo_tags()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| token     | 	string | Yes |Project Authorization Token|
 | instruction	     | string      |   Yes | Image instruction|
 | data     | 	string | Yes |Data for attachment|
 | postback_url	     | string      | No | Image postback url|
@@ -400,7 +384,6 @@ KSequencing.client.create_image_photo_tags()
 Sample request
 ```ruby
 KSequencing.client.create_image_photo_tags(
-  token: "9UPmGGWEwBsJrVnw6844tfpd",
   instruction: "question",
   data: "image_url"
 )
