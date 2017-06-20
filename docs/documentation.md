@@ -176,7 +176,7 @@ For one answer
 ```ruby
 KSequencing.client.create_image_choices(
   instruction: "question",
-  categories: ["options1", "options2", "options3"],
+  categories: "options1 options2 options3",
   data: "image_url"
 )
 ```
@@ -184,7 +184,7 @@ For multiple answer
 ```ruby
 KSequencing.client.create_image_choices(
   instruction: "question",
-  categories: ["options1", "options2", "options3"],
+  categories: "options1 options2 options3",
   data: "image_url"
   multiple: true
 )

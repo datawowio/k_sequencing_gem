@@ -4,7 +4,7 @@ Image and content moderation services.
 
 ## Getting Started
 
-KSequencing 0.1.5 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.1.6 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
 gem 'k_sequencing'
 ```
