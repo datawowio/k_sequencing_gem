@@ -163,7 +163,7 @@ KSequencing.client.create_image_choices()
 | instruction	     | string      |   Yes | Image instruction|
 |categories | Array[string]     |    Yes | Categories of answers |
 | data     | 	string | Yes |Data for attachment|
-| postback_url	     | string      |  No | Image instruction|
+| postback_url	     | string      |  No | Image postback url|
 |multiple | boolean   |    No | true for multiple answer and false for one answer |
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
