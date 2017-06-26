@@ -185,7 +185,7 @@ For multiple answer
 KSequencing.client.create_image_choices(
   instruction: "question",
   categories: "options1 options2 options3",
-  data: "image_url"
+  data: "image_url",
   multiple: true
 )
 ```
