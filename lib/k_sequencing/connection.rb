@@ -34,8 +34,7 @@ module KSequencing
 
     def connection
       options = {
-        # url: 'https://k-sequencing.datawow.io/'
-        url: "http://localhost:3001/"
+        url: 'https://k-sequencing.datawow.io/'
       }
 
       @connection ||= Faraday::Connection.new(options) do |connection|
