@@ -21,6 +21,11 @@ module KSequencing
       connection.post('/api/images/photo_tags', options)
     end
 
+    def create_prediction(options = {})
+      options[:token] ||= KSequencing.project_key
+      connection.post('/api/prime/predictions', options)
+    end
+
 
     # -------------------------------- list data ----------------------------------
     def get_image_choice(options = {})
@@ -41,6 +46,11 @@ module KSequencing
     def get_image_photo_tag(options = {})
       options[:token] ||= KSequencing.project_key
       connection.get('/api/images/photo_tags', options)
+    end
+
+    def get_prediction(options = {})
+      options[:token] ||= KSequencing.project_key
+      connection.get('/api/prime/predictions' , options)
     end
 
     
@@ -64,6 +74,12 @@ module KSequencing
       options[:token] ||= KSequencing.project_key
       connection.get('/api/images/photo_tag', options)
     end
+
+    def find_by_id_prediction(options = {}, id)
+      options[:token] ||= KSequencing.project_key
+      connection.get("/api/prime/predictions/#{id}", options)
+    end
+
 
 
     private
