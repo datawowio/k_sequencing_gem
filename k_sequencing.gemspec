@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'faraday', '~> 0.9', '>= 0.9.2'
   s.add_runtime_dependency 'faraday_middleware', '~> 0.10.0', '>= 0.10.0'
   s.add_runtime_dependency 'faraday_middleware-active_support_json', '~> 0.0.3', '>= 0.0.3'
+  s.add_development_dependency 'minitest', '~> 5.10'
 end

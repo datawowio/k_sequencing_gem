@@ -26,7 +26,6 @@ module KSequencing
       connection.post('/api/prime/predictions', options)
     end
 
-
     # -------------------------------- list data ----------------------------------
     def get_image_choice(options = {})
       options[:token] ||= KSequencing.project_key
@@ -50,37 +49,38 @@ module KSequencing
 
     def get_prediction(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/prime/predictions' , options)
+      connection.get('/api/prime/predictions', options)
     end
 
-    
     # ------------------------------ find by id -------------------------------
+    # FIXME: Provide id
     def find_by_id_image_choice(options = {})
       options[:token] ||= KSequencing.project_key
       connection.get('/api/images/choice', options)
     end
 
+    # FIXME: Provide id
     def find_by_id_image_closed_question(options = {})
       options[:token] ||= KSequencing.project_key
       connection.get('/api/images/closed_question', options)
     end
 
+    # FIXME: Provide id
     def find_by_id_image_message(options = {})
       options[:token] ||= KSequencing.project_key
       connection.get('/api/images/message', options)
     end
 
+    # FIXME: Provide id
     def find_by_id_image_photo_tag(options = {})
       options[:token] ||= KSequencing.project_key
       connection.get('/api/images/photo_tag', options)
     end
 
-    def find_by_id_prediction(options = {}, id)
+    def find_by_id_prediction(id, options = {})
       options[:token] ||= KSequencing.project_key
       connection.get("/api/prime/predictions/#{id}", options)
     end
-
-
 
     private
 

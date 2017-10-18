@@ -33,11 +33,7 @@ module KSequencing
     private
 
     def connection
-      options = {
-        url: 'https://k-sequencing.datawow.io/'
-      }
-
-      @connection ||= Faraday::Connection.new(options) do |connection|
+      @connection ||= Faraday::Connection.new(KSequencing.service_url) do |connection|
         connection.request :url_encoded
         connection.request :json
         connection.response :json
@@ -61,7 +57,7 @@ module KSequencing
 
     def handle_error(exception)
       if exception.is_a?(Faraday::ConnectionFailed)
-        code = 599
+        code = KSequencing.connection_failed_code
         message = 'Connection Failed'
       else
         code = exception.to_s.partition(':').first
