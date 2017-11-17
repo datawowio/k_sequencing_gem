@@ -5,11 +5,12 @@
 * [Choices](#choices) - User can set multiple choices for select. It can be radio or checkbox.
 * [Photo tags](#photo-tags) - User can create box-like overlays on top of your image and assign messages to each box.
 * [Messages](#messages) - User can set messages for answer.
+* [Prediction](#messages) - Use AI to prediction the result
 ---
-#### Closed questions
+### Closed questions
 Get image
 ```ruby
-KSequencing.client.get_image_closed_question()
+KSequencing.image_closed_question.find_by()
 ```
 
 | Field        | Type           | Required  | Description |
@@ -19,15 +20,12 @@ KSequencing.client.get_image_closed_question()
 
 Note: You must choose id or custom_id for search. Not both.
 
-Sample request
+--- Sample request
 ```ruby
-KSequencing.client.get_image_closed_question(
+KSequencing.image_closed_question.find_by({
+  token: "[you_token]",
   id: "59311194e99991b2ca8979f1"
-)
-```
-
-```
-curl --request GET -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" "https://k-sequencing.datawow.io/api/images/closed_question?id=59311194e99991b2ca8979f1"
+})
 ```
 
 Sample results
@@ -56,7 +54,7 @@ Sample results
 
 Create images
 ```ruby
-KSequencing.client.create_image_closed_questions()
+KSequencing.image_closed_questions.create()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -67,13 +65,10 @@ KSequencing.client.create_image_closed_questions()
 
 Sample request
 ```ruby
-KSequencing.client.create_image_closed_questions(
+KSequencing.image_closed_questions.create({
+  token: "[you_token]",
   data: "image_url"
-)
-```
-
-```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "data=image_url" "http://k-sequencing.datawow.io/api/images/closed_questions"
+})
 ```
 
 Sample results
@@ -101,7 +96,7 @@ Sample results
 #### Choices
 Get image
 ```ruby
-KSequencing.client.get_image_choice()
+KSequencing.image_choice.find_by()
 ```
 
 | Field        | Type           | Required  | Description |
@@ -113,13 +108,10 @@ Note: You must choose id or custom_id for search. Not both.
 
 Sample request
 ```ruby
-KSequencing.client.get_image_choice(
+KSequencing.image_choice.find_by({
+  token: "[you_token]",
   id: "59311194e99991b2ca8979f1"
-)
-```
-
-```
-curl --request GET -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" "https://k-sequencing.datawow.io/api/images/choice?id=59311194e99991b2ca8979f1"
+})
 ```
 
 Sample results
@@ -156,7 +148,7 @@ Sample results
 
 Create new choices
 ```ruby
-KSequencing.client.create_image_choices()
+KSequencing.image_choices.create()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -167,6 +159,8 @@ KSequencing.client.create_image_choices()
 |multiple | boolean   |    No | true for multiple answer and false for one answer |
 | postback_method     | 	string | No |Postback method|
 | custom_id	     | string      |   No |Custom's id|
+| allow_empty	     | boolean      |   No |Allow sent answer with empty choice. default is `false`|
+ 
 
 Note: Answer can choose only one is default. If you want answer to be multiple, you need to set multiple to true.
 
@@ -174,24 +168,22 @@ Sample request
 
 For one answer
 ```ruby
-KSequencing.client.create_image_choices(
+KSequencing.image_choices.create({
+  token: "[you_token]",
   instruction: "question",
   categories: "options1 options2 options3",
   data: "image_url"
-)
+})
 ```
 For multiple answer
 ```ruby
-KSequencing.client.create_image_choices(
+KSequencing.image_choices.create({
+  token: "[you_token]",
   instruction: "question",
   categories: "options1 options2 options3",
   data: "image_url",
   multiple: true
-)
-```
-
-```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&categories=option1%20options2%20options3&data=image_url" "http://k-sequencing.datawow.io/api/images/choices"
+})
 ```
 
 Sample results
@@ -227,7 +219,7 @@ Sample results
 #### Messages
 Get image
 ```ruby
-KSequencing.client.get_image_message()
+KSequencing.image_message.find_by()
 ```
 
 | Field        | Type           | Required  | Description |
@@ -239,13 +231,10 @@ Note: You must choose id or custom_id for search. Not both.
 
 Sample request
 ```ruby
-KSequencing.client.get_image_message(
+KSequencing.image_message.find_by({
+  token: "[you_token]",
   id: "592fbfce1b9d8f69e4178688"
-)
-```
-
-```
-curl --request GET -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" "https://k-sequencing.datawow.io/api/images/message?id=592fbfce1b9d8f69e4178688"
+})
 ```
 
 Sample results
@@ -275,7 +264,7 @@ Sample results
 
 Create new message
 ```ruby
-KSequencing.client.create_image_messages()
+KSequencing.image_messages.create()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -287,14 +276,10 @@ KSequencing.client.create_image_messages()
 
 Sample request
 ```ruby
-KSequencing.client.create_image_messages(
+KSequencing.image_messages.create({
   instruction: "question",
   data: "image_url"
-)
-```
-
-```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url" "http://k-sequencing.datawow.io/api/images/messages"
+})
 ```
 
 Sample results
@@ -323,7 +308,7 @@ Sample results
 #### Photo tags
 Get image
 ```ruby
-KSequencing.client.get_image_photo_tag()
+KSequencing.image_photo_tag.find_by()
 ```
 
 | Field        | Type           | Required  | Description |
@@ -335,13 +320,9 @@ Note: You must choose id or custom_id for search. Not both.
 
 Sample request
 ```ruby
-KSequencing.client.get_image_photo_tag(
+KSequencing.image_photo_tag.find_by({
   id: "592fbfec1b9d8f69e4178689"
-)
-```
-
-```
-curl --request GET -H "Accept: application/json" -H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" "https://k-sequencing.datawow.io/api/images/photo_tag?id=592fbfec1b9d8f69e4178689"
+})
 ```
 
 Sample results
@@ -371,7 +352,7 @@ Sample results
 
 Create new photo tag
 ```ruby
-KSequencing.client.create_image_photo_tags()
+KSequencing.client.image_photo_tags.create()
 ```
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
@@ -383,15 +364,12 @@ KSequencing.client.create_image_photo_tags()
 
 Sample request
 ```ruby
-KSequencing.client.create_image_photo_tags(
+KSequencing.client.image_photo_tags.create(
   instruction: "question",
   data: "image_url"
 )
 ```
 
-```
-curl --request POST -H "Content-Type: application/x-www-form-urlencoded" -H "Accept: application/json" --H "Authorization: 9UPmGGWEwBsJrVnw6844tfpd" --data "instruction=question&data=image_url" "http://k-sequencing.datawow.io/api/images/photo_tags"
-```
 
 Sample results
 ```json
@@ -416,3 +394,108 @@ Sample results
 }
 ```
 ---
+
+
+#### Prediction
+Get prediction
+```ruby
+KSequencing.prediction.find_by()
+```
+
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| id	     | string      |   No | Image id|
+|custom_id | string     |    No | Client's image id |
+
+Note: You must choose id or custom_id for search. Not both.
+
+Sample request
+```ruby
+KSequencing.prediction.find_by({
+  id: "592fbfec1b9d8f69e4178689"
+})
+```
+
+Sample results
+```json
+{
+  "data": {
+    "image": {
+      "id": "5a0d3a8c0deb540ab9c56e33",
+      "answer": null,
+      "credit_charged": 0,
+      "custom_id": null,
+      "data": "www.example.com",
+      "postback_url": "www.example.com",
+      "processed_at": null,
+      "project_id": 96,
+      "status": "processing"
+    }
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
+
+Create prediction
+```ruby
+KSequencing.prediction.create()
+```
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| data     | 	string | Yes |Data for attachment|
+| postback_url	     | string      | No | Image postback url|
+| postback_method     | 	string | No |Postback method|
+| custom_id	     | string      |   No |Custom's id|
+
+Sample request
+```ruby
+KSequencing.prediction.create(
+  token: "[your_token]",
+  data: "image_url"
+)
+```
+
+Sample results
+```json
+{
+  "data": {
+    "id": "5a0e49d00deb540ab9c56e4f",
+    "answer": null,
+    "credit_charged": 0,
+    "custom_id": null,
+    "data": "www.example.com",
+    "postback_url": "www.example.com",
+    "processed_at": null,
+    "project_id": 96,
+    "status": "processing"
+  },
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
+}
+```
+<enter>
+---
+
+As you see above all API have a same name just change model name and paramter, however if you would like to list all of your data just use all() see example below 
+
+#### Get list of data 
+
+```ruby
+KSequencing.[model].all()
+```
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| page     | 	interger | No | default 0|
+| per_page 	     | string      | No | default 20 |
+
+Sample request
+```ruby
+KSequencing.[model].all(
+  token: "[your_token]"
+)
+```
