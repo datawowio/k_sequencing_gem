@@ -89,10 +89,13 @@ KSequencing.[model].find_by({
 ```
 <Enter>
 ---
+  
 #### Create images
+
 ```ruby
 KSequencing.[model].create()
 ```
+  
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
 |token | string     |    Yes | Project token |
