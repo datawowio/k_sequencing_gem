@@ -9,7 +9,7 @@ module KSequencing
 
     def all(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/prime/predictions' , options)
+      connection.get('/api/prime/predictions', options)
     end
 
     def find_by(options = {})
