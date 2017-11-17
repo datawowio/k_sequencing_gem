@@ -2,11 +2,11 @@
 
 
 ## There are 5 avalable for API 
-* Closed question - Answer can be only approved, declined or ban.
-* Choices - User can set multiple choices for select. It can be radio or checkbox.
-* Photo tag - User can create box-like overlays on top of your image and assign messages to each box.
-* Message - User can set messages for answer.
-* Prediction Model - This model use AI to prediction result
+* Closed questions - Answer can be only approved, declined or ban(kenta).
+* Choices - This model use to ask question with multiple choice. Anwser can be one or multiple.
+* Photo tags - This model use to create a selection area to find where answer is, by drag the area on image from webpage.
+* Messages - This model allow moderator type the anwser on what they see.
+* Predictions - Use AI to prediction the result
 
 ##### Please see more usage [documentation](docs/documentation.md) for details on our guideline.
 
@@ -90,9 +90,11 @@ KSequencing.[model].find_by({
 <Enter>
 ---
 #### Create images
+
 ```ruby
 KSequencing.[model].create()
 ```
+
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
 |token | string     |    Yes | Project token |

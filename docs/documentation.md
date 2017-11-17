@@ -1,10 +1,10 @@
 ## Usage
 ### Operations about Images
 #### Image moderation can set 4 kinds of answer
-* [Closed questions](#closed-questions)- Answer can be only approved, declined or ban.
-* [Choices](#choices) - User can set multiple choices for select. It can be radio or checkbox.
-* [Photo tags](#photo-tags) - User can create box-like overlays on top of your image and assign messages to each box.
-* [Messages](#messages) - User can set messages for answer.
+* [Closed questions](#closed-questions) - Answer can be only approved, declined or ban(kenta).
+* [Choices](#choices) - This model use to ask question with multiple choice. Anwser can be one or multiple.
+* [Photo tags](#photo-tags) - This model use to create a selection area to find where answer is by drag the area on image from web page.
+* [Messages](#messages) - This model allow moderator type the anwser on what they see.
 * [Prediction](#messages) - Use AI to prediction the result
 ---
 ### Closed questions
