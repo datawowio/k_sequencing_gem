@@ -20,7 +20,7 @@ KSequencing.image_closed_question.find_by()
 
 Note: You must choose id or custom_id for search. Not both.
 
---- Sample request
+Sample request
 ```ruby
 KSequencing.image_closed_question.find_by({
   token: "[you_token]",
