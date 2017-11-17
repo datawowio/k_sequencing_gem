@@ -5,7 +5,7 @@
 * [Choices](#choices) - User can set multiple choices for select. It can be radio or checkbox.
 * [Photo tags](#photo-tags) - User can create box-like overlays on top of your image and assign messages to each box.
 * [Messages](#messages) - User can set messages for answer.
-* [Prediction](#messages) - Use AI to prediction the result
+* [Prediction](#prediction) - Use AI to prediction the result
 ---
 ### Closed questions
 Get image
