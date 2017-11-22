@@ -7,17 +7,17 @@ module KSequencing
       connection.get('/api/images/photo_tags', options)
     end
 
-    def find_by(options = {})
-      options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/photo_tag', options)
-    end
-
     def create(options = {})
       options[:token] ||= KSequencing.project_key
       connection.post('/api/images/photo_tags', options)
     end
 
-    private
+    def find_by(options = {})
+      options[:token] ||= KSequencing.project_key
+      connection.get('/api/images/photo_tag', options)
+    end
+
+  private
 
     def connection
       @connection ||= Connection.new
