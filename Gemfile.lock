@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    k_sequencing (0.1.20)
+    k_sequencing (0.1.23)
       faraday (~> 0.13.1, >= 0.13.1)
       faraday_middleware (~> 0.12.2, >= 0.12.2)
       json (~> 1.8, >= 1.8.3)
