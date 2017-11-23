@@ -1,7 +1,7 @@
 # Image and content moderation services.
 
 
-## There are 5 avalable for API 
+## There are 5 avalable for API
 * Closed questions - Answer can be only approved, declined or ban(kenta).
 * Choices - This model use to ask question with multiple choice. Anwser can be one or multiple.
 * Photo tags - This model use to create a selection area to find where answer is, by drag the area on image from webpage.
@@ -14,9 +14,9 @@
 
 ## Getting Started
 
-KSequencing 0.1.9 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.1.23 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
-gem 'k_sequencing'
+gem 'k_sequencing', '~> 0.1.23'
 ```
 Then run bundle install
 
@@ -88,6 +88,23 @@ KSequencing.[model].find_by({
 }
 ```
 <Enter>
+#### Get image by id
+```ruby
+KSequencing.client.find_image(id)
+```
+
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :----:| :-----|
+| token         | string        | Yes   | Project token |
+| id            | string        | Yes   | Image id or Client's image id|
+
+###### Sample request
+
+```ruby
+KSequencing.client.find_image("59311194e99991b2ca8979f1")
+KSequencing.client.find_image("your custom id")
+KSequencing.client.find_image("59311194e99991b2ca8979f1", { token: "[you_token]" })
+```
 ---
 #### Create images
 
@@ -97,11 +114,11 @@ KSequencing.[model].create()
 
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-|token | string     |    Yes | Project token |
-| data     | 	string | Yes |Data for moderate|
-| postback_url	     | string      | No | Image postback url|
-| postback_method     | 	string | No |Postback method|
-| custom_id	     | string      |   No |Custom's id|
+| token         | string     |    Yes | Project token |
+| data          | 	string | Yes |Data for moderate|
+| postback_url  | string      | No | Image postback url|
+| postback_method | 	string | No |Postback method|
+| custom_id	    | string      |   No |Custom's id|
 
 ###### Sample request
 

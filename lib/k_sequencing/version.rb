@@ -1,3 +1,3 @@
 module KSequencing
-  VERSION = '0.1.9'.freeze
+  VERSION = '0.1.23'.freeze
 end
