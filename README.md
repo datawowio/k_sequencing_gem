@@ -2,11 +2,11 @@
 
 
 ## There are 5 avalable for API
-* Closed questions - Answer can be only approved, declined or ban(kenta).
-* Choices - This model use to ask question with multiple choice. Anwser can be one or multiple.
-* Photo tags - This model use to create a selection area to find where answer is, by drag the area on image from webpage.
-* Messages - This model allow moderator type the anwser on what they see.
-* Predictions - Use AI to prediction the result
+* Closed questions(Standard Criteria (5 mins response time)) - Answer can be only approved, declined or ban(kenta).
+* Choices(Yes or No Question from Image (30 mins response time)) - This model use to ask question with multiple choice. Anwser can be one or multiple.
+* Photo tags(Tag an object in the image (60 mins response time)) - This model use to create a selection area to find where answer is, by drag the area on image from webpage.
+* Messages(Message Question from Image (30 mins response time)) - This model allow moderator type the anwser on what they see.
+* Predictions(Images (AI Beta / 95% accuracy)) - Use AI to prediction the result
 
 ##### Please see more usage [documentation](docs/documentation.md) for details on our guideline.
 
@@ -35,61 +35,6 @@ There are 3 oparations of each model as the same name see example below
 
 #### Get image
 ```ruby
-KSequencing.[model].find_by()
-```
-
-| Field        | Type           | Required  | Description |
-| ------------- |:-------------:| :----:| :-----|
-|token | string     |    Yes | Project token |
-| id	     | string      |   No | Image id|
-|custom_id | string     |    No | Client's image id |\
-
-Note: You must choose id or custom_id for search. Not both.
-
-###### Sample request
-
-```ruby
-KSequencing.[model].find_by({
-  token: "[you_token]",
-  id: "59311194e99991b2ca8979f1"
-})
-```
-
-or
-
-```ruby
-KSequencing.[model].find_by({
-  token: "[you_token]",
-  custom_id: "59311194e99991b2ca8979f1"
-})
-```
-
-###### Sample results
-```json
-{
-  "data": {
-    "image": {
-      "id": "59311194e99991b2ca8979f1",
-      "answer": null,
-      "credit_charged": 0,
-      "custom_id": null,
-      "data": "image_url",
-      "postback_url": "www.example.com",
-      "processed_at": null,
-      "project_id": 3,
-      "status": "unprocess",
-      "created_at": "2017-06-02T07:19:48.574Z"
-    }
-  },
-  "meta": {
-    "code": 200,
-    "message": "success"
-  }
-}
-```
-<Enter>
-#### Get image by id
-```ruby
 KSequencing.client.find_image(id)
 ```
 
@@ -98,18 +43,63 @@ KSequencing.client.find_image(id)
 | token         | string        | Yes   | Project token |
 | id            | string        | Yes   | Image id or Client's image id|
 
+Note:
+ - You must choose id or custom_id for search. Not both.
+ - Image data dynamic by project token.
+
 ###### Sample request
 
 ```ruby
-KSequencing.client.find_image("59311194e99991b2ca8979f1")
-KSequencing.client.find_image("your custom id")
-KSequencing.client.find_image("59311194e99991b2ca8979f1", { token: "[you_token]" })
+KSequencing.client.find_image("5a40be59fb9d7f27354c5efa")
 ```
----
-#### Create images
+
+or
 
 ```ruby
-KSequencing.[model].create()
+KSequencing.client.find_image("your custom id")
+```
+
+or
+
+```ruby
+KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]" })
+```
+
+###### Sample response
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+
+```json
+{
+  "value" => {
+    "image" => {
+      "id" => "5a40be59fb9d7f27354c5efa",
+      "answer" => "approved",
+      "credit_charged" => 1,
+      "custom_id" => "custom_id",
+      "data" => "image_url",
+      "postback_url" => "postback_url",
+      "processed_at" => "2017-12-25T16:02:00.599+07:00",
+      "project_id" => project_id,
+      "status" => "processed"
+    }
+  },
+  "success" => true,
+  "status" => 200,
+  "message" => "success",
+  "total" => nil,
+  "meta" => {
+    "code" => 200,
+    "message" => "success"
+  }
+}
+```
+<Enter>
+---
+#### Create Image Standard Criteria (5 mins response time)
+Closed questions - Answer can be only approved, declined or ban(kenta).
+
+```ruby
+KSequencing.image_closed_question.create()
 ```
 
 | Field        | Type           | Required  | Description |
@@ -121,42 +111,56 @@ KSequencing.[model].create()
 | custom_id	    | string      |   No |Custom's id|
 
 ###### Sample request
-
 ```ruby
-KSequencing.[model].create({
+KSequencing.image_closed_question.create({ data: "image_url" })
+```
+
+or
+
+Override data [:token, :postback_url, :postback_method]
+```ruby
+KSequencing.image_closed_question.create({
+  custom_id: "custom_id",
+  data: "image_url",
+  postback_method: "POST",
+  postback_url: "https://example.com/callbacks",
   token: "[you_token]"
-  data: "image_url"
-  ....
 })
 ```
 
-###### Sample results
+###### Sample response
 ```json
 {
-  "data": {
-    "id": "58c8c3ef12c09f1c0fa78392",
-    "answer": null,
-    "credit_charged": 0,
-    "custom_id": null,
-    "data": "image_url",
-    "postback_url": "www.example.com",
-    "process": false,
-    "processed_at": null,
-    "project_id": null,
-    "created_at": "2017-03-14T08:29:40.696Z"
+  "value" => {
+    "id" => "5a40c77ffb9d7f27354c60c2",
+    "answer" => nil,
+    "credit_charged" => 0,
+    "custom_id" => "custom_id",
+    "data" => "image_url",
+    "postback_url" => "https://example.com/callbacks",
+    "processed_at" => nil,
+    "project_id" => "project_id",
+    "status" => "unprocess" 
   },
-  "meta": {
-    "code": 200,
-    "message": "success"
-  }
+  "success" => true,
+  "status" => 201,
+  "message" => "success",
+  "total" => 0,
+  "meta" => nil
 }
 ```
+
+###### Sample postback data
+```
+POST "https://example.com/callbacks?answer=declined&custom_id=custom_id&image_id=5a40cfc2fb9d7f27354c62b5&task_id=5a40cfc2fb9d7f27354c62b5"
+```
+
 <Enter>
 ---
 
 #### Get list of images
 ```ruby
-KSequencing.[model].all()
+KSequencing.image_closed_question.all({ token: "[you_token]" })
 ```
 
 | Field        | Type           | Required  | Description |
@@ -168,50 +172,70 @@ KSequencing.[model].all()
 Note: You must choose id or custom_id for search. Not both.
 
 ###### Sample request
+```ruby
+KSequencing.image_closed_question.all
+```
+
+or
 
 ```ruby
-KSequencing.[model].all({
+KSequencing.image_closed_question.all({
+  page: 1,
+  per_page: 20,
   token: "[you_token]"
 })
 ```
 
-
 ###### Sample results
 ```json
 {
-  "data": {
-    "images": [
+  "value" => {
+    "images" => [
       {
-        "id": "5a0d5a0c0deb540ab9c56e4e",
-        "allow_empty": false,
-        "answer": [],
-        "categories": ["face", "eye"],
-        "credit_charged": 0,
-        "custom_id": null,
-        "data": "image_url",
-        "instruction": "face",
-        "multiple": false,
-        "postback_url": "www.example.com",
-        "processed_at": null,
-        "project_id": 94,
-        "status": "unprocess"
-      }
+        "answer" => "approved",
+        "credit_charged" => 1,
+        "custom_id" => "custom_id",
+        "data" => "image_url",
+        "id" => "5a40c77ffb9d7f27354c60c2",
+        "postback_url" => "https://example.com/callbacks",
+        "processed_at" => "2017-12-25T16:40:19.699+07:00",
+        "project_id" => "project_id",
+        "status" => "processed"
+      },
+      {
+        "answer" => "approved",
+        "credit_charged" => 1,
+        "custom_id" => "custom_id",
+        "data" => "image_url",
+        "id" => "5a40be59fb9d7f27354c5efa",
+        "postback_url" => "https://example.com/callbacks",
+        "processed_at" => "2017-12-25T16:02:00.599+07:00",
+        "project_id" => "project_id",
+        "status" => "processed"
+      },
+      ...
     ]
   },
-  "meta": {
-    "code": 200,
-    "message": "success",
-    "current_page": 1,
-    "next_page": 2,
-    "prev_page": -1,
-    "total_pages": 13,
-    "total_count": 13
+  "success" => true,
+  "status" => 200,
+  "message" => "success",
+  "total" => nil,
+  "meta" => {
+    "code" => 200,
+    "current_page" => 1,
+    "message" => "success",
+    "next_page" => 2,
+    "prev_page" => -1,
+    "total_count" => 3
+    "total_pages" => 2,
   }
 }
 ```
 <Enter>
 
 However `token: "[you_token]"` you can config in configuration file is not necessary to send to method every time you request, if you have one project token we recommeded this approach
+
+##### Please see more usage [documentation](docs/documentation.md) for details on our guideline.
 
 ## License
 
