@@ -118,7 +118,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
       "data": "image_url",
       "postback_url": "postback_url",
       "processed_at": "2017-12-25T16:02:00.599+07:00",
-      "project_id": project_id,
+      "project_id": "project_id",
       "status": "processed"
     }
   },
@@ -144,7 +144,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
       "data": "image_url",
       "postback_url": "postback_url",
       "processed_at": "2017-12-25T16:02:00.599+07:00",
-      "project_id": project_id,
+      "project_id": "project_id",
       "status": "processed"
     }
   },
@@ -170,7 +170,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
       "data": "image_url",
       "postback_url": "postback_url",
       "processed_at": "2017-12-25T16:02:00.599+07:00",
-      "project_id": project_id,
+      "project_id": "project_id",
       "status": "processed"
     }
   },
@@ -254,8 +254,8 @@ KSequencing.image_closed_question.all({
     "message": "success",
     "next_page": 2,
     "prev_page": -1,
-    "total_count": 3
-    "total_pages": 2,
+    "total_count": 3,
+    "total_pages": 2
   }
 }
 ```
@@ -835,8 +835,8 @@ KSequencing.image_message.all({
     "message": "success",
     "next_page": 2,
     "prev_page": -1,
-    "total_count": 3
-    "total_pages": 2,
+    "total_count": 3,
+    "total_pages": 2
   }
 }
 ```
@@ -1081,7 +1081,7 @@ KSequencing.image_photo_tag.all({
         "instruction": "Your question?",
         "postback_url": "https://example.com/callbacks",
         "processed_at": "2017-12-26T10:09:28.467+07:00",
-        "project_id" =>"project_id",
+        "project_id": "project_id",
         "status": "processed"
       },
       {
