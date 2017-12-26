@@ -70,30 +70,29 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a40be59fb9d7f27354c5efa",
-      "answer" => "approved",
-      "credit_charged" => 1,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "postback_url" => "postback_url",
-      "processed_at" => "2017-12-25T16:02:00.599+07:00",
-      "project_id" => project_id,
-      "status" => "processed"
+  "value": {
+    "image": {
+      "id": "5a40be59fb9d7f27354c5efa",
+      "answer": "approved",
+      "credit_charged": 1,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "postback_url": "postback_url",
+      "processed_at": "2017-12-25T16:02:00.599+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
-<Enter>
 ---
 #### Create Image Standard Criteria (5 mins response time)
 Closed questions - Answer can be only approved, declined or ban(kenta).
@@ -131,22 +130,22 @@ KSequencing.image_closed_question.create({
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a40c77ffb9d7f27354c60c2",
-    "answer" => nil,
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "unprocess" 
+  "value": {
+    "id": "5a40c77ffb9d7f27354c60c2",
+    "answer": nil,
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "unprocess" 
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -155,7 +154,6 @@ KSequencing.image_closed_question.create({
 POST "https://example.com/callbacks?answer=declined&custom_id=custom_id&image_id=5a40cfc2fb9d7f27354c62b5&task_id=5a40cfc2fb9d7f27354c62b5"
 ```
 
-<Enter>
 ---
 
 #### Get list of images
@@ -189,49 +187,48 @@ KSequencing.image_closed_question.all({
 ###### Sample results
 ```json
 {
-  "value" => {
-    "images" => [
+  "value": {
+    "images": [
       {
-        "answer" => "approved",
-        "credit_charged" => 1,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "id" => "5a40c77ffb9d7f27354c60c2",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-25T16:40:19.699+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "answer": "approved",
+        "credit_charged": 1,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "id": "5a40c77ffb9d7f27354c60c2",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-25T16:40:19.699+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       },
       {
-        "answer" => "approved",
-        "credit_charged" => 1,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "id" => "5a40be59fb9d7f27354c5efa",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-25T16:02:00.599+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "answer": "approved",
+        "credit_charged": 1,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "id": "5a40be59fb9d7f27354c5efa",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-25T16:02:00.599+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       },
       ...
     ]
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "current_page" => 1,
-    "message" => "success",
-    "next_page" => 2,
-    "prev_page" => -1,
-    "total_count" => 3
-    "total_pages" => 2,
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "current_page": 1,
+    "message": "success",
+    "next_page": 2,
+    "prev_page": -1,
+    "total_count": 3,
+    "total_pages": 2
   }
 }
 ```
-<Enter>
 
 However `token: "[you_token]"` you can config in configuration file is not necessary to send to method every time you request, if you have one project token we recommeded this approach
 

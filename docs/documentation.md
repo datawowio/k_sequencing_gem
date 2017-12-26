@@ -46,22 +46,22 @@ KSequencing.image_closed_question.create({
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a40c77ffb9d7f27354c60c2",
-    "answer" => nil,
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "unprocess" 
+  "value": {
+    "id": "5a40c77ffb9d7f27354c60c2",
+    "answer": nil,
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "unprocess" 
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -70,7 +70,6 @@ KSequencing.image_closed_question.create({
 POST "https://example.com/callbacks?answer=declined&custom_id=custom_id&image_id=5a40cfc2fb9d7f27354c62b5&task_id=5a40cfc2fb9d7f27354c62b5"
 ```
 
-<Enter>
 ---
 #### Get image
 ```ruby
@@ -110,83 +109,81 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
  - approved
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a40be59fb9d7f27354c5efa",
-      "answer" => "approved",
-      "credit_charged" => 1,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "postback_url" => "postback_url",
-      "processed_at" => "2017-12-25T16:02:00.599+07:00",
-      "project_id" => project_id,
-      "status" => "processed"
+  "value": {
+    "image": {
+      "id": "5a40be59fb9d7f27354c5efa",
+      "answer": "approved",
+      "credit_charged": 1,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "postback_url": "postback_url",
+      "processed_at": "2017-12-25T16:02:00.599+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
-<Enter>
  - declined
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a40be59fb9d7f27354c5efa",
-      "answer" => "declined",
-      "credit_charged" => 1,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "postback_url" => "postback_url",
-      "processed_at" => "2017-12-25T16:02:00.599+07:00",
-      "project_id" => project_id,
-      "status" => "processed"
+  "value": {
+    "image": {
+      "id": "5a40be59fb9d7f27354c5efa",
+      "answer": "declined",
+      "credit_charged": 1,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "postback_url": "postback_url",
+      "processed_at": "2017-12-25T16:02:00.599+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
 - kenta
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a40be59fb9d7f27354c5efa",
-      "answer" => "kenta",
-      "credit_charged" => 1,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "postback_url" => "postback_url",
-      "processed_at" => "2017-12-25T16:02:00.599+07:00",
-      "project_id" => project_id,
-      "status" => "processed"
+  "value": {
+    "image": {
+      "id": "5a40be59fb9d7f27354c5efa",
+      "answer": "kenta",
+      "credit_charged": 1,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "postback_url": "postback_url",
+      "processed_at": "2017-12-25T16:02:00.599+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
-<Enter>
 ---
 
 #### Get list of images
@@ -220,49 +217,48 @@ KSequencing.image_closed_question.all({
 ###### Sample results
 ```json
 {
-  "value" => {
-    "images" => [
+  "value": {
+    "images": [
       {
-        "answer" => "approved",
-        "credit_charged" => 1,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "id" => "5a40c77ffb9d7f27354c60c2",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-25T16:40:19.699+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "answer": "approved",
+        "credit_charged": 1,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "id": "5a40c77ffb9d7f27354c60c2",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-25T16:40:19.699+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       },
       {
-        "answer" => "approved",
-        "credit_charged" => 1,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "id" => "5a40be59fb9d7f27354c5efa",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-25T16:02:00.599+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "answer": "approved",
+        "credit_charged": 1,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "id": "5a40be59fb9d7f27354c5efa",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-25T16:02:00.599+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       },
       ...
     ]
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "current_page" => 1,
-    "message" => "success",
-    "next_page" => 2,
-    "prev_page" => -1,
-    "total_count" => 3
-    "total_pages" => 2,
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "current_page": 1,
+    "message": "success",
+    "next_page": 2,
+    "prev_page": -1,
+    "total_count": 3,
+    "total_pages": 2
   }
 }
 ```
-<Enter>
 ---
 ### Choices
 [Yes or No Question from Image (30 mins response time)]
@@ -299,30 +295,30 @@ KSequencing.image_choice.create({
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a40d924eecee03cb247f0dd",
-    "allow_empty" => false,
-    "answer" => [],
-    "categories" => [
+  "value": {
+    "id": "5a40d924eecee03cb247f0dd",
+    "allow_empty": false,
+    "answer": [],
+    "categories": [
       "options1",
       "options2",
       "options3"
     ],
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "instruction" => "question",
-    "multiple" => false,
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "unprocess"
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "instruction": "question",
+    "multiple": false,
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "unprocess"
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -341,30 +337,30 @@ KSequencing.image_choice.create({
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a40d924eecee03cb247f0dd",
-    "allow_empty" => false,
-    "answer" => [],
-    "categories" => [
+  "value": {
+    "id": "5a40d924eecee03cb247f0dd",
+    "allow_empty": false,
+    "answer": [],
+    "categories": [
       "options1",
       "options2",
       "options3"
     ],
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "instruction" => "question",
-    "multiple" => true,
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "unprocess"
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "instruction": "question",
+    "multiple": true,
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "unprocess"
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -382,40 +378,38 @@ KSequencing.image_choice.create({
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a40d924eecee03cb247f0dd",
-    "allow_empty" => true,
-    "answer" => [],
-    "categories" => [
+  "value": {
+    "id": "5a40d924eecee03cb247f0dd",
+    "allow_empty": true,
+    "answer": [],
+    "categories": [
       "options1",
       "options2",
       "options3"
     ],
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "instruction" => "question",
-    "multiple" => false,
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "unprocess"
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "instruction": "question",
+    "multiple": false,
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "unprocess"
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
-<Enter>
 ---
 ###### Sample postback data
 ```
 POST "https://example.com/callbacks?answer[]=options3&custom_id=custom_id&image_id=5a41b2a8fb9d7f27354c83d8&task_id=5a41b2a8fb9d7f27354c83d8"
 ```
 
-<Enter>
 ---
 
 #### Get image choice
@@ -456,34 +450,34 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 For one answer
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a40de95aa05617baebfb01f",
-      "allow_empty" => false,
-      "answer" => ["options2"],
-      "categories" => [
+  "value": {
+    "image": {
+      "id": "5a40de95aa05617baebfb01f",
+      "allow_empty": false,
+      "answer": ["options2"],
+      "categories": [
         "options1",
         "options2",
         "options3"
       ],
-      "credit_charged" => 1,
-      "custom_id" => nil,
-      "data" => "image_url",
-      "instruction" => "question",
-      "multiple" => false,
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-25T18:20:11.450+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+      "credit_charged": 1,
+      "custom_id": nil,
+      "data": "image_url",
+      "instruction": "question",
+      "multiple": false,
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-25T18:20:11.450+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
@@ -491,34 +485,34 @@ For one answer
 For multiple answer
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a40de95aa05617baebfb01f",
-      "allow_empty" => false,
-      "answer" => ["options2", "options3"],
-      "categories" => [
+  "value": {
+    "image": {
+      "id": "5a40de95aa05617baebfb01f",
+      "allow_empty": false,
+      "answer": ["options2", "options3"],
+      "categories": [
         "options1",
         "options2",
         "options3"
       ],
-      "credit_charged" => 1,
-      "custom_id" => nil,
-      "data" => "image_url",
-      "instruction" => "question",
-      "multiple" => true,
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-25T18:20:11.450+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+      "credit_charged": 1,
+      "custom_id": nil,
+      "data": "image_url",
+      "instruction": "question",
+      "multiple": true,
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-25T18:20:11.450+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
@@ -526,34 +520,34 @@ For multiple answer
 For allow empty answer
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a40de95aa05617baebfb01f",
-      "allow_empty" => true,
-      "answer" => [],
-      "categories" => [
+  "value": {
+    "image": {
+      "id": "5a40de95aa05617baebfb01f",
+      "allow_empty": true,
+      "answer": [],
+      "categories": [
         "options1",
         "options2",
         "options3"
       ],
-      "credit_charged" => 1,
-      "custom_id" => nil,
-      "data" => "image_url",
-      "instruction" => "question",
-      "multiple" => false,
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-25T18:20:11.450+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+      "credit_charged": 1,
+      "custom_id": nil,
+      "data": "image_url",
+      "instruction": "question",
+      "multiple": false,
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-25T18:20:11.450+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
@@ -589,65 +583,64 @@ KSequencing.image_choice.all({
 ###### Sample results
 ```json
 {
-  "value" => {
-    "images" => [
+  "value": {
+    "images": [
       {
-        "id" => "5a40de95aa05617baebfb01f",
-        "allow_empty" => false,
-        "answer" => ["options2"],
-        "categories" => [
+        "id": "5a40de95aa05617baebfb01f",
+        "allow_empty": false,
+        "answer": ["options2"],
+        "categories": [
           "options1",
           "options2",
           "options3"
         ],
-        "credit_charged" => 1,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "instruction" => "question",
-        "multiple" => false,
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-25T18:20:11.450+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "credit_charged": 1,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "instruction": "question",
+        "multiple": false,
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-25T18:20:11.450+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       },
       {
-        "id" => "5a40da6faa05617baebfaf3f",
-        "allow_empty" => false,
-        "answer" => ["options2"],
-        "categories" => [
+        "id": "5a40da6faa05617baebfaf3f",
+        "allow_empty": false,
+        "answer": ["options2"],
+        "categories": [
           "options1",
           "options2",
           "options3"
         ],
-        "credit_charged" => 1,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "instruction" => "question",
-        "multiple" => false,
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-25T18:20:08.853+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "credit_charged": 1,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "instruction": "question",
+        "multiple": false,
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-25T18:20:08.853+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       }
     ]
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success",
-    "current_page" => 1,
-    "next_page" => 2,
-    "prev_page" => -1,
-    "total_pages" => 4,
-    "total_count" => 8
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success",
+    "current_page": 1,
+    "next_page": 2,
+    "prev_page": -1,
+    "total_pages": 4,
+    "total_count": 8
   }
 }
 ```
 
-<Enter>
 ---
 ### Messages
 [Message Question from Image (30 mins response time)]
@@ -677,30 +670,30 @@ KSequencing.image_message.create({
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a41b2a8fb9d7f27354c83d8",
-    "allow_empty" => false,
-    "answer" => [],
-    "categories" => [
+  "value": {
+    "id": "5a41b2a8fb9d7f27354c83d8",
+    "allow_empty": false,
+    "answer": [],
+    "categories": [
       "options1",
       "options2",
       "options3"
     ],
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "instruction" => "Your question?",
-    "multiple" => false,
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "unprocess"
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "instruction": "Your question?",
+    "multiple": false,
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "unprocess"
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -747,31 +740,30 @@ KSequencing.client.find_image("5a41b7b2fb9d7f27354c84d4", { token: "[you_token]"
 
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a41b7b2fb9d7f27354c84d4",
-      "answer" => "sky blue",
-      "credit_charged" => 1,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "instruction" => "Your question?",
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-26T09:45:29.328+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+  "value": {
+    "image": {
+      "id": "5a41b7b2fb9d7f27354c84d4",
+      "answer": "sky blue",
+      "credit_charged": 1,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "instruction": "Your question?",
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-26T09:45:29.328+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
-<Enter>
 ---
 #### Get list of image messages
 ```ruby
@@ -804,51 +796,50 @@ KSequencing.image_message.all({
 ###### Sample results
 ```json
 {
-  "value" => {
-    "images" => [
+  "value": {
+    "images": [
       {
-        "answer" => "sky blue",
-        "credit_charged" => 1,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "instruction" => "Your question?",
-        "id" => "5a41b7b2fb9d7f27354c84d4",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-25T16:40:19.699+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "answer": "sky blue",
+        "credit_charged": 1,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "instruction": "Your question?",
+        "id": "5a41b7b2fb9d7f27354c84d4",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-25T16:40:19.699+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       },
       {
-        "answer" => "yes",
-        "credit_charged" => 1,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "instruction" => "Your question?",
-        "id" => "5a40be59fb9d7f27354c5efa",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-25T16:02:00.599+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "answer": "yes",
+        "credit_charged": 1,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "instruction": "Your question?",
+        "id": "5a40be59fb9d7f27354c5efa",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-25T16:02:00.599+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       },
       ...
     ]
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "current_page" => 1,
-    "message" => "success",
-    "next_page" => 2,
-    "prev_page" => -1,
-    "total_count" => 3
-    "total_pages" => 2,
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "current_page": 1,
+    "message": "success",
+    "next_page": 2,
+    "prev_page": -1,
+    "total_count": 3,
+    "total_pages": 2
   }
 }
 ```
-<Enter>
 ---
 
 ### Photo tags
@@ -890,23 +881,23 @@ KSequencing.image_photo_tag.create({
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a41bc09aa05617baa2832f8",
-    "answer" => [],
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "instruction" => "Your question?",
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "unprocess"
+  "value": {
+    "id": "5a41bc09aa05617baa2832f8",
+    "answer": [],
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "instruction": "Your question?",
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "unprocess"
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -921,7 +912,6 @@ Case multi answers
 ```
 POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=104&answer[0][y]=294&answer[0][z]=0&answer[0][width]=240&answer[0][height]=131&answer[1][id]=1&answer[1][x]=85&answer[1][y]=64&answer[1][z]=100&answer[1][width]=234&answer[1][height]=180&custom_id=&image_id=5a41bc09aa05617baa2832f8&task_id=5a41bc09aa05617baa2832f8"
 ```
-<Enter>
 ---
 #### Get image
 ```ruby
@@ -961,36 +951,36 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
  - one answer
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a41bd55aa05617baa283338",
-      "answer" => [
+  "value": {
+    "image": {
+      "id": "5a41bd55aa05617baa283338",
+      "answer": [
         {
-          "height" => "60",
-          "id" => "0",
-          "width" => "167",
-          "x" => "331",
-          "y" => "435",
-          "z" => "100"
+          "height": "60",
+          "id": "0",
+          "width": "167",
+          "x": "331",
+          "y": "435",
+          "z": "100"
         }
       ],
-      "credit_charged" => 0,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "instruction" => "Your question?",
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-26T10:09:28.467+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+      "credit_charged": 0,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "instruction": "Your question?",
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-26T10:09:28.467+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
@@ -998,48 +988,47 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
  - two answer
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a41bc09aa05617baa2832f8",
-      "answer" => [
+  "value": {
+    "image": {
+      "id": "5a41bc09aa05617baa2832f8",
+      "answer": [
         {
-          "height" => "131",
-          "id" => "0",
-          "width" => "240",
-          "x" => "104",
-          "y" => "294",
-          "z" => "0"
+          "height": "131",
+          "id": "0",
+          "width": "240",
+          "x": "104",
+          "y": "294",
+          "z": "0"
         },
         {
-          "height" => "180",
-          "id" => "1",
-          "width" => "234",
-          "x" => "85",
-          "y" => "64",
-          "z" => "100"
+          "height": "180",
+          "id": "1",
+          "width": "234",
+          "x": "85",
+          "y": "64",
+          "z": "100"
         }
       ],
-      "credit_charged" => 0,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "instruction" => "Your question?",
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-26T10:05:53.633+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+      "credit_charged": 0,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "instruction": "Your question?",
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-26T10:05:53.633+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
-<Enter>
 ---
 #### Get list of image photo tags
 ```ruby
@@ -1072,76 +1061,75 @@ KSequencing.image_photo_tag.all({
 ###### Sample results
 ```json
 {
-  "value" => {
-    "images" => [
+  "value": {
+    "images": [
       {
-        "id" => "5a41bd55aa05617baa283338",
-        "answer" => [
+        "id": "5a41bd55aa05617baa283338",
+        "answer": [
           {
-            "height" => "60",
-            "id" => "0",
-            "width" => "167",
-            "x" => "331",
-            "y" => "435",
-            "z" => "100"
+            "height": "60",
+            "id": "0",
+            "width": "167",
+            "x": "331",
+            "y": "435",
+            "z": "100"
           }
         ],
-        "credit_charged" => 0,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "instruction" => "Your question?",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-26T10:09:28.467+07:00",
-        "project_id" =>"project_id",
-        "status" => "processed"
+        "credit_charged": 0,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "instruction": "Your question?",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-26T10:09:28.467+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       },
       {
-        "id" => "5a41bc09aa05617baa2832f8",
-        "answer" => [
+        "id": "5a41bc09aa05617baa2832f8",
+        "answer": [
           {
-            "height" => "131",
-            "id" => "0",
-            "width" => "240",
-            "x" => "104",
-            "y" => "294",
-            "z" => "0"
+            "height": "131",
+            "id": "0",
+            "width": "240",
+            "x": "104",
+            "y": "294",
+            "z": "0"
           },
           {
-            "height" => "180",
-            "id" => "1",
-            "width" => "234",
-            "x" => "85",
-            "y" => "64",
-            "z" => "100"
+            "height": "180",
+            "id": "1",
+            "width": "234",
+            "x": "85",
+            "y": "64",
+            "z": "100"
           }
         ],
-        "credit_charged" => 0,
-        "custom_id" => "custom_id",
-        "data" => "image_url",
-        "instruction" => "Your question?",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-26T10:05:53.633+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "credit_charged": 0,
+        "custom_id": "custom_id",
+        "data": "image_url",
+        "instruction": "Your question?",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-26T10:05:53.633+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       }
     ]
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success",
-    "current_page" => 1,
-    "next_page" => -1,
-    "prev_page" => -1,
-    "total_pages" => 1,
-    "total_count" => 3
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success",
+    "current_page": 1,
+    "next_page": -1,
+    "prev_page": -1,
+    "total_pages": 1,
+    "total_count": 3
   }
 }
 ```
-<Enter>
 ---
 
 ### Prediction
@@ -1176,22 +1164,22 @@ KSequencing.prediction.create(
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a41c388aa05617baa283457",
-    "answer" => nil,
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "processing"
+  "value": {
+    "id": "5a41c388aa05617baa283457",
+    "answer": nil,
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "processing"
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -1199,28 +1187,27 @@ KSequencing.prediction.create(
 ```
 POST "https://example.com/callbacks?answer=approved&custom_id=&image_id=5a41c388aa05617baa283457&task_id=5a41c388aa05617baa283457"
 ```
-<Enter>
 ---
 - [sexual]Nudity/Sexual (~1 min)
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a41ce6eaa05617baa2836aa",
-    "answer" => nil,
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "processing"
+  "value": {
+    "id": "5a41ce6eaa05617baa2836aa",
+    "answer": nil,
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "processing"
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -1228,28 +1215,27 @@ POST "https://example.com/callbacks?answer=approved&custom_id=&image_id=5a41c388
 ```
 POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=331&answer[0][y]=435&answer[0][z]=100&answer[0][width]=167&answer[0][height]=60&custom_id=&image_id=5a41bd55aa05617baa283338&task_id=5a41bd55aa05617baa283338"
 ```
-<Enter>
 ---
 - [demographic]Demographic (~3 mins)
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a41d011fb9d7f273a75a62d",
-    "answer" => nil,
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "processing"
+  "value": {
+    "id": "5a41d011fb9d7f273a75a62d",
+    "answer": nil,
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "processing"
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -1257,28 +1243,27 @@ POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=331&answer[0][y
 ```
 POST "https://example.com/callbacks?answer[result][][gender]=male&answer[result][][coordinates][x_max]=747.9999554157257&answer[result][][coordinates][x_min]=0.0&answer[result][][coordinates][y_max]=573.0054758787155&answer[result][][coordinates][y_min]=0.0&custom_id=custom_id&image_id=5a41d011fb9d7f273a75a62d&task_id=5a41d011fb9d7f273a75a62d"
 ```
-<Enter>
 ---
 - [ai_human]Standard Criteria & Human
 ###### Sample response
 ```json
 {
-  "value" => {
-    "id" => "5a41d10efb9d7f27354c8963",
-    "answer" => nil,
-    "credit_charged" => 0,
-    "custom_id" => "custom_id",
-    "data" => "image_url",
-    "postback_url" => "https://example.com/callbacks",
-    "processed_at" => nil,
-    "project_id" => "project_id",
-    "status" => "processing"
+  "value": {
+    "id": "5a41d10efb9d7f27354c8963",
+    "answer": nil,
+    "credit_charged": 0,
+    "custom_id": "custom_id",
+    "data": "image_url",
+    "postback_url": "https://example.com/callbacks",
+    "processed_at": nil,
+    "project_id": "project_id",
+    "status": "processing"
   },
-  "success" => true,
-  "status" => 201,
-  "message" => "success",
-  "total" => 0,
-  "meta" => nil
+  "success": true,
+  "status": 201,
+  "message": "success",
+  "total": 0,
+  "meta": nil
 }
 ```
 
@@ -1286,7 +1271,6 @@ POST "https://example.com/callbacks?answer[result][][gender]=male&answer[result]
 ```
 POST "https://example.com/callbacks?answer=approved&custom_id=custom_id&image_id=5a41d110aa05617baebfd46f&task_id=5a41d110aa05617baebfd46f"
 ```
-<Enter>
 ---
 
 #### Get prediction
@@ -1325,172 +1309,169 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ###### Sample response
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a40a134fb9d7f273a7574d1",
-      "answer" => "approved",
-      "credit_charged" => 1,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-25T13:56:54.651+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+  "value": {
+    "image": {
+      "id": "5a40a134fb9d7f273a7574d1",
+      "answer": "approved",
+      "credit_charged": 1,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-25T13:56:54.651+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
-<Enter>
 ---
 - [sexual]Nudity/Sexual (~1 min)
 ###### Sample response
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a40a2a6aa05617baa2805c0",
-      "answer" => {
-        "sexual" => 0.030112840235233307
+  "value": {
+    "image": {
+      "id": "5a40a2a6aa05617baa2805c0",
+      "answer": {
+        "sexual": 0.030112840235233307
       },
-      "credit_charged" => 0,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-25T14:03:05.750+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+      "credit_charged": 0,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-25T14:03:05.750+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
-<Enter>
 ---
 - [demographic]Demographic (~3 mins)
 ###### Sample response
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a41d011fb9d7f273a75a62d",
-      "answer" => {
-        "result" => [
+  "value": {
+    "image": {
+      "id": "5a41d011fb9d7f273a75a62d",
+      "answer": {
+        "result": [
           {
-            "coordinates" => {
-              "x_max" => 747.9999554157257,
-              "x_min" => 0.0,
-              "y_max" => 573.0054758787155,
-              "y_min" => 0.0
+            "coordinates": {
+              "x_max": 747.9999554157257,
+              "x_min": 0.0,
+              "y_max": 573.0054758787155,
+              "y_min": 0.0
             },
-            "gender" => "male"
+            "gender": "male"
           }
         ]
       },
-      "credit_charged" => 0,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-26T11:29:20.212+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+      "credit_charged": 0,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-26T11:29:20.212+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
-<Enter>
 ---
 - [ai_human]Standard Criteria & Human
 ###### Sample response
 ```json
 {
-  "value" => {
-    "image" => {
-      "id" => "5a41d110aa05617baebfd46f",
-      "answer" => "approved",
-      "credit_charged" => 1,
-      "custom_id" => "custom_id",
-      "data" => "image_url",
-      "postback_url" => "https://example.com/callbacks",
-      "processed_at" => "2017-12-26T11:34:55.786+07:00",
-      "project_id" => "project_id",
-      "status" => "processed"
+  "value": {
+    "image": {
+      "id": "5a41d110aa05617baebfd46f",
+      "answer": "approved",
+      "credit_charged": 1,
+      "custom_id": "custom_id",
+      "data": "image_url",
+      "postback_url": "https://example.com/callbacks",
+      "processed_at": "2017-12-26T11:34:55.786+07:00",
+      "project_id": "project_id",
+      "status": "processed"
     }
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success"
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success"
   }
 }
 ```
 if prediction [ai_human] processed by human you will find answer human from Get list of predictions
 ###### example
-```
+```json
 {
-  "value" => {
-    "images" => [
+  "value": {
+    "images": [
       {
-        "id" => "5a41d10efb9d7f27354c8963",
-        "answer" => "human",
-        "credit_charged" => 0,
-        "custom_id" => nil,
-        "data" => "image_url",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-26T11:33:20.009+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "id": "5a41d10efb9d7f27354c8963",
+        "answer": "human",
+        "credit_charged": 0,
+        "custom_id": nil,
+        "data": "image_url",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-26T11:33:20.009+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       },
       {
-        "id" => "5a40a178fb9d7f27354c58bc",
-        "answer" => "approved",
-        "credit_charged" => 0,
-        "custom_id" => nil,
-        "data" => "image_url",
-        "postback_url" => "https://example.com/callbacks",
-        "processed_at" => "2017-12-25T13:58:03.022+07:00",
-        "project_id" => "project_id",
-        "status" => "processed"
+        "id": "5a40a178fb9d7f27354c58bc",
+        "answer": "approved",
+        "credit_charged": 0,
+        "custom_id": nil,
+        "data": "image_url",
+        "postback_url": "https://example.com/callbacks",
+        "processed_at": "2017-12-25T13:58:03.022+07:00",
+        "project_id": "project_id",
+        "status": "processed"
       }
     ]
   },
-  "success" => true,
-  "status" => 200,
-  "message" => "success",
-  "total" => nil,
-  "meta" => {
-    "code" => 200,
-    "message" => "success",
-    "current_page" => 1,
-    "next_page" => -1,
-    "prev_page" => -1,
-    "total_pages" => 1,
-    "total_count" => 2
+  "success": true,
+  "status": 200,
+  "message": "success",
+  "total": nil,
+  "meta": {
+    "code": 200,
+    "message": "success",
+    "current_page": 1,
+    "next_page": -1,
+    "prev_page": -1,
+    "total_pages": 1,
+    "total_count": 2
   }
 }
 ```
