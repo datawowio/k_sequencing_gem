@@ -3,10 +3,10 @@ module KSequencing
   class Response
 
     attr_reader :count, :message, :status
-    attr_accessor :value, :meta
+    attr_accessor :data, :meta
 
-    def initialize(value, success, response_code = "", response_message = "success", meta = nil, total = 0)
-      @data = value
+    def initialize(data, success, response_code = "", response_message = "success", meta = nil, total = 0)
+      @data = data
       @success = success
       @status = response_code
       @message = response_message
