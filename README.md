@@ -66,11 +66,11 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ```
 
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40be59fb9d7f27354c5efa",
       "answer": "approved",
@@ -129,7 +129,7 @@ KSequencing.image_closed_question.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a40c77ffb9d7f27354c60c2",
     "answer": nil,
     "credit_charged": 0,
@@ -188,7 +188,7 @@ KSequencing.image_closed_question.all({
 ###### Sample results
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "answer": "approved",
