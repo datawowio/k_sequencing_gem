@@ -1,7 +1,7 @@
 require File.expand_path('../faraday/raise_http_exception.rb', __FILE__)
 require File.expand_path('../client_response.rb', __FILE__)
 require 'active_support/all'
-
+require 'pry'
 module KSequencing
   # :nodoc:
   class Connection
@@ -12,6 +12,7 @@ module KSequencing
         request.headers['Authorization'] = options[:token] unless options[:token].nil?
         request.params = options
       end
+      
       Response.new(data(response), true, response.status, 'success', meta(response), total(response))
     rescue Error, Faraday::Error => e
       handle_error(e)
@@ -25,7 +26,7 @@ module KSequencing
         request.params = query_params
         request.body = options unless options.empty?
       end
-      Response.new(data(response), true, response.status)
+      Response.new(data(response), true, status_code(response), meta(response), meta(response), nil)
     rescue Error, Faraday::Error => e
       handle_error(e)
     end
@@ -47,12 +48,16 @@ module KSequencing
       end
     end
 
+    def status_code(response)
+      meta(response)['code'] if meta(response).present?
+    end
+
     def meta(response)
       response.body['meta']
     end
 
     def total(response)
-      meta(response)['count'] if meta(response).present?
+      meta(response)['total_count'] if meta(response).present?
     end
 
     def data(response)

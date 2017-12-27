@@ -6,11 +6,14 @@ module KSequencing
     attr_accessor :value, :meta
 
     def initialize(value, success, response_code = "", response_message = "success", meta = nil, total = 0)
-      @value = value
+      @data = value
       @success = success
       @status = response_code
       @message = response_message
-      @total = total
+
+      # for create post exculde total
+      @total = total unless total.nil?
+
       @meta = meta
     end
 
