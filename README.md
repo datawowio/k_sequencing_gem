@@ -86,7 +86,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -142,10 +141,11 @@ KSequencing.image_closed_question.create({
     "status": "unprocess" 
   },
   "success": true,
-  "status": 201,
-  "message": "success",
-  "total": 0,
-  "meta": nil
+  "status": 200,
+  "message": { 
+    "code": 200, 
+    "message": "success" 
+  }
 }
 ```
 
@@ -217,7 +217,7 @@ KSequencing.image_closed_question.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 3,
   "meta": {
     "code": 200,
     "current_page": 1,
