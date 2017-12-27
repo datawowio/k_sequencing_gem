@@ -142,7 +142,8 @@ KSequencing.image_closed_question.create({
   },
   "success": true,
   "status": 200,
-  "message": { 
+  "message": "success",
+  "meta": { 
     "code": 200, 
     "message": "success" 
   }
