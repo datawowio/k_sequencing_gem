@@ -127,7 +127,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -153,7 +152,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -179,7 +177,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
