@@ -58,10 +58,12 @@ KSequencing.image_closed_question.create({
     "status": "unprocess" 
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -247,7 +249,7 @@ KSequencing.image_closed_question.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 3,
   "meta": {
     "code": 200,
     "current_page": 1,
@@ -315,10 +317,12 @@ KSequencing.image_choice.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+   "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -357,10 +361,12 @@ KSequencing.image_choice.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -398,10 +404,12 @@ KSequencing.image_choice.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 ---
@@ -474,7 +482,6 @@ For one answer
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -509,7 +516,6 @@ For multiple answer
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -544,7 +550,6 @@ For allow empty answer
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -628,7 +633,7 @@ KSequencing.image_choice.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 8,
   "meta": {
     "code": 200,
     "message": "success",
@@ -690,10 +695,12 @@ KSequencing.image_message.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -757,7 +764,6 @@ KSequencing.client.find_image("5a41b7b2fb9d7f27354c84d4", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -828,7 +834,7 @@ KSequencing.image_message.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 3,
   "meta": {
     "code": 200,
     "current_page": 1,
@@ -894,10 +900,12 @@ KSequencing.image_photo_tag.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -977,7 +985,6 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1022,7 +1029,6 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1118,7 +1124,7 @@ KSequencing.image_photo_tag.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 3,
   "meta": {
     "code": 200,
     "message": "success",
@@ -1176,10 +1182,12 @@ KSequencing.prediction.create(
     "status": "processing"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -1204,10 +1212,12 @@ POST "https://example.com/callbacks?answer=approved&custom_id=&image_id=5a41c388
     "status": "processing"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -1232,10 +1242,12 @@ POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=331&answer[0][y
     "status": "processing"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -1260,10 +1272,12 @@ POST "https://example.com/callbacks?answer[result][][gender]=male&answer[result]
     "status": "processing"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -1325,7 +1339,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1355,7 +1368,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1395,7 +1407,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1423,7 +1434,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1463,7 +1473,7 @@ if prediction [ai_human] processed by human you will find answer human from Get 
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 2,
   "meta": {
     "code": 200,
     "message": "success",

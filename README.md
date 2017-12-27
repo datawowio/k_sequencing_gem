@@ -14,9 +14,9 @@
 
 ## Getting Started
 
-KSequencing 0.1.23 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.1.24 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
-gem 'k_sequencing', '~> 0.1.23'
+gem 'k_sequencing', '~> 0.1.24'
 ```
 Then run bundle install
 
@@ -86,7 +86,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -142,10 +141,12 @@ KSequencing.image_closed_question.create({
     "status": "unprocess" 
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": { 
+    "code": 200, 
+    "message": "success" 
+  }
 }
 ```
 
@@ -217,7 +218,7 @@ KSequencing.image_closed_question.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 3,
   "meta": {
     "code": 200,
     "current_page": 1,
