@@ -46,7 +46,7 @@ KSequencing.image_closed_question.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a40c77ffb9d7f27354c60c2",
     "answer": nil,
     "credit_charged": 0,
@@ -111,7 +111,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
  - approved
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40be59fb9d7f27354c5efa",
       "answer": "approved",
@@ -136,7 +136,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
  - declined
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40be59fb9d7f27354c5efa",
       "answer": "declined",
@@ -161,7 +161,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 - kenta
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40be59fb9d7f27354c5efa",
       "answer": "kenta",
@@ -216,7 +216,7 @@ KSequencing.image_closed_question.all({
 ###### Sample results
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "answer": "approved",
@@ -294,7 +294,7 @@ KSequencing.image_choice.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a40d924eecee03cb247f0dd",
     "allow_empty": false,
     "answer": [],
@@ -338,7 +338,7 @@ KSequencing.image_choice.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a40d924eecee03cb247f0dd",
     "allow_empty": false,
     "answer": [],
@@ -381,7 +381,7 @@ KSequencing.image_choice.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a40d924eecee03cb247f0dd",
     "allow_empty": true,
     "answer": [],
@@ -455,7 +455,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 For one answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40de95aa05617baebfb01f",
       "allow_empty": false,
@@ -489,7 +489,7 @@ For one answer
 For multiple answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40de95aa05617baebfb01f",
       "allow_empty": false,
@@ -523,7 +523,7 @@ For multiple answer
 For allow empty answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40de95aa05617baebfb01f",
       "allow_empty": true,
@@ -585,7 +585,7 @@ KSequencing.image_choice.all({
 ###### Sample results
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "id": "5a40de95aa05617baebfb01f",
@@ -672,7 +672,7 @@ KSequencing.image_message.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41b2a8fb9d7f27354c83d8",
     "allow_empty": false,
     "answer": [],
@@ -744,7 +744,7 @@ KSequencing.client.find_image("5a41b7b2fb9d7f27354c84d4", { token: "[you_token]"
 
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41b7b2fb9d7f27354c84d4",
       "answer": "sky blue",
@@ -799,7 +799,7 @@ KSequencing.image_message.all({
 ###### Sample results
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "answer": "sky blue",
@@ -884,7 +884,7 @@ KSequencing.image_photo_tag.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41bc09aa05617baa2832f8",
     "answer": [],
     "credit_charged": 0,
@@ -956,7 +956,7 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
  - one answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41bd55aa05617baa283338",
       "answer": [
@@ -992,7 +992,7 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
  - two answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41bc09aa05617baa2832f8",
       "answer": [
@@ -1064,7 +1064,7 @@ KSequencing.image_photo_tag.all({
 ###### Sample results
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "id": "5a41bd55aa05617baa283338",
@@ -1167,7 +1167,7 @@ KSequencing.prediction.create(
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41c388aa05617baa283457",
     "answer": nil,
     "credit_charged": 0,
@@ -1197,7 +1197,7 @@ POST "https://example.com/callbacks?answer=approved&custom_id=&image_id=5a41c388
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41ce6eaa05617baa2836aa",
     "answer": nil,
     "credit_charged": 0,
@@ -1227,7 +1227,7 @@ POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=331&answer[0][y
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41d011fb9d7f273a75a62d",
     "answer": nil,
     "credit_charged": 0,
@@ -1257,7 +1257,7 @@ POST "https://example.com/callbacks?answer[result][][gender]=male&answer[result]
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41d10efb9d7f27354c8963",
     "answer": nil,
     "credit_charged": 0,
@@ -1320,7 +1320,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40a134fb9d7f273a7574d1",
       "answer": "approved",
@@ -1347,7 +1347,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40a2a6aa05617baa2805c0",
       "answer": {
@@ -1376,7 +1376,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41d011fb9d7f273a75a62d",
       "answer": {
@@ -1415,7 +1415,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41d110aa05617baebfd46f",
       "answer": "approved",
@@ -1441,7 +1441,7 @@ if prediction [ai_human] processed by human you will find answer human from Get 
 ###### example
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "id": "5a41d10efb9d7f27354c8963",
