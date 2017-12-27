@@ -106,7 +106,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ```
 
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
  - approved
 ```json
@@ -450,7 +450,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ```
 
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
 For one answer
 ```json
@@ -740,7 +740,7 @@ KSequencing.client.find_image("5a41b7b2fb9d7f27354c84d4", { token: "[you_token]"
 ```
 
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
 ```json
 {
@@ -951,7 +951,7 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
 ```
 
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
  - one answer
 ```json
