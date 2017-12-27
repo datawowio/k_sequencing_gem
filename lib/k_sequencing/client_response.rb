@@ -10,10 +10,7 @@ module KSequencing
       @success = success
       @status = response_code
       @message = response_message
-
-      # for create post exculde total
       @total = total unless total.nil?
-
       @meta = meta
     end
 

@@ -1,7 +1,6 @@
 require File.expand_path('../faraday/raise_http_exception.rb', __FILE__)
 require File.expand_path('../client_response.rb', __FILE__)
 require 'active_support/all'
-require 'pry'
 module KSequencing
   # :nodoc:
   class Connection
