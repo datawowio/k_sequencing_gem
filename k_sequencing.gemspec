@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
   s.license       = 'Commercial'
   s.require_paths = ['lib']
 
-  s.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.3'
-  s.add_runtime_dependency 'faraday', '~> 0.13.1', '>= 0.13.1'
+  s.add_runtime_dependency 'json',               '~> 1.8',    '>= 1.8.3'
+  s.add_runtime_dependency 'faraday',            '~> 0.13.1', '>= 0.13.1'
   s.add_runtime_dependency 'faraday_middleware', '~> 0.12.2', '>= 0.12.2'
+  s.add_development_dependency 'minitest',       '~> 5.11'
 end
