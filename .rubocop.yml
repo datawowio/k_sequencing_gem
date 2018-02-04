@@ -1,0 +1,23 @@
+---
+Metrics/AbcSize:
+  Max: 20
+Metrics/ClassLength:
+  Max: 200
+Metrics/LineLength:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 20
+Style/Documentation:
+  Enabled: false
+Style/HashSyntax:
+  Style: no_mixed_keys
+  Exclude:
+    - 'Rakefile'
+Style/EmptyCaseCondition:
+  Enabled: false
+Style/ParallelAssignment:
+  Enabled: false
+Style/NumericPredicate:
+  Enabled: false
+Style/WhileUntilModifier:
+  Enabled: false
