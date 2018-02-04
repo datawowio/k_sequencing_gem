@@ -10,8 +10,6 @@ require_relative 'k_sequencing/image_messages'
 require_relative 'k_sequencing/predictions'
 # :nodoc:
 module KSequencing
-  mattr_accessor :user_key, :project_key
-
   class << self
     def setup
       yield self
@@ -40,7 +38,5 @@ module KSequencing
     def prediction
       Prediction.new
     end
-
   end
-
 end
