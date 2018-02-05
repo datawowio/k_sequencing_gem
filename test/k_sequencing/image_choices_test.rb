@@ -6,11 +6,8 @@ module KSequencing
     IMAGE_CHOICE_URL = 'https://k-sequencing.datawow.io/api/images/choice'.freeze
 
     def setup
-      image_choices_file = File.read('test/fixtures/image_choice/all.json')
-      image_choice_file =  File.read('test/fixtures/image_choice/create.json')
-      @image_choices = JSON.parse(image_choices_file)
-      @image_choice = JSON.parse(image_choice_file)
-
+      @image_choices = FileReader.new('test/fixtures/image_choice/all.json').read_json
+      @image_choice = FileReader.new('test/fixtures/image_choice/create.json').read_json
       @options = {
         token: 'project token'
       }
@@ -19,8 +16,8 @@ module KSequencing
     def test_all
       stub_request(:get, IMAGE_CHOICES_URL)
         .with(query: { token: options[:token] })
-        .to_return(body: JSON.generate(@image_choices), status: 200)
-      response = KSequencing::ImageChoice.new.all(options)
+        .to_return(body: JSON.generate(image_choices), status: 200)
+      response = ImageChoice.new.all(options)
       assert_instance_of(Response, response)
       assert_equal(200, response.status)
       refute_nil(response.data)
@@ -30,8 +27,8 @@ module KSequencing
     def test_create
       stub_request(:post, IMAGE_CHOICES_URL)
         .with(headers: { Authorization: options[:token] })
-        .to_return(body: JSON.generate(@image_choice), status: 200)
-      response = KSequencing::ImageChoice.new.create(options)
+        .to_return(body: JSON.generate(image_choice), status: 200)
+      response = ImageChoice.new.create(options)
       assert_instance_of(Response, response)
       assert_equal(200, response.status)
       refute_nil(response.data)
@@ -41,8 +38,8 @@ module KSequencing
     def test_find
       stub_request(:get, IMAGE_CHOICE_URL)
         .with(query: { token: options[:token] })
-        .to_return(body: JSON.generate(@image_choice), status: 200)
-      response = KSequencing::ImageChoice.new.find_by(options)
+        .to_return(body: JSON.generate(image_choice), status: 200)
+      response = ImageChoice.new.find_by(options)
       assert_instance_of(Response, response)
       assert_equal(200, response.status)
       refute_nil(response.data)
@@ -51,6 +48,6 @@ module KSequencing
 
     private
 
-    attr_reader :options
+    attr_reader :options, :image_choices, :image_choice
   end
 end

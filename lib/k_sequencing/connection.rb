@@ -75,8 +75,7 @@ module KSequencing
     end
 
     def prediction_options(options)
-      options.delete(:id)
-      options.delete(:path_param)
+      %i[id path_param].each { |e| options.delete(e) }
       options
     end
   end

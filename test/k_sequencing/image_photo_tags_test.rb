@@ -6,11 +6,8 @@ module KSequencing
     IMAGE_PHOTO_TAG = 'https://k-sequencing.datawow.io/api/images/photo_tag'.freeze
 
     def setup
-      image_photo_tags_file = File.read('test/fixtures/image_photo_tag/all.json')
-      image_photo_tag_file =  File.read('test/fixtures/image_photo_tag/create.json')
-      @image_photo_tags = JSON.parse(image_photo_tags_file)
-      @image_photo_tag = JSON.parse(image_photo_tag_file)
-
+      @image_photo_tags = FileReader.new('test/fixtures/image_photo_tag/all.json').read_json
+      @image_photo_tag = FileReader.new('test/fixtures/image_photo_tag/create.json').read_json
       @options = {
         token: 'project token'
       }
@@ -19,8 +16,8 @@ module KSequencing
     def test_all
       stub_request(:get, IMAGE_PHOTO_TAGS)
         .with(query: { token: options[:token] })
-        .to_return(body: JSON.generate(@image_photo_tags), status: 200)
-      response = KSequencing::ImagePhotoTag.new.all(options)
+        .to_return(body: JSON.generate(image_photo_tags), status: 200)
+      response = ImagePhotoTag.new.all(options)
       assert_instance_of(Response, response)
       assert_equal(200, response.status)
       refute_nil(response.data)
@@ -30,8 +27,8 @@ module KSequencing
     def test_create
       stub_request(:post, IMAGE_PHOTO_TAGS)
         .with(headers: { Authorization: options[:token] })
-        .to_return(body: JSON.generate(@image_photo_tags), status: 200)
-      response = KSequencing::ImagePhotoTag.new.create(options)
+        .to_return(body: JSON.generate(image_photo_tags), status: 200)
+      response = ImagePhotoTag.new.create(options)
       assert_instance_of(Response, response)
       assert_equal(200, response.status)
       refute_nil(response.data)
@@ -41,8 +38,8 @@ module KSequencing
     def test_find
       stub_request(:get, IMAGE_PHOTO_TAG)
         .with(query: { token: options[:token] })
-        .to_return(body: JSON.generate(@image_photo_tag), status: 200)
-      response = KSequencing::ImagePhotoTag.new.find_by(options)
+        .to_return(body: JSON.generate(image_photo_tag), status: 200)
+      response = ImagePhotoTag.new.find_by(options)
       assert_instance_of(Response, response)
       assert_equal(200, response.status)
       refute_nil(response.data)
@@ -51,6 +48,6 @@ module KSequencing
 
     private
 
-    attr_reader :options
+    attr_reader :options, :image_photo_tag, :image_photo_tags
   end
 end
