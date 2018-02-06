@@ -1,18 +1,7 @@
 require 'test_helper'
 
 module KSequencing
-  class ImageChoiceTest < Minitest::Test
-    IMAGE_CHOICES_URL = 'https://k-sequencing.datawow.io/api/images/choices'.freeze
-    IMAGE_CHOICE_URL = 'https://k-sequencing.datawow.io/api/images/choice'.freeze
-
-    def setup
-      @image_choices = FileReader.new('test/fixtures/image_choice/all.json').read_json
-      @image_choice = FileReader.new('test/fixtures/image_choice/create.json').read_json
-      @options = {
-        token: 'project token'
-      }
-    end
-
+  class ImageChoiceTest < TestBase
     def test_all
       stub_request(:get, IMAGE_CHOICES_URL)
         .with(query: { token: options[:token] })
@@ -45,9 +34,5 @@ module KSequencing
       refute_nil(response.data)
       refute_nil(response.meta)
     end
-
-    private
-
-    attr_reader :options, :image_choices, :image_choice
   end
 end

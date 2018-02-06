@@ -1,18 +1,7 @@
 require 'test_helper'
 
 module KSequencing
-  class ImageMessageTest < Minitest::Test
-    IMAGE_MESSAGES_URL = 'https://k-sequencing.datawow.io/api/images/messages'.freeze
-    IMAGE_MESSAGE_URL = 'https://k-sequencing.datawow.io/api/images/message'.freeze
-
-    def setup
-      @image_messages = FileReader.new('test/fixtures/image_message/all.json').read_json
-      @image_message = FileReader.new('test/fixtures/image_message/create.json').read_json
-      @options = {
-        token: 'project token'
-      }
-    end
-
+  class ImageMessageTest < TestBase
     def test_all
       stub_request(:get, IMAGE_MESSAGES_URL)
         .with(query: { token: options[:token] })
@@ -45,9 +34,5 @@ module KSequencing
       refute_nil(response.data)
       refute_nil(response.meta)
     end
-
-    private
-
-    attr_reader :options, :image_message, :image_messages
   end
 end

@@ -1,21 +1,11 @@
 require 'test_helper'
 
 module KSequencing
-  class PredictionTest < Minitest::Test
-    PREDICTIONS_URL = 'https://k-sequencing.datawow.io/api/prime/predictions'.freeze
-
-    def setup
-      @prediction = FileReader.new('test/fixtures/prediction/all.json').read_json
-      @prediction = FileReader.new('test/fixtures/prediction/create.json').read_json
-      @options = {
-        token: 'project-token'
-      }
-    end
-
+  class PredictionTest < TestBase
     def test_all
       stub_request(:get, PREDICTIONS_URL)
         .with(query: { token: options[:token] })
-        .to_return(body: JSON.generate(prediction), status: 200)
+        .to_return(body: JSON.generate(predictions), status: 200)
       response = Prediction.new.all(options)
       assert_instance_of(Response, response)
       assert_equal(200, response.status)
@@ -45,9 +35,5 @@ module KSequencing
       refute_nil(response.data)
       refute_nil(response.meta)
     end
-
-    private
-
-    attr_reader :options, :predictions, :prediction
   end
 end

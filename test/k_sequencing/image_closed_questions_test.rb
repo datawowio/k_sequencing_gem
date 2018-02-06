@@ -1,18 +1,7 @@
 require 'test_helper'
 
 module KSequencing
-  class ImageClosedQuestionTest < Minitest::Test
-    IMAGE_CLOSED_QUESTIONS_URL = 'https://k-sequencing.datawow.io/api/images/closed_questions'.freeze
-    IMAGE_CLOSED_QUESTION_URL = 'https://k-sequencing.datawow.io/api/images/closed_question'.freeze
-
-    def setup
-      @image_closed_questions = FileReader.new('test/fixtures/image_closed_question/all.json').read_json
-      @image_closed_question = FileReader.new('test/fixtures/image_closed_question/create.json').read_json
-      @options = {
-        token: 'project token'
-      }
-    end
-
+  class ImageClosedQuestionTest < TestBase
     def test_all
       stub_request(:get, IMAGE_CLOSED_QUESTIONS_URL)
         .with(query: { token: options[:token] })
@@ -45,9 +34,5 @@ module KSequencing
       refute_nil(response.data)
       refute_nil(response.meta)
     end
-
-    private
-
-    attr_reader :options, :image_closed_question, :image_closed_questions
   end
 end

@@ -1,18 +1,7 @@
 require 'test_helper'
 
 module KSequencing
-  class ImagePhotoTagsTest < Minitest::Test
-    IMAGE_PHOTO_TAGS = 'https://k-sequencing.datawow.io/api/images/photo_tags'.freeze
-    IMAGE_PHOTO_TAG = 'https://k-sequencing.datawow.io/api/images/photo_tag'.freeze
-
-    def setup
-      @image_photo_tags = FileReader.new('test/fixtures/image_photo_tag/all.json').read_json
-      @image_photo_tag = FileReader.new('test/fixtures/image_photo_tag/create.json').read_json
-      @options = {
-        token: 'project token'
-      }
-    end
-
+  class ImagePhotoTagsTest < TestBase
     def test_all
       stub_request(:get, IMAGE_PHOTO_TAGS)
         .with(query: { token: options[:token] })
@@ -45,9 +34,5 @@ module KSequencing
       refute_nil(response.data)
       refute_nil(response.meta)
     end
-
-    private
-
-    attr_reader :options, :image_photo_tag, :image_photo_tags
   end
 end
