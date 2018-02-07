@@ -1,6 +1,5 @@
 require File.expand_path('../faraday/raise_http_exception.rb', __FILE__)
 require File.expand_path('../client_response.rb', __FILE__)
-require 'active_support/all'
 
 module KSequencing
   # :nodoc:
@@ -10,7 +9,7 @@ module KSequencing
         request.url(path)
         request.headers['Content-Type'] = 'application/json'
         request.headers['Authorization'] = options[:token] unless options[:token].nil?
-        request.params = options
+        request.params = options[:path_param] ? prediction_options(options) : options
       end
       Response.new(data(response), true, response.status, 'success', meta(response), total(response))
     rescue Error, Faraday::Error => e
@@ -23,7 +22,7 @@ module KSequencing
         request.headers['Content-Type'] = 'application/json'
         request.headers['Authorization'] = options[:token] unless options[:token].nil?
         request.params = query_params
-        request.body = options unless options.empty?
+        request.body = options unless options.nil?
       end
       Response.new(data(response), true, status_code(response), meta(response), meta(response), nil)
     rescue Error, Faraday::Error => e
@@ -48,7 +47,7 @@ module KSequencing
     end
 
     def status_code(response)
-      meta(response)['code'] if meta(response).present?
+      meta(response)['code'] unless meta(response).nil?
     end
 
     def meta(response)
@@ -56,7 +55,7 @@ module KSequencing
     end
 
     def total(response)
-      meta(response)['total_count'] if meta(response).present?
+      meta(response)['total_count'] unless meta(response).nil?
     end
 
     def data(response)
@@ -73,6 +72,11 @@ module KSequencing
       end
 
       Response.new(nil, false, code, message, 0)
+    end
+
+    def prediction_options(options)
+      %i[id path_param].each { |e| options.delete(e) }
+      options
     end
   end
 end

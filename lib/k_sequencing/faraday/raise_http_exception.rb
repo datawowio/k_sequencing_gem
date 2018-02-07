@@ -1,11 +1,8 @@
 require 'faraday_middleware'
 
 module KSequencing
-
   module FaradayMiddleware
-
     class RaiseHttpException < Faraday::Middleware
-
       def call(request_env)
         @app.call(request_env).on_complete do |response|
           case response[:status].to_i
@@ -33,14 +30,11 @@ module KSequencing
       private
 
       def error_message(response_body)
-        if response_body.present? && response_body.is_a?(String)
+        if !response_body.nil? && response_body.is_a?(String)
           response_body = JSON.parse(response_body)
-          response_body["message"]
+          response_body['message']
         end
       end
-
     end
-
   end
-
 end
