@@ -30,7 +30,7 @@ module KSequencing
       private
 
       def error_message(response_body)
-        if !response_body.empty? && response_body.is_a?(String)
+        if !response_body.nil? && response_body.is_a?(String)
           response_body = JSON.parse(response_body)
           response_body['message']
         end

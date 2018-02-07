@@ -22,7 +22,7 @@ module KSequencing
         request.headers['Content-Type'] = 'application/json'
         request.headers['Authorization'] = options[:token] unless options[:token].nil?
         request.params = query_params
-        request.body = options unless options.empty?
+        request.body = options unless options.nil?
       end
       Response.new(data(response), true, status_code(response), meta(response), meta(response), nil)
     rescue Error, Faraday::Error => e
@@ -47,7 +47,7 @@ module KSequencing
     end
 
     def status_code(response)
-      meta(response)['code'] unless meta(response).empty?
+      meta(response)['code'] unless meta(response).nil?
     end
 
     def meta(response)
@@ -55,7 +55,7 @@ module KSequencing
     end
 
     def total(response)
-      meta(response)['total_count'] unless meta(response).empty?
+      meta(response)['total_count'] unless meta(response).nil?
     end
 
     def data(response)
