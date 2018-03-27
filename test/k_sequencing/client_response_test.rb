@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 module KSequencing
@@ -7,6 +9,10 @@ module KSequencing
       refute_nil(response)
       refute_nil(response.data)
       assert_equal(true, response.successful?)
+      assert_equal('response', response.data)
+      assert_equal('success', response.message)
+      assert_equal('meta', response.meta)
+      assert_equal(5, response.total)
     end
 
     def test_failure_response
@@ -14,6 +20,10 @@ module KSequencing
       refute_nil(response)
       refute_nil(response.data)
       assert_equal(false, response.successful?)
+      assert_equal('response', response.data)
+      assert_equal('failure', response.message)
+      assert_equal('meta', response.meta)
+      assert_equal(0, response.total)
     end
   end
 end

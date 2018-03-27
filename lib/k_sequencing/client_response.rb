@@ -1,6 +1,6 @@
 module KSequencing
   class Response
-    attr_reader :count, :message, :status
+    attr_reader :total, :message, :status
     attr_accessor :data, :meta
 
     def initialize(data, response_code = '', response_message = 'success', meta = nil, total = 0)
