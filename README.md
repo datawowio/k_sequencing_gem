@@ -65,8 +65,19 @@ or
 KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]" })
 ```
 
+Client can check whether request is success by
+
+```ruby
+response = KSequencing.client.find_image("5a40be59fb9d7f27354c5efa")
+if response.successful?
+  # Do stuff
+else
+  log.error("Request was not success, somethings went wrong.")
+end
+```
+
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
+<KSequencing::Response @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
 ```json
 {
@@ -83,7 +94,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
       "status": "processed"
     }
   },
-  "success": true,
   "status": 200,
   "message": "success",
   "meta": {
@@ -140,7 +150,6 @@ KSequencing.image_closed_question.create({
     "project_id": "project_id",
     "status": "unprocess" 
   },
-  "success": true,
   "status": 200,
   "message": "success",
   "meta": { 
@@ -215,7 +224,6 @@ KSequencing.image_closed_question.all({
       ...
     ]
   },
-  "success": true,
   "status": 200,
   "message": "success",
   "total": 3,
