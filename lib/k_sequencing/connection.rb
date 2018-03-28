@@ -1,31 +1,30 @@
 require File.expand_path('../faraday/raise_http_exception.rb', __FILE__)
 require File.expand_path('../client_response.rb', __FILE__)
-require 'active_support/all'
 
 module KSequencing
   # :nodoc:
   class Connection
     def get(path, options = {})
-      response = connection.get do |request|
+      @response = connection.get do |request|
         request.url(path)
         request.headers['Content-Type'] = 'application/json'
         request.headers['Authorization'] = options[:token] unless options[:token].nil?
-        request.params = options
+        request.params = options[:path_param] ? prediction_options(options) : options
       end
-      Response.new(data(response), true, response.status, 'success', meta(response), total(response))
+      Response.new(data, status_code, message, meta, total)
     rescue Error, Faraday::Error => e
       handle_error(e)
     end
 
     def post(path, options = {}, query_params = {})
-      response = connection.post do |request|
+      @response = connection.post do |request|
         request.path = path
         request.headers['Content-Type'] = 'application/json'
         request.headers['Authorization'] = options[:token] unless options[:token].nil?
         request.params = query_params
-        request.body = options unless options.empty?
+        request.body = options unless options.nil?
       end
-      Response.new(data(response), true, response.status)
+      Response.new(data, status_code, message, meta, nil)
     rescue Error, Faraday::Error => e
       handle_error(e)
     end
@@ -47,16 +46,24 @@ module KSequencing
       end
     end
 
-    def meta(response)
-      response.body['meta']
+    def data
+      @response.body['data']
     end
 
-    def total(response)
-      meta(response)['count'] if meta(response).present?
+    def meta
+      @response.body['meta']
     end
 
-    def data(response)
-      response.body['data']
+    def status_code
+      meta['code'] unless meta.nil?
+    end
+
+    def message
+      meta['message'] unless meta.nil?
+    end
+
+    def total
+      meta['total_count'] unless meta.nil?
     end
 
     def handle_error(exception)
@@ -68,7 +75,12 @@ module KSequencing
         message = exception.to_s.partition(':').last
       end
 
-      Response.new(nil, false, code, message, 0)
+      Response.new(nil, code, message, nil)
+    end
+
+    def prediction_options(options)
+      %i[id path_param].each { |e| options.delete(e) }
+      options
     end
   end
 end

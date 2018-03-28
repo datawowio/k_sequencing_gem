@@ -1,2 +1,6 @@
 *.gem
 *.DS_Store
+
+tags
+
+coverage/

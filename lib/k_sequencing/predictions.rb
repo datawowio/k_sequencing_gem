@@ -1,7 +1,6 @@
 module KSequencing
   # :nodoc:
   class Prediction
-
     def all(options = {})
       options[:token] ||= KSequencing.project_key
       connection.get('/api/prime/predictions', options)
@@ -14,15 +13,14 @@ module KSequencing
 
     def find_by(options = {})
       options[:token] ||= KSequencing.project_key
+      options[:path_param] = true
       connection.get("/api/prime/predictions/#{options[:id]}", options)
     end
 
-  private
+    private
 
     def connection
       @connection ||= Connection.new
     end
-
   end
-
 end

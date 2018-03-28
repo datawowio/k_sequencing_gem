@@ -1,7 +1,6 @@
 module KSequencing
   # :nodoc:
   class Client
-
     def create_image_choices(options = {})
       options[:token] ||= KSequencing.project_key
       connection.post('/api/images/choices', options)
@@ -84,11 +83,10 @@ module KSequencing
       connection.get("/api/projects/images/#{id}", options)
     end
 
-  private
+    private
 
     def connection
       @connection ||= Connection.new
     end
-
   end
 end

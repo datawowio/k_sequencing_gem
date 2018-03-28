@@ -1,23 +1,18 @@
 module KSequencing
-
   class Response
+    attr_reader :total, :message, :status
+    attr_accessor :data, :meta
 
-    attr_reader :count, :message, :status
-    attr_accessor :value, :meta
-
-    def initialize(value, success, response_code = "", response_message = "success", meta = nil, total = 0)
-      @value = value
-      @success = success
+    def initialize(data, response_code = '', response_message = 'success', meta = nil, total = 0)
+      @data = data
       @status = response_code
       @message = response_message
-      @total = total
       @meta = meta
+      @total = total unless total.nil?
     end
 
     def successful?
-      !something.nil?
+      [200, 201].include? status
     end
-
   end
-
 end

@@ -46,7 +46,7 @@ KSequencing.image_closed_question.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a40c77ffb9d7f27354c60c2",
     "answer": nil,
     "credit_charged": 0,
@@ -58,10 +58,12 @@ KSequencing.image_closed_question.create({
     "status": "unprocess" 
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -104,12 +106,12 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ```
 
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
  - approved
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40be59fb9d7f27354c5efa",
       "answer": "approved",
@@ -125,7 +127,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -135,7 +136,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
  - declined
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40be59fb9d7f27354c5efa",
       "answer": "declined",
@@ -151,7 +152,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -161,7 +161,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 - kenta
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40be59fb9d7f27354c5efa",
       "answer": "kenta",
@@ -177,7 +177,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -217,7 +216,7 @@ KSequencing.image_closed_question.all({
 ###### Sample results
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "answer": "approved",
@@ -247,7 +246,7 @@ KSequencing.image_closed_question.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 3,
   "meta": {
     "code": 200,
     "current_page": 1,
@@ -295,7 +294,7 @@ KSequencing.image_choice.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a40d924eecee03cb247f0dd",
     "allow_empty": false,
     "answer": [],
@@ -315,10 +314,12 @@ KSequencing.image_choice.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+   "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -337,7 +338,7 @@ KSequencing.image_choice.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a40d924eecee03cb247f0dd",
     "allow_empty": false,
     "answer": [],
@@ -357,10 +358,12 @@ KSequencing.image_choice.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -378,7 +381,7 @@ KSequencing.image_choice.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a40d924eecee03cb247f0dd",
     "allow_empty": true,
     "answer": [],
@@ -398,10 +401,12 @@ KSequencing.image_choice.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 ---
@@ -445,12 +450,12 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ```
 
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
 For one answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40de95aa05617baebfb01f",
       "allow_empty": false,
@@ -474,7 +479,6 @@ For one answer
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -485,7 +489,7 @@ For one answer
 For multiple answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40de95aa05617baebfb01f",
       "allow_empty": false,
@@ -509,7 +513,6 @@ For multiple answer
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -520,7 +523,7 @@ For multiple answer
 For allow empty answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40de95aa05617baebfb01f",
       "allow_empty": true,
@@ -544,7 +547,6 @@ For allow empty answer
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -583,7 +585,7 @@ KSequencing.image_choice.all({
 ###### Sample results
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "id": "5a40de95aa05617baebfb01f",
@@ -628,7 +630,7 @@ KSequencing.image_choice.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 8,
   "meta": {
     "code": 200,
     "message": "success",
@@ -670,7 +672,7 @@ KSequencing.image_message.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41b2a8fb9d7f27354c83d8",
     "allow_empty": false,
     "answer": [],
@@ -690,10 +692,12 @@ KSequencing.image_message.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -736,11 +740,11 @@ KSequencing.client.find_image("5a41b7b2fb9d7f27354c84d4", { token: "[you_token]"
 ```
 
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41b7b2fb9d7f27354c84d4",
       "answer": "sky blue",
@@ -757,7 +761,6 @@ KSequencing.client.find_image("5a41b7b2fb9d7f27354c84d4", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -796,7 +799,7 @@ KSequencing.image_message.all({
 ###### Sample results
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "answer": "sky blue",
@@ -828,7 +831,7 @@ KSequencing.image_message.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 3,
   "meta": {
     "code": 200,
     "current_page": 1,
@@ -881,7 +884,7 @@ KSequencing.image_photo_tag.create({
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41bc09aa05617baa2832f8",
     "answer": [],
     "credit_charged": 0,
@@ -894,10 +897,12 @@ KSequencing.image_photo_tag.create({
     "status": "unprocess"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -946,12 +951,12 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
 ```
 
 ###### Sample response
-<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @value={}, />
+<KSequencing::Response @success=true, @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
 
  - one answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41bd55aa05617baa283338",
       "answer": [
@@ -977,7 +982,6 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -988,7 +992,7 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
  - two answer
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41bc09aa05617baa2832f8",
       "answer": [
@@ -1022,7 +1026,6 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1061,7 +1064,7 @@ KSequencing.image_photo_tag.all({
 ###### Sample results
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "id": "5a41bd55aa05617baa283338",
@@ -1118,7 +1121,7 @@ KSequencing.image_photo_tag.all({
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 3,
   "meta": {
     "code": 200,
     "message": "success",
@@ -1164,7 +1167,7 @@ KSequencing.prediction.create(
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41c388aa05617baa283457",
     "answer": nil,
     "credit_charged": 0,
@@ -1176,10 +1179,12 @@ KSequencing.prediction.create(
     "status": "processing"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -1192,7 +1197,7 @@ POST "https://example.com/callbacks?answer=approved&custom_id=&image_id=5a41c388
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41ce6eaa05617baa2836aa",
     "answer": nil,
     "credit_charged": 0,
@@ -1204,10 +1209,12 @@ POST "https://example.com/callbacks?answer=approved&custom_id=&image_id=5a41c388
     "status": "processing"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -1220,7 +1227,7 @@ POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=331&answer[0][y
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41d011fb9d7f273a75a62d",
     "answer": nil,
     "credit_charged": 0,
@@ -1232,10 +1239,12 @@ POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=331&answer[0][y
     "status": "processing"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -1248,7 +1257,7 @@ POST "https://example.com/callbacks?answer[result][][gender]=male&answer[result]
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "id": "5a41d10efb9d7f27354c8963",
     "answer": nil,
     "credit_charged": 0,
@@ -1260,10 +1269,12 @@ POST "https://example.com/callbacks?answer[result][][gender]=male&answer[result]
     "status": "processing"
   },
   "success": true,
-  "status": 201,
+  "status": 200,
   "message": "success",
-  "total": 0,
-  "meta": nil
+  "meta": {
+    "code": 200,
+    "message": "success"
+  }
 }
 ```
 
@@ -1309,7 +1320,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40a134fb9d7f273a7574d1",
       "answer": "approved",
@@ -1325,7 +1336,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1337,7 +1347,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a40a2a6aa05617baa2805c0",
       "answer": {
@@ -1355,7 +1365,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1367,7 +1376,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41d011fb9d7f273a75a62d",
       "answer": {
@@ -1395,7 +1404,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1407,7 +1415,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 ###### Sample response
 ```json
 {
-  "value": {
+  "data": {
     "image": {
       "id": "5a41d110aa05617baebfd46f",
       "answer": "approved",
@@ -1423,7 +1431,6 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
   "meta": {
     "code": 200,
     "message": "success"
@@ -1434,7 +1441,7 @@ if prediction [ai_human] processed by human you will find answer human from Get 
 ###### example
 ```json
 {
-  "value": {
+  "data": {
     "images": [
       {
         "id": "5a41d10efb9d7f27354c8963",
@@ -1463,7 +1470,7 @@ if prediction [ai_human] processed by human you will find answer human from Get 
   "success": true,
   "status": 200,
   "message": "success",
-  "total": nil,
+  "total": 2,
   "meta": {
     "code": 200,
     "message": "success",
