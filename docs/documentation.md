@@ -20,7 +20,7 @@ KSequencing.image_closed_question.create()
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
 | token         | string     |    Yes | Project token |
-| data          | 	string | Yes |Data for moderate|
+| data          | 	string | Yes |Data for moderation|
 | postback_url  | string      | No | Image postback url|
 | postback_method | 	string | No |Postback method|
 | custom_id	    | string      |   No |Custom id|
