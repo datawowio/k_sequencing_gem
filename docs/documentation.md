@@ -2,10 +2,10 @@
 ### Operations about Images
 #### Image moderation can set 5 kinds of answer
 * [Closed questions](#closed-questions)(Standard Criteria (5 mins response time)) - Answer can be only approved, declined or ban(kenta).
-* [Choices](#choices)(Yes or No Question from Image (30 mins response time)) - This model use to ask question with multiple choice. Anwser can be one or multiple.
-* [Photo tags](#photo-tags)(Tag an object in the image (60 mins response time)) - This model use to create a selection area to find where answer is by drag the area on image from web page.
-* [Messages](#messages)(Message Question from Image (30 mins response time)) - This model allow moderator type the anwser on what they see.
-* [Prediction](#prediction)(Images (AI Beta / 95% accuracy)) - Use AI to prediction the result
+* [Choices](#choices)(Yes or No Question from Image (30 mins response time)) - This model is used to ask a question with multiple choice. Answer can be one or multiple.
+* [Photo tags](#photo-tags)(Tag an object in the image (60 mins response time)) - This model is used to create a selection area to find where the answer is by dragging the area on an image from a web page.
+* [Messages](#messages)(Message Question from Image (30 mins response time)) - This model allows the moderator to type the answer on what they see.
+* [Prediction](#prediction)(Images (AI Beta / 95% accuracy)) - Use AI to predict the result
 ---
 ### Closed questions
 [Standard Criteria (5 mins response time)]
@@ -23,7 +23,7 @@ KSequencing.image_closed_question.create()
 | data          | 	string | Yes |Data for moderate|
 | postback_url  | string      | No | Image postback url|
 | postback_method | 	string | No |Postback method|
-| custom_id	    | string      |   No |Custom's id|
+| custom_id	    | string      |   No |Custom id|
 
 ###### Sample request
 ```ruby
@@ -39,7 +39,7 @@ KSequencing.image_closed_question.create({
   data: "image_url",
   postback_method: "POST",
   postback_url: "https://example.com/callbacks",
-  token: "[you_token]"
+  token: "[your_token]"
 })
 ```
 
@@ -102,7 +102,7 @@ KSequencing.client.find_image("your custom id")
 or
 
 ```ruby
-KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]" })
+KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[your_token]" })
 ```
 
 ###### Sample response
@@ -187,7 +187,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
 
 #### Get list of images
 ```ruby
-KSequencing.image_closed_question.all({ token: "[you_token]" })
+KSequencing.image_closed_question.all({ token: "[your_token]" })
 ```
 
 | Field        | Type           | Required  | Description |
@@ -209,7 +209,7 @@ or
 KSequencing.image_closed_question.all({
   page: 1,
   per_page: 20,
-  token: "[you_token]"
+  token: "[your_token]"
 })
 ```
 
@@ -274,17 +274,17 @@ KSequencing.image_choice.create()
 | postback_url	     | string      |  No | Image postback url|
 |multiple | boolean   |    No | true for multiple answer and false for one answer |
 | postback_method     | 	string | No |Postback method|
-| custom_id	     | string      |   No |Custom's id|
+| custom_id	     | string      |   No |Custom id|
 | allow_empty	     | boolean      |   No |Allow sent answer with empty choice. default is `false`|
  
 
-Note: Answer can choose only one is default. If you want answer to be multiple, you need to set multiple to true.
+Note: Answer choice can be only one by default. If you want the answer to be multiple, you need to set multiple to true.
 
 For one answer
 ###### Sample request
 ```ruby
 KSequencing.image_choice.create({
-  token: "[you_token]",
+  token: "[your_token]",
   instruction: "question",
   categories: "options1 options2 options3",
   data: "image_url"
@@ -327,7 +327,7 @@ For multiple answer
 ###### Sample request
 ```ruby
 KSequencing.image_choice.create({
-  token: "[you_token]",
+  token: "[your_token]",
   instruction: "question",
   categories: "options1 options2 options3",
   data: "image_url",
@@ -367,10 +367,10 @@ KSequencing.image_choice.create({
 }
 ```
 
-For allow empty answer
+To allow an empty answer
 ```ruby
 KSequencing.image_choice.create({
-  token: "[you_token]",
+  token: "[your_token]",
   instruction: "question",
   categories: "options1 options2 options3",
   data: "image_url",
@@ -446,7 +446,7 @@ KSequencing.client.find_image("your custom id")
 or
 
 ```ruby
-KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]" })
+KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[your_token]" })
 ```
 
 ###### Sample response
@@ -486,7 +486,7 @@ For one answer
 }
 ```
 
-For multiple answer
+For multiple answers
 ```json
 {
   "data": {
@@ -520,7 +520,7 @@ For multiple answer
 }
 ```
 
-For allow empty answer
+To allow empty answer
 ```json
 {
   "data": {
@@ -556,7 +556,7 @@ For allow empty answer
 
 #### Get all choices
 ```ruby
-KSequencing.image_choice.all({ token: "[you_token]" })
+KSequencing.image_choice.all({ token: "[your_token]" })
 ```
 
 | Field        | Type           | Required  | Description |
@@ -578,7 +578,7 @@ or
 KSequencing.image_choice.all({
   page: 1,
   per_page: 20,
-  token: "[you_token]"
+  token: "[your_token]"
 })
 ```
 
@@ -648,7 +648,7 @@ KSequencing.image_choice.all({
 [Message Question from Image (30 mins response time)]
 
 #### Create Message Question from Image (30 mins response time)
-Messages - This model allow moderator type the anwser on what they see.
+Messages - This model allows the moderator to type the answer on what they see.
 
 ```ruby
 KSequencing.image_message.create()
@@ -659,7 +659,7 @@ KSequencing.image_message.create()
 | data            | 	string    | Yes   | Data for attachment|
 | postback_url	  | string      | No    | Image postback url|
 | postback_method | 	string    | No    | Postback method|
-| custom_id	      | string      |   No  | Custom's id|
+| custom_id	      | string      |   No  | Custom id|
 
 ###### Sample request
 ```ruby
@@ -736,7 +736,7 @@ KSequencing.client.find_image("your custom id")
 or
 
 ```ruby
-KSequencing.client.find_image("5a41b7b2fb9d7f27354c84d4", { token: "[you_token]" })
+KSequencing.client.find_image("5a41b7b2fb9d7f27354c84d4", { token: "[your_token]" })
 ```
 
 ###### Sample response
@@ -770,7 +770,7 @@ KSequencing.client.find_image("5a41b7b2fb9d7f27354c84d4", { token: "[you_token]"
 ---
 #### Get list of image messages
 ```ruby
-KSequencing.image_message.all({ token: "[you_token]" })
+KSequencing.image_message.all({ token: "[your_token]" })
 ```
 
 | Field        | Type           | Required  | Description |
@@ -792,7 +792,7 @@ or
 KSequencing.image_message.all({
   page: 1,
   per_page: 20,
-  token: "[you_token]"
+  token: "[your_token]"
 })
 ```
 
@@ -877,7 +877,7 @@ KSequencing.image_photo_tag.create({
   data: "image_url",
   postback_method: "POST",
   postback_url: "https://example.com/callbacks",
-  token: "[you_token]"
+  token: "[your_token]"
 })
 ```
 
@@ -908,12 +908,12 @@ KSequencing.image_photo_tag.create({
 
 ###### Sample postback data
 
-Case one answer
+For a case of one answer
 ```
 POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=331&answer[0][y]=435&answer[0][z]=100&answer[0][width]=167&answer[0][height]=60&custom_id=custom_id&image_id=5a41bd55aa05617baa283338&task_id=5a41bd55aa05617baa283338"
 ```
 
-Case multi answers
+For a case of multiple answers
 ```
 POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=104&answer[0][y]=294&answer[0][z]=0&answer[0][width]=240&answer[0][height]=131&answer[1][id]=1&answer[1][x]=85&answer[1][y]=64&answer[1][z]=100&answer[1][width]=234&answer[1][height]=180&custom_id=&image_id=5a41bc09aa05617baa2832f8&task_id=5a41bc09aa05617baa2832f8"
 ```
@@ -947,7 +947,7 @@ KSequencing.client.find_image("your custom id")
 or
 
 ```ruby
-KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]" })
+KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[your_token]" })
 ```
 
 ###### Sample response
@@ -989,7 +989,7 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
 }
 ```
 
- - two answer
+ - two answers
 ```json
 {
   "data": {
@@ -1035,7 +1035,7 @@ KSequencing.client.find_image("5a41bc09aa05617baa2832f8", { token: "[you_token]"
 ---
 #### Get list of image photo tags
 ```ruby
-KSequencing.image_photo_tag.all({ token: "[you_token]" })
+KSequencing.image_photo_tag.all({ token: "[your_token]" })
 ```
 
 | Field        | Type           | Required  | Description |
@@ -1057,7 +1057,7 @@ or
 KSequencing.image_photo_tag.all({
   page: 1,
   per_page: 20,
-  token: "[you_token]"
+  token: "[your_token]"
 })
 ```
 
@@ -1153,7 +1153,7 @@ KSequencing.prediction.create()
 | data            | string | Yes | Data for attachment|
 | postback_url	  | string | No  | Image postback url|
 | postback_method | string | No  | Postback method|
-| custom_id	      | string | No  | Custom's id|
+| custom_id	      | string | No  | Custom id|
 
 ###### Sample request
 ```ruby
@@ -1313,7 +1313,7 @@ KSequencing.client.find_image("your custom id")
 or
 
 ```ruby
-KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]" })
+KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[your_token]" })
 ```
 
 - [nanameue]Standard Criteria (~1 min)
@@ -1437,7 +1437,7 @@ KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]"
   }
 }
 ```
-if prediction [ai_human] processed by human you will find answer human from Get list of predictions
+if the prediction [ai_human] is processed by a human, you will find answer human from Get list of predictions
 ###### example
 ```json
 {

@@ -1,14 +1,14 @@
 # Image and content moderation services.
 
 
-## There are 5 avalable for API
+## There are 5 available for API
 * Closed questions(Standard Criteria (5 mins response time)) - Answer can be only approved, declined or ban(kenta).
-* Choices(Yes or No Question from Image (30 mins response time)) - This model use to ask question with multiple choice. Anwser can be one or multiple.
-* Photo tags(Tag an object in the image (60 mins response time)) - This model use to create a selection area to find where answer is, by drag the area on image from webpage.
-* Messages(Message Question from Image (30 mins response time)) - This model allow moderator type the anwser on what they see.
-* Predictions(Images (AI Beta / 95% accuracy)) - Use AI to prediction the result
+* Choices(Yes or No Question from Image (30 mins response time)) - This model is used to ask a question with multiple choice. Anwser can be one or multiple.
+* Photo tags(Tag an object in the image (60 mins response time)) - This model is used to create a selection area to find where the answer is, by dragging the area on an image from webpage.
+* Messages(Message Question from Image (30 mins response time)) - This model allows the moderator to type the answer on what they see.
+* Predictions(Images (AI Beta / 95% accuracy)) - Use AI to predict the result
 
-##### Please see more usage [documentation](docs/documentation.md) for details on our guideline.
+##### Please see more usage [documentation](docs/documentation.md) for details on our guidelines.
 
 
 
@@ -31,7 +31,7 @@ The generator will install an initializer which describes ALL of KSequencing's c
 You have to contact us [Datawow](https://datawow.io/pages/contact) to get your token. With this token you'll be able to use our gem properly.
 
 ## Usage
-There are 3 oparations of each model as the same name see example below
+There are 3 operations of each model as the same name, see example below
 
 #### Get image
 ```ruby
@@ -65,14 +65,14 @@ or
 KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]" })
 ```
 
-Client can check whether request is success by
+Client can check whether request is successful by
 
 ```ruby
 response = KSequencing.client.find_image("5a40be59fb9d7f27354c5efa")
 if response.successful?
   # Do stuff
 else
-  log.error("Request was not success, somethings went wrong.")
+  log.error("Request was not successful, something went wrong.")
 end
 ```
 
@@ -113,10 +113,10 @@ KSequencing.image_closed_question.create()
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
 | token         | string     |    Yes | Project token |
-| data          | 	string | Yes |Data for moderate|
+| data          | 	string | Yes |Data for moderation|
 | postback_url  | string      | No | Image postback url|
 | postback_method | 	string | No |Postback method|
-| custom_id	    | string      |   No |Custom's id|
+| custom_id	    | string      |   No |Custom id|
 
 ###### Sample request
 ```ruby
@@ -132,7 +132,7 @@ KSequencing.image_closed_question.create({
   data: "image_url",
   postback_method: "POST",
   postback_url: "https://example.com/callbacks",
-  token: "[you_token]"
+  token: "[your_token]"
 })
 ```
 
@@ -168,7 +168,7 @@ POST "https://example.com/callbacks?answer=declined&custom_id=custom_id&image_id
 
 #### Get list of images
 ```ruby
-KSequencing.image_closed_question.all({ token: "[you_token]" })
+KSequencing.image_closed_question.all({ token: "[your_token]" })
 ```
 
 | Field        | Type           | Required  | Description |
@@ -190,7 +190,7 @@ or
 KSequencing.image_closed_question.all({
   page: 1,
   per_page: 20,
-  token: "[you_token]"
+  token: "[your_token]"
 })
 ```
 
@@ -239,9 +239,9 @@ KSequencing.image_closed_question.all({
 }
 ```
 
-However `token: "[you_token]"` you can config in configuration file is not necessary to send to method every time you request, if you have one project token we recommeded this approach
+However `token: "[your_token]"` you can configure in configuration file, but it is not necessary to send to the method every time you request, if you have one project token we recommend this approach
 
-##### Please see more usage [documentation](docs/documentation.md) for details on our guideline.
+##### Please see more usage [documentation](docs/documentation.md) for details on our guidelines.
 
 ## License
 
