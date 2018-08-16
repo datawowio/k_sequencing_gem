@@ -14,7 +14,7 @@
 
 ## Getting Started
 
-KSequencing 0.1.24 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+KSequencing 0.1.25 works with Rails 4.1 onwards. You can add it to your Gemfile with:
 ```ruby
 gem 'k_sequencing', '~> 0.1.24'
 ```
