@@ -38,7 +38,7 @@ module KSequencing
     end
 
     def prediction
-      Prediction.new
+      Predictor.new
     end
   end
 end

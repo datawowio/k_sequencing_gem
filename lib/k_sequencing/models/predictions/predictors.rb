@@ -1,6 +1,6 @@
 module KSequencing
   # :nodoc:
-  class Prediction
+  class Predictor
     def all(options = {})
       options[:token] ||= KSequencing.project_key
       connection.get('/api/prime/predictions', options)
