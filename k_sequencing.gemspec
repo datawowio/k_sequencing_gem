@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |s|
   s.name          = 'k_sequencing'
   s.version       = '0.1.25'
-  s.date          = '2018-03-28'
+  s.date          = '2018-08-15'
   s.summary       = 'KSequencing is a moderator service for your online content'
   s.description   = 'Moderation suite'
   s.post_install_message = File.read('INSTALL.md') if File.exist?('INSTALL.md')
