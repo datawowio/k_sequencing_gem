@@ -1,27 +1,27 @@
 module KSequencing
   # :nodoc:
-  class ImageMessage
+  class TextCategory
     def all(options = {})
       options[:token] ||= KSequencing.project_key
       options[:per_page] ||= 20
       options[:page] ||= 1
-      connection.get('/api/images/messages', options)
+      connection.get('/api/v1/text/text_categories', options)
     end
 
     def create(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.post('/api/images/messages', options)
+      connection.post('/api/v1/text/text_categories', options)
     end
 
     def find_by(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get("/api/projects/images/#{options[:id]}", options)
+      connection.get("/api/v1/text/text_categories/#{options[:id]}", options)
     end
 
     private
 
     def connection
-      @connection ||= Connection.new('image')
+      @connection ||= Connection.new('text')
     end
   end
 end

@@ -1,9 +1,10 @@
 module KSequencing
   # :nodoc:
   class ImageClosedQuestion
-
     def all(options = {})
       options[:token] ||= KSequencing.project_key
+      options[:per_page] ||= 20
+      options[:page] ||= 1
       connection.get('/api/images/closed_questions', options)
     end
 
@@ -14,15 +15,13 @@ module KSequencing
 
     def find_by(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/closed_question', options)
+      connection.get("/api/projects/images/#{options[:id]}", options)
     end
 
-  private
+    private
 
     def connection
-      @connection ||= Connection.new
+      @connection ||= Connection.new('image')
     end
-
   end
-
 end
