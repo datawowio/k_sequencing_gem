@@ -10,7 +10,7 @@ We're going to explant about parameter for creation and example of use
 - [Common function](#common-function)
 
 ## Choice class
-Description: Yes or No Question from Image (30 mins response time) - This model use to create select list on a moderator screen and let's they answer your question on what they're seeing. Answer can be only one or multiple  choice
+Description: Yes or No Question from Image (30 mins response time) - This model used for create select list on a moderator screen and let's they answer your question on what they're seeing. Answer can be only one or multiple  choice
 
 #### Create 
 
@@ -74,7 +74,7 @@ KSequencing.image_message.create(params)
 
   
 ## Photo tags class
-Description: Tag an object in the image (60 mins response time) - This model use to create answer by area. Moderator will be create a selection square on a image by following your instruction to finding the exactly answer on the image
+Description: Identifying an object in the image (60 mins response time) - This model is used for identifying the object within the hand drawn rectangle from the moderator, following any instructions given by the customer.
 
 ### Create
 ```python
