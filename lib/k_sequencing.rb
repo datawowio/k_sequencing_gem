@@ -32,6 +32,14 @@ module KSequencing
       TextClosedQuestion.new
     end
 
+    def text_category
+      TextCategory.new
+    end
+
+    def text_conversation
+      TextConversation.new
+    end
+
     def image_closed_question
       ImageClosedQuestion.new
     end
