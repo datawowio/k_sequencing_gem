@@ -88,22 +88,22 @@ module KSequencing
     end
 
     def base_point
-      unless debug
+      options = {
+        image: 'https://k-sequencing.datawow.io/',
+        ai: '',
+        text: '',
+        video: ''
+      }.with_indifferent_access
+
+      if debug
         options = {
-          image: 'https://k-sequencing.datawow.io/',
+          image: 'http://localhost:3001/',
           ai: 'http://localhost:3001/',
           text: 'http://localhost:3001/',
           video: 'http://localhost:3001/'
         }.with_indifferent_access
+
       end
-
-      options = {
-        image: 'http://localhost:3001/',
-        ai: 'http://localhost:3001/',
-        text: 'http://localhost:3001/',
-        video: 'http://localhost:3001/'
-      }.with_indifferent_access
-
       options[@model]
     end
   end
