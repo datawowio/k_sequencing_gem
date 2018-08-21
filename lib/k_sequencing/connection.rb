@@ -99,7 +99,7 @@ module KSequencing
         options = {
           image: 'http://localhost:3001/',
           ai: 'http://localhost:3001/',
-          text: 'http://localhost:3001/',
+          text: 'http://localhost:3002/',
           video: 'http://localhost:3001/'
         }.with_indifferent_access
 

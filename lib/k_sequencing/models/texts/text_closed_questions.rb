@@ -1,6 +1,6 @@
 module KSequencing
   # :nodoc:
-  class TextCloseqQuestion
+  class TextClosedQuestion
     def all(options = {})
       options[:token] ||= KSequencing.project_key
       options[:per_page] ||= 20
