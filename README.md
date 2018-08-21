@@ -74,13 +74,26 @@ KSequencing.[class].find_by({id: "_image_id", token: '_token'})
 ```ruby
 KSequencing.[class].all({token: '_token'})
 ```
-# Demo and Usage
- - Image Documentation [link](README/image_docs.md)
- - Video Documentation [link](README/video_docs.md)
- - Text Documentation [link](README/text_docs.md)
- - AI/Prediction Documentation [link](README/ai_docs.md)
 
+# Setting default token
 
+If you have only one token that use on your project, may be would like to config auto append or set token by default after calling APIs. This for Ruby On Rails project. 
+
+`config/initializers/k_sequencing.rb` 
+
+```ruby 
+KSequencing.setup do |config|
+  # ==> Secret key Configuration
+  # You can change it below and use your own secret key.
+  config.project_key = 'your token'
+end
+```
+
+After configuration has been set. You can calling APIs by not insert token like this
+```ruby
+KSequencing.[class].create({data: "image URL"})
+```
+The system will be looking for your token by automatically
 
 # Response
 
@@ -123,3 +136,10 @@ else
   log.error("Request was not successful, something went wrong.")
 end
 ```
+
+# Demo and Usage
+ - Image Documentation [link](README/image_docs.md)
+ - Video Documentation [link](README/video_docs.md)
+ - Text Documentation [link](README/text_docs.md)
+ - AI/Prediction Documentation [link](README/ai_docs.md)
+
