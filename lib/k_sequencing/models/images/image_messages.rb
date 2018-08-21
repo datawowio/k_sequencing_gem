@@ -1,26 +1,27 @@
 module KSequencing
   # :nodoc:
-  class Prediction
+  class ImageMessage
     def all(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/prime/predictions', options)
+      options[:per_page] ||= 20
+      options[:page] ||= 1
+      connection.get('/api/images/messages', options)
     end
 
     def create(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.post('/api/prime/predictions', options)
+      connection.post('/api/images/messages', options)
     end
 
     def find_by(options = {})
       options[:token] ||= KSequencing.project_key
-      options[:path_param] = true
-      connection.get("/api/prime/predictions/#{options[:id]}", options)
+      connection.get("/api/projects/images/#{options[:id]}", options)
     end
 
     private
 
     def connection
-      @connection ||= Connection.new
+      @connection ||= Connection.new('image')
     end
   end
 end

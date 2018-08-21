@@ -1,9 +1,13 @@
-require File.expand_path('../faraday/raise_http_exception.rb', __FILE__)
-require File.expand_path('../client_response.rb', __FILE__)
+require File.expand_path('faraday/raise_http_exception.rb', __dir__)
+require File.expand_path('client_response.rb', __dir__)
 
 module KSequencing
   # :nodoc:
   class Connection
+    def initialize(model = nil)
+      @model = model
+    end
+
     def get(path, options = {})
       @response = connection.get do |request|
         request.url(path)
@@ -32,11 +36,7 @@ module KSequencing
     private
 
     def connection
-      options = {
-        url: 'https://k-sequencing.datawow.io/'
-      }
-
-      @connection ||= Faraday::Connection.new(options) do |connection|
+      @connection ||= Faraday::Connection.new(base_point) do |connection|
         connection.request :url_encoded
         connection.request :json
         connection.response :json
@@ -81,6 +81,30 @@ module KSequencing
     def prediction_options(options)
       %i[id path_param].each { |e| options.delete(e) }
       options
+    end
+
+    def debug
+      true
+    end
+
+    def base_point
+      options = {
+        image: 'https://k-sequencing.datawow.io/',
+        ai: '',
+        text: '',
+        video: ''
+      }.with_indifferent_access
+
+      if debug
+        options = {
+          image: 'http://localhost:3001/',
+          ai: 'http://localhost:3001/',
+          text: 'http://localhost:3002/',
+          video: 'http://localhost:3001/'
+        }.with_indifferent_access
+
+      end
+      options[@model]
     end
   end
 end

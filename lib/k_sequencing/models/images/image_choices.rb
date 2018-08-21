@@ -1,28 +1,27 @@
 module KSequencing
   # :nodoc:
-  class ImageClosedQuestion
-
+  class ImageChoice
     def all(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/closed_questions', options)
+      options[:per_page] ||= 20
+      options[:page] ||= 1
+      connection.get('/api/images/choices', options)
     end
 
     def create(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.post('/api/images/closed_questions', options)
+      connection.post('/api/images/choices', options)
     end
 
     def find_by(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/closed_question', options)
+      connection.get("/api/projects/images/#{options[:id]}", options)
     end
 
-  private
+    private
 
     def connection
-      @connection ||= Connection.new
+      @connection ||= Connection.new('image')
     end
-
   end
-
 end
