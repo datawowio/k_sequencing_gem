@@ -1,33 +1,35 @@
-### Prediction
-Images (AI Beta / 95% accuracy)
+# Table of Content
+- [How to use it](#create)
+#### [Type of AI](#response-of-each-type-ai)
+- [Standard Criteria](#standard-criteria)
+- [Nudity/Sexual](#nuditysexual)
+- [Demographic](#demographic)
+- [Standard Criteria & Human](#standard-criteria--human)
+- [Common function](#common-function)
+
+### Prediction Images (AI Beta / 95% accuracy)
  - [nanameue]Standard Criteria (~1 min)
  - [sexual]Nudity/Sexual (~1 min)
  - [demographic]Demographic (~3 mins)
  - [ai_human]Standard Criteria & Human
 
 #### Create prediction
-Dynamic from your project key
+**Note**: For creation of prediction the type of AI will be separated by token. Once, you sent request to server your token will be used for find type of AI automatically and you will get response upon your token type 
 
 ```ruby
-KSequencing.prediction.create()
+params = { ..., token: '_token' }
+KSequencing.prediction.create(params)
 ```
+#### params
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :-----:| :-----|
-| data            | string | Yes | Data for attachment|
-| postback_url	  | string | No  | Image postback url|
-| postback_method | string | No  | Postback method|
-| custom_id	      | string | No  | Custom id|
+| data     | 	string | Yes |Data for attachment|
+| postback_url	     | string      | No | Image postback url|
+| postback_method     | 	string | No |Postback method|
+| custom_id	     | string      |   No |Custom's id|
 
-###### Sample request
-```ruby
-KSequencing.prediction.create(
-  token: "[your_token]",
-  data: "image_url"
-)
-```
-
- - [nanameue]Standard Criteria (~1 min)
-###### Sample response
+## Response of each type AI
+#### [nanameue]Standard Criteria (~1 min)
 ```json
 {
   "data": {
@@ -50,14 +52,8 @@ KSequencing.prediction.create(
   }
 }
 ```
-
-###### Sample postback data
-```
-POST "https://example.com/callbacks?answer=approved&custom_id=&image_id=5a41c388aa05617baa283457&task_id=5a41c388aa05617baa283457"
-```
 ---
-- [sexual]Nudity/Sexual (~1 min)
-###### Sample response
+#### [sexual]Nudity/Sexual (~1 min)
 ```json
 {
   "data": {
@@ -80,14 +76,8 @@ POST "https://example.com/callbacks?answer=approved&custom_id=&image_id=5a41c388
   }
 }
 ```
-
-###### Sample postback data
-```
-POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=331&answer[0][y]=435&answer[0][z]=100&answer[0][width]=167&answer[0][height]=60&custom_id=&image_id=5a41bd55aa05617baa283338&task_id=5a41bd55aa05617baa283338"
-```
 ---
-- [demographic]Demographic (~3 mins)
-###### Sample response
+#### [demographic]Demographic (~3 mins)
 ```json
 {
   "data": {
@@ -110,14 +100,8 @@ POST "https://example.com/callbacks?answer[0][id]=0&answer[0][x]=331&answer[0][y
   }
 }
 ```
-
-###### Sample postback data
-```
-POST "https://example.com/callbacks?answer[result][][gender]=male&answer[result][][coordinates][x_max]=747.9999554157257&answer[result][][coordinates][x_min]=0.0&answer[result][][coordinates][y_max]=573.0054758787155&answer[result][][coordinates][y_min]=0.0&custom_id=custom_id&image_id=5a41d011fb9d7f273a75a62d&task_id=5a41d011fb9d7f273a75a62d"
-```
 ---
-- [ai_human]Standard Criteria & Human
-###### Sample response
+#### [ai_human]Standard Criteria & Human
 ```json
 {
   "data": {
@@ -140,208 +124,30 @@ POST "https://example.com/callbacks?answer[result][][gender]=male&answer[result]
   }
 }
 ```
-
-###### Sample postback data
-```
-POST "https://example.com/callbacks?answer=approved&custom_id=custom_id&image_id=5a41d110aa05617baebfd46f&task_id=5a41d110aa05617baebfd46f"
-```
 ---
+  
+# Common function 
+For every classes there are common functions to get list of data and find by ID. We're going to show you how to use it.
 
-#### Get prediction
-```ruby
-KSequencing.client.find_image(id)
+## Query list of data by  `all()`
+
+```ruby 
+params = { ..., token: '_token' }
+KSequencing.[model].all(params)
 ```
+#### params
+| Field        | Type           | Required  | Description |
+| ------------- |:-------------:| :-----:| :-----|
+| page     | 	interger | No | default 0|
+| per_page 	     | string      | No | default 20 |
 
+
+## Find data with ID by  `find_by()`
+```ruby
+params = { id: '_id', token: '_token' }
+KSequencing.[model].find_by(params)
+```
+#### params
 | Field        | Type           | Required  | Description |
 | ------------- |:-------------:| :----:| :-----|
-| token         | string        | Yes   | Project token |
-| id            | string        | Yes   | Image id or Client's image id|
-
-Note:
- - You must choose id or custom_id for search. Not both.
- - Image data dynamic by project token.
-
-###### Sample request
-
-```ruby
-KSequencing.client.find_image("5a40be59fb9d7f27354c5efa")
-```
-
-or
-
-```ruby
-KSequencing.client.find_image("your custom id")
-```
-
-or
-
-```ruby
-KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[your_token]" })
-```
-
-- [nanameue]Standard Criteria (~1 min)
-###### Sample response
-```json
-{
-  "data": {
-    "image": {
-      "id": "5a40a134fb9d7f273a7574d1",
-      "answer": "approved",
-      "credit_charged": 1,
-      "custom_id": "custom_id",
-      "data": "image_url",
-      "postback_url": "https://example.com/callbacks",
-      "processed_at": "2017-12-25T13:56:54.651+07:00",
-      "project_id": "project_id",
-      "status": "processed"
-    }
-  },
-  "success": true,
-  "status": 200,
-  "message": "success",
-  "meta": {
-    "code": 200,
-    "message": "success"
-  }
-}
-```
----
-- [sexual]Nudity/Sexual (~1 min)
-###### Sample response
-```json
-{
-  "data": {
-    "image": {
-      "id": "5a40a2a6aa05617baa2805c0",
-      "answer": {
-        "sexual": 0.030112840235233307
-      },
-      "credit_charged": 0,
-      "custom_id": "custom_id",
-      "data": "image_url",
-      "postback_url": "https://example.com/callbacks",
-      "processed_at": "2017-12-25T14:03:05.750+07:00",
-      "project_id": "project_id",
-      "status": "processed"
-    }
-  },
-  "success": true,
-  "status": 200,
-  "message": "success",
-  "meta": {
-    "code": 200,
-    "message": "success"
-  }
-}
-```
----
-- [demographic]Demographic (~3 mins)
-###### Sample response
-```json
-{
-  "data": {
-    "image": {
-      "id": "5a41d011fb9d7f273a75a62d",
-      "answer": {
-        "result": [
-          {
-            "coordinates": {
-              "x_max": 747.9999554157257,
-              "x_min": 0.0,
-              "y_max": 573.0054758787155,
-              "y_min": 0.0
-            },
-            "gender": "male"
-          }
-        ]
-      },
-      "credit_charged": 0,
-      "custom_id": "custom_id",
-      "data": "image_url",
-      "postback_url": "https://example.com/callbacks",
-      "processed_at": "2017-12-26T11:29:20.212+07:00",
-      "project_id": "project_id",
-      "status": "processed"
-    }
-  },
-  "success": true,
-  "status": 200,
-  "message": "success",
-  "meta": {
-    "code": 200,
-    "message": "success"
-  }
-}
-```
----
-- [ai_human]Standard Criteria & Human
-###### Sample response
-```json
-{
-  "data": {
-    "image": {
-      "id": "5a41d110aa05617baebfd46f",
-      "answer": "approved",
-      "credit_charged": 1,
-      "custom_id": "custom_id",
-      "data": "image_url",
-      "postback_url": "https://example.com/callbacks",
-      "processed_at": "2017-12-26T11:34:55.786+07:00",
-      "project_id": "project_id",
-      "status": "processed"
-    }
-  },
-  "success": true,
-  "status": 200,
-  "message": "success",
-  "meta": {
-    "code": 200,
-    "message": "success"
-  }
-}
-```
-if the prediction [ai_human] is processed by a human, you will find answer human from Get list of predictions
-###### example
-```json
-{
-  "data": {
-    "images": [
-      {
-        "id": "5a41d10efb9d7f27354c8963",
-        "answer": "human",
-        "credit_charged": 0,
-        "custom_id": nil,
-        "data": "image_url",
-        "postback_url": "https://example.com/callbacks",
-        "processed_at": "2017-12-26T11:33:20.009+07:00",
-        "project_id": "project_id",
-        "status": "processed"
-      },
-      {
-        "id": "5a40a178fb9d7f27354c58bc",
-        "answer": "approved",
-        "credit_charged": 0,
-        "custom_id": nil,
-        "data": "image_url",
-        "postback_url": "https://example.com/callbacks",
-        "processed_at": "2017-12-25T13:58:03.022+07:00",
-        "project_id": "project_id",
-        "status": "processed"
-      }
-    ]
-  },
-  "success": true,
-  "status": 200,
-  "message": "success",
-  "total": 2,
-  "meta": {
-    "code": 200,
-    "message": "success",
-    "current_page": 1,
-    "next_page": -1,
-    "prev_page": -1,
-    "total_pages": 1,
-    "total_count": 2
-  }
-}
-```
+| id	     | string  |   **Yes** | Image's ID or custom ID which is you were assigned|
