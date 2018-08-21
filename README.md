@@ -77,7 +77,7 @@ KSequencing.[class].all({token: '_token'})
 
 # Setting default token
 
-If you have only one token that use on your project, may be would like to config auto append or set token by default after calling APIs. This for Ruby On Rails project. 
+If you have only one token that use on your project, you could config auto append or set token by default. This for Ruby On Rails project. 
 
 `config/initializers/k_sequencing.rb` 
 

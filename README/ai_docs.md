@@ -14,7 +14,7 @@
  - [ai_human]Standard Criteria & Human
 
 #### Create prediction
-**Note**: For creation of prediction the type of AI will be separated by token. Once, you sent request to server your token will be used for find type of AI automatically and you will get response upon your token type 
+**Note**: For creation of prediction, a type of AI will be separated by token. Once, you sent request to server your token will be used for find AI'type automatically and you will get response upon your token type 
 
 ```ruby
 params = { ..., token: '_token' }
