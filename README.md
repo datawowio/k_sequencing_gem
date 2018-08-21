@@ -58,7 +58,7 @@ There are 1 API for prediction class
 KSequencing.prediction
 ```
 ---
-### Calling APIs 
+## Calling APIs 
 Every classes there are 3 function that is `create`, `find_by` and `all`
 #### `create`
 ```ruby
