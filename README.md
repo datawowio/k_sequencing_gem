@@ -1,83 +1,95 @@
-# Image and content moderation services.
+# Datawow-ruby
+  
+HTTP RESTFul for calling DataWow APIs
 
+###### support or question support@datawow.io
 
-## There are 5 available for API
-* Closed questions(Standard Criteria (5 mins response time)) - Answer can be only approved, declined or ban(kenta).
-* Choices(Yes or No Question from Image (30 mins response time)) - This model is used to ask a question with multiple choice. Anwser can be one or multiple.
-* Photo tags(Tag an object in the image (60 mins response time)) - This model is used to create a selection area to find where the answer is, by dragging the area on an image from webpage.
-* Messages(Message Question from Image (30 mins response time)) - This model allows the moderator to type the answer on what they see.
-* Predictions(Images (AI Beta / 95% accuracy)) - Use AI to predict the result
-
-##### Please see more usage [documentation](docs/documentation.md) for details on our guidelines.
-
-
-
-## Getting Started
-
-KSequencing 0.1.25 works with Rails 4.1 onwards. You can add it to your Gemfile with:
+# Installation
 ```ruby
-gem 'k_sequencing', '~> 0.1.25'
+gem 'k_sequencing', '~> 0.1.26'
 ```
-Then run bundle install
 
-Next, you need to run the generator:
+#### Generate setting
 
 ```console
 $ rails generate k_sequencing:install
 ```
+The generator will install an initializer which describes ALL of library's configuration options. It is *imperative* that you take a look at it. When you are done, you are ready to call it to any of your codes.
 
-The generator will install an initializer which describes ALL of KSequencing's configuration options. It is *imperative* that you take a look at it. When you are done, you are ready to add KSqeuencing to any of your codes.
+**Note**: Our library work with Rails 4.1 or above
 
-You have to contact us [Datawow](https://datawow.io/pages/contact) to get your token. With this token you'll be able to use our gem properly.
+# Usage
 
-## Usage
-There are 3 operations of each model as the same name, see example below
+To call our module use `KSequencing` and follow by class of APIs which we're going to explain what API we have
 
-#### Get image
+## Class explanation
+#### Image classe `KSequencing.image_*`
+There are 4 APIs for image class
+
+```ruby 
+KSequencing.image_closed_question
+KSequencing.image_photo_tag 
+KSequencing.image_choice
+KSequencing.image_message
+```
+---
+
+#### Video classe `KSequencing.video_*`
+There is 1 API for video class
+
+```ruby 
+KSequencing.video_classification
+```
+---
+#### Text classe `KSequencing.text_*`
+There are 3 APIs for text class
+
+```ruby 
+KSequencing.text_closed_question
+KSequencing.text_category 
+KSequencing.text_conversation
+```
+---
+
+#### Prediction classe `KSequencing.prediction`
+There are 1 API for prediction class
+
+```ruby 
+KSequencing.prediction
+```
+---
+### Calling APIs 
+Every classes there are 3 function that is `create`, `find_by` and `all`
+#### `create`
 ```ruby
-KSequencing.client.find_image(id)
+KSequencing.[class].create({data: "image URL", token: '_token'})
 ```
 
-| Field        | Type           | Required  | Description |
-| ------------- |:-------------:| :----:| :-----|
-| token         | string        | Yes   | Project token |
-| id            | string        | Yes   | Image id or Client's image id|
-
-Note:
- - You must choose id or custom_id for search. Not both.
- - Image data dynamic by project token.
-
-###### Sample request
-
+#### `find_by`
 ```ruby
-KSequencing.client.find_image("5a40be59fb9d7f27354c5efa")
+KSequencing.[class].find_by({id: "_image_id", token: '_token'})
 ```
 
-or
-
+#### `all`
 ```ruby
-KSequencing.client.find_image("your custom id")
+KSequencing.[class].all({token: '_token'})
 ```
+# Demo and Usage
+ - Image Documentation [link](README/image_docs.md)
+ - Video Documentation [link](README/video_docs.md)
+ - Text Documentation [link](README/text_docs.md)
+ - AI/Prediction Documentation [link](README/ai_docs.md)
 
-or
 
+
+# Response
+
+Response is a module and it contain such as meta-data, message, status and data.
+#### Example of response module
 ```ruby
-KSequencing.client.find_image("5a40be59fb9d7f27354c5efa", { token: "[you_token]" })
+<KSequencing::Response @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={...}, />
 ```
-
-Client can check whether request is successful by
-
-```ruby
-response = KSequencing.client.find_image("5a40be59fb9d7f27354c5efa")
-if response.successful?
-  # Do stuff
-else
-  log.error("Request was not successful, something went wrong.")
-end
-```
-
-###### Sample response
-<KSequencing::Response @status=200, @message="success" @meta={"code"=>200, "message"=>"success"}, @data={}, />
+you can use data whit calling `data` property and you will be get data like a example below
 
 ```json
 {
@@ -103,146 +115,11 @@ end
 }
 ```
 ---
-#### Create Image Standard Criteria (5 mins response time)
-Closed questions - Answer can be only approved, declined or ban(kenta).
-
+#### Checking status with `successful?`
 ```ruby
-KSequencing.image_closed_question.create()
+if response.successful?
+  # Do stuff
+else
+  log.error("Request was not successful, something went wrong.")
+end
 ```
-
-| Field        | Type           | Required  | Description |
-| ------------- |:-------------:| :-----:| :-----|
-| token         | string     |    Yes | Project token |
-| data          | 	string | Yes |Data for moderation|
-| postback_url  | string      | No | Image postback url|
-| postback_method | 	string | No |Postback method|
-| custom_id	    | string      |   No |Custom id|
-
-###### Sample request
-```ruby
-KSequencing.image_closed_question.create({ data: "image_url" })
-```
-
-or
-
-Override data [:token, :postback_url, :postback_method]
-```ruby
-KSequencing.image_closed_question.create({
-  custom_id: "custom_id",
-  data: "image_url",
-  postback_method: "POST",
-  postback_url: "https://example.com/callbacks",
-  token: "[your_token]"
-})
-```
-
-###### Sample response
-```json
-{
-  "data": {
-    "id": "5a40c77ffb9d7f27354c60c2",
-    "answer": nil,
-    "credit_charged": 0,
-    "custom_id": "custom_id",
-    "data": "image_url",
-    "postback_url": "https://example.com/callbacks",
-    "processed_at": nil,
-    "project_id": "project_id",
-    "status": "unprocess" 
-  },
-  "status": 200,
-  "message": "success",
-  "meta": { 
-    "code": 200, 
-    "message": "success" 
-  }
-}
-```
-
-###### Sample postback data
-```
-POST "https://example.com/callbacks?answer=declined&custom_id=custom_id&image_id=5a40cfc2fb9d7f27354c62b5&task_id=5a40cfc2fb9d7f27354c62b5"
-```
-
----
-
-#### Get list of images
-```ruby
-KSequencing.image_closed_question.all({ token: "[your_token]" })
-```
-
-| Field        | Type           | Required  | Description |
-| ------------- |:-------------:| :----:| :-----|
-|token | string     |    Yes | Project token |
-| page	     | integer       |   No | Image id|
-|per_page | integer      |    No | Client's image id |\
-
-Note: You must choose id or custom_id for search. Not both.
-
-###### Sample request
-```ruby
-KSequencing.image_closed_question.all
-```
-
-or
-
-```ruby
-KSequencing.image_closed_question.all({
-  page: 1,
-  per_page: 20,
-  token: "[your_token]"
-})
-```
-
-###### Sample results
-```json
-{
-  "data": {
-    "images": [
-      {
-        "answer": "approved",
-        "credit_charged": 1,
-        "custom_id": "custom_id",
-        "data": "image_url",
-        "id": "5a40c77ffb9d7f27354c60c2",
-        "postback_url": "https://example.com/callbacks",
-        "processed_at": "2017-12-25T16:40:19.699+07:00",
-        "project_id": "project_id",
-        "status": "processed"
-      },
-      {
-        "answer": "approved",
-        "credit_charged": 1,
-        "custom_id": "custom_id",
-        "data": "image_url",
-        "id": "5a40be59fb9d7f27354c5efa",
-        "postback_url": "https://example.com/callbacks",
-        "processed_at": "2017-12-25T16:02:00.599+07:00",
-        "project_id": "project_id",
-        "status": "processed"
-      },
-      ...
-    ]
-  },
-  "status": 200,
-  "message": "success",
-  "total": 3,
-  "meta": {
-    "code": 200,
-    "current_page": 1,
-    "message": "success",
-    "next_page": 2,
-    "prev_page": -1,
-    "total_count": 3,
-    "total_pages": 2
-  }
-}
-```
-
-However `token: "[your_token]"` you can configure in configuration file, but it is not necessary to send to the method every time you request, if you have one project token we recommend this approach
-
-##### Please see more usage [documentation](docs/documentation.md) for details on our guidelines.
-
-## License
-
-This project is licensed under datawowio
