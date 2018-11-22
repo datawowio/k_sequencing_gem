@@ -10,7 +10,9 @@ require_relative 'k_sequencing/image_messages'
 require_relative 'k_sequencing/predictions'
 # :nodoc:
 module KSequencing
-  mattr_accessor :project_key
+  extend self
+
+  attr_accessor :project_key
 
   class << self
     def setup
