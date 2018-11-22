@@ -3,84 +3,84 @@ module KSequencing
   class Client
     def create_image_choices(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.post('/api/images/choices', options)
+      connection.post('/api/v1/images/choices', options)
     end
 
     def create_image_closed_questions(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.post('/api/images/closed_questions', options)
+      connection.post('/api/v1/images/closed_questions', options)
     end
 
     def create_image_messages(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.post('/api/images/messages', options)
+      connection.post('/api/v1/images/messages', options)
     end
 
     def create_image_photo_tags(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.post('/api/images/photo_tags', options)
+      connection.post('/api/v1/images/photo_tags', options)
     end
 
     def create_prediction(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.post('/api/prime/predictions', options)
+      connection.post('/api/v1/prime/predictions', options)
     end
 
     # -------------------------------- list data ----------------------------------
     def get_image_choice(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/choices', options)
+      connection.get('/api/v1/images/choices', options)
     end
 
     def get_image_closed_question(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/closed_questions', options)
+      connection.get('/api/v1/images/closed_questions', options)
     end
 
     def get_image_message(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/messages', options)
+      connection.get('/api/v1/images/messages', options)
     end
 
     def get_image_photo_tag(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/photo_tags', options)
+      connection.get('/api/v1/images/photo_tags', options)
     end
 
     def get_prediction(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/prime/predictions', options)
+      connection.get('/api/v1/prime/predictions', options)
     end
 
     # ------------------------------ find by id -------------------------------
     def find_by_id_image_choice(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/choice', options)
+      connection.get('/api/v1/images/choice', options)
     end
 
     def find_by_id_image_closed_question(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/closed_question', options)
+      connection.get('/api/v1/images/closed_question', options)
     end
 
     def find_by_id_image_message(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/message', options)
+      connection.get('/api/v1/images/message', options)
     end
 
     def find_by_id_image_photo_tag(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/photo_tag', options)
+      connection.get('/api/v1/images/photo_tag', options)
     end
 
     def find_by_id_prediction(id, options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get("/api/prime/predictions/#{id}", options)
+      connection.get("/api/v1/prime/predictions/#{id}", options)
     end
 
     def find_image(id, options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get("/api/projects/images/#{id}", options)
+      connection.get("/api/v1/projects/images/#{id}", options)
     end
 
     private

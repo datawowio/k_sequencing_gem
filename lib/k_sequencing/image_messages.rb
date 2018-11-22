@@ -4,17 +4,17 @@ module KSequencing
 
     def all(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/messages', options)
+      connection.get('/api/v1/images/messages', options)
     end
 
     def create(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.post('/api/images/messages', options)
+      connection.post('/api/v1/images/messages', options)
     end
 
     def find_by(options = {})
       options[:token] ||= KSequencing.project_key
-      connection.get('/api/images/message', options)
+      connection.get('/api/v1/images/message', options)
     end
 
   private
